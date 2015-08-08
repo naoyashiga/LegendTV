@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>item0</key>
+	<dict>
+		<key>seriesName</key>
+		<string>松本vs浜田・対決シリーズ / 罰ゲーム</string>
+		<key>desc</key>
+		<string>松本人志と浜田雅功が日本シリーズや紅白歌合戦の勝敗予想、スポーツ、ゲームなどで対決（1998年のゴルフ対決からは山崎・ココリコも参加している）、敗者は厳しい罰ゲームを受ける。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>ガララニョロロでズームイン!!（1990年正月）松本人志</string>
+			<string>SM亀甲縛りアルタ画面で番組宣伝（1990年春）松本人志</string>
+			<string>浜ちゃん決死のスカイダイビング（1990年夏）浜田雅功</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い ガララニョロロ</string>
+			<string>準備中</string>
+			<string>ガキの使い 浜ちゃん決死のスカイダイビング</string>
+		</array>
+	</dict>
+	<key>item1</key>
+	<dict>
+		<key>seriesName</key>
+		<string>笑ってはいけないシリーズ</string>
+		<key>desc</key>
+		<string>松本人志と浜田雅功による対決企画（優勝予想対決や短距離走対決等）を行い、負けた方が受ける「罰ゲーム」を企画の主軸に据えて放送していた。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>松本チーム罰ゲーム 絶対笑ってはいけない温泉宿一泊二日の旅</string>
+			<string>浜田・山崎・田中罰ゲーム 笑ってはいけない温泉宿一泊二日の旅in湯河原</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い 笑ってはいけない Hot Spring</string>
+			<string>ガキの使い 笑ってはいけない  Yugawara</string>
+		</array>
+	</dict>
+	<key>item2</key>
+	<dict>
+		<key>seriesName</key>
+		<string>山崎 VS モリマン</string>
+		<key>desc</key>
+		<string>1996年に端を発する、山崎とホルスタイン・モリ夫（モリマン）の因縁対決。 「俺はずっと裏番長だった。本当はケンカが強い」と常々楽屋で言っていた山崎が、本当に強いのかを検証する為に始まった企画から発展。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>山崎ケツ公開スパーリング!!</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い 山崎ケツ公開スパーリング</string>
+		</array>
+	</dict>
+	<key>item3</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ヘイポーお見合いシリーズ</string>
+		<key>desc</key>
+		<string>原久美子や網浜直子、ジャガー横田など芸能人とのお見合いがセッティングされ、ダウンタウンの指示でヘイポーが無茶な行動を行って相手を怒らせる企画。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>ヘイポーはじめてのお見合い</string>
+			<string>ヘイポー2度目のお見合い</string>
+			<string>ヘイポー ジャガー横田 お見合い企画</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い ヘイポーはじめてのお見合い</string>
+			<string>ガキの使い ヘイポー2度目のお見合い</string>
+			<string>ガキの使い ジャガー横田 お見合い企画</string>
+		</array>
+	</dict>
+	<key>item4</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ハイテンションシリーズ</string>
+		<key>desc</key>
+		<string>芸人たちのハイテンション芸を楽しむ名物企画である。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1弾 ハイテンション・ザ・ベストテン</string>
+			<string>第2弾 ハイテンション・ザ・ベストテン</string>
+			<string>第3弾 ハイテンション・ザ・ベストテン</string>
+			<string>第4弾 ヒクソングレイシー ハイテンション・ザ・ベストテン</string>
+			<string>第5弾 森三中初登場 ハイテンション・ザ・ベストテン</string>
+			<string>第6弾 ハイテンション・ザ・ベストテン</string>
+			<string>第7弾 ハイテンション・ザ・ベストテン</string>
+			<string>第8弾 ハイテンション・ザ・ベストテン</string>
+			<string>第9弾 ハイテンション・ザ・ベストテン</string>
+			<string>第10弾 ハイテンション・ザ・ベストテン</string>
+			<string>第11弾 ハイテンション・ザ・ベストテン</string>
+			<string>第12弾 ハイテンション・ザ・ベストテン</string>
+			<string>第13弾 ハイテンション・ザ・ベストテン</string>
+			<string>第14弾 又吉、春日 ハイテンション・ザ・ベストテン</string>
+			<string>第15弾 吉村 ハイテンション・ザ・ベストテン</string>
+			<string>第16弾 バイきんぐ、ちゅうえい ハイテンション・ザ・ベストテン</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ハイテンション・ザ・ベストテン 第1弾</string>
+			<string>ハイテンション・ザ・ベストテン 第2弾</string>
+			<string>ハイテンション・ザ・ベストテン 第3弾</string>
+			<string>ハイテンション・ザ・ベストテン 第4弾</string>
+			<string>ハイテンション・ザ・ベストテン 第5弾</string>
+			<string>ハイテンション・ザ・ベストテン 第6弾</string>
+			<string>ハイテンション・ザ・ベストテン 第7弾</string>
+			<string>ハイテンション・ザ・ベストテン 第8弾</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>ハイテンション・ザ・ベストテン 2011</string>
+			<string>ハイテンション・ザ・ベストテン 2012</string>
+			<string>ハイテンション・ザ・ベストテン 2014</string>
+		</array>
+	</dict>
+	<key>item5</key>
+	<dict>
+		<key>seriesName</key>
+		<string>さようなら山崎邦正（月亭方正）</string>
+		<key>desc</key>
+		<string>「番組の2回目から出演している方正が番組を卒業することになった」という暗いトーンで始まる。降板理由を訊かれた山崎（方正）は、「東野幸治のレギュラーの数が減ったことが羨ましくなって自分も減らしたくなった」「すべての時間を子作りに専念したい」などと降板には全くつながらない返答を繰り返す。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回さようなら山崎邦正</string>
+			<string>第2回さようなら山崎邦正 </string>
+			<string>第3回さようなら山崎邦正 </string>
+			<string>第4回さようなら山崎邦正 </string>
+			<string>第5回さようなら山崎邦正 </string>
+			<string>第6回さようなら山崎邦正 </string>
+			<string>第7回さようなら山崎邦正 </string>
+			<string>第8回さようなら山崎邦正 </string>
+			<string>第9回さようなら山崎邦正 </string>
+			<string>第10回さようなら山崎邦正 </string>
+			<string>第11回さようなら山崎邦正 </string>
+			<string>第12回さようなら山崎邦正 </string>
+			<string>第13回さようなら山崎邦正 </string>
+			<string>第14回さようなら山崎邦正 </string>
+			<string>第15回さようなら月亭方正</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>準備中</string>
+			<string>第2回さようなら山崎邦正 </string>
+			<string>第3回さようなら山崎邦正 </string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>第6回さようなら山崎邦正 </string>
+			<string>さようなら山崎邦正  第7回</string>
+			<string>さようなら山崎邦正  第8回</string>
+			<string>さようなら山崎邦正  第9回</string>
+			<string>さようなら山崎邦正  第10回</string>
+			<string>さようなら山崎邦正  2011</string>
+			<string>準備中</string>
+			<string>さようなら山崎邦正  2013</string>
+			<string>準備中</string>
+			<string>さようなら月亭邦正  2015</string>
+		</array>
+	</dict>
+	<key>item6</key>
+	<dict>
+		<key>seriesName</key>
+		<string>七変化</string>
+		<key>desc</key>
+		<string>ダミーの企画会議が行われている中、仕掛人が7回変装をし、会議の出席者を何回笑わせることができるかを競う。笑ってしまった人は1回につき罰金1,000円を徴収[</string>
+		<key>kikakuList</key>
+		<array>
+			<string>河本準一（次長課長）七変化</string>
+			<string>黒沢かずこ（森三中）七変化</string>
+			<string>中西哲夫（笑い飯）七変化</string>
+			<string>ボブ・サップ 七変化</string>
+			<string>大悟（千鳥）</string>
+			<string>小杉竜一（ブラックマヨネーズ）七変化</string>
+			<string>友近 七変化</string>
+			<string>日村勇紀（バナナマン）七変化</string>
+			<string>劇団ひとり 七変化</string>
+			<string>原西孝幸（FUJIWARA）七変化</string>
+			<string>堀部圭亮(竜泉) 七変化</string>
+			<string>木下隆行（TKO）七変化</string>
+			<string>千原靖史（千原兄弟）七変化</string>
+			<string>中川礼二（中川家）七変化</string>
+			<string>堀内健（ネプチューン）七変化</string>
+			<string>塚地武雅（ドランクドラゴン）七変化</string>
+			<string>ケンドーコバヤシ 七変化</string>
+			<string>田中直樹（ココリコ）七変化</string>
+			<string>有田哲平（くりぃむしちゅー）七変化</string>
+			<string>後藤輝基（フットボールアワー）七変化</string>
+			<string>設楽統（バナナマン）七変化</string>
+			<string>腰フリおばちゃん 七変化</string>
+			<string>近藤春菜（ハリセンボン）七変化</string>
+			<string>川島邦裕（野性爆弾）七変化</string>
+			<string>藤本敏史（FUJIWARA）七変化</string>
+			<string>岩尾望（フットボールアワー）七変化</string>
+			<string>ふかわりょう 七変化</string>
+			<string>大友有一 七変化</string>
+			<string>西田幸治（笑い飯）七変化</string>
+			<string>木村祐一 七変化</string>
+			<string>宮迫博之（雨上がり決死隊）七変化</string>
+			<string>千原ジュニア（千原兄弟）七変化</string>
+			<string>磯俣拓生 七変化</string>
+			<string>蛍原徹（雨上がり決死隊）七変化</string>
+			<string>遠藤章造（ココリコ）七変化</string>
+			<string>菅賢治 七変化</string>
+			<string>品川祐（品川庄司）七変化</string>
+			<string>山下しげのり（ジャリズム（当時））七変化</string>
+			<string>山崎邦正 七変化</string>
+			<string>堤本幸男 七変化</string>
+			<string>中村喜伸 七変化</string>
+			<string>高須光聖 七変化</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>七変化 河本</string>
+			<string>七変化 黒沢</string>
+			<string>七変化 哲夫</string>
+			<string>七変化 ボブ・サップ</string>
+			<string>千鳥 大悟 七変化</string>
+			<string>七変化 小杉</string>
+			<string>七変化 友近</string>
+			<string>七変化 日村</string>
+			<string>七変化 劇団ひとり</string>
+			<string>準備中</string>
+			<string>七変化 堀部圭亮</string>
+			<string>七変化 木下</string>
+			<string>七変化 千原せいじ</string>
+			<string>七変化 中川家 礼二</string>
+			<string>七変化 堀内</string>
+			<string>七変化 塚地</string>
+			<string>七変化 ケンドーコバヤシ</string>
+			<string>七変化 田中直樹 ココリコ</string>
+			<string>七変化 有田</string>
+			<string>七変化 後藤 フット</string>
+			<string>七変化 設楽統</string>
+			<string>七変化 腰フリおばちゃん</string>
+			<string>七変化 近藤春菜（ハリセンボン）</string>
+			<string>七変化 川島 野性爆弾</string>
+			<string>七変化 藤本 FUJIWARA</string>
+			<string>七変化 岩尾</string>
+			<string>七変化 ふかわりょう</string>
+			<string>七変化 大友有一</string>
+			<string>準備中</string>
+			<string>七変化 木村祐一</string>
+			<string>七変化 宮迫</string>
+			<string>七変化 千原ジュニア</string>
+			<string>準備中</string>
+			<string>七変化 蛍原</string>
+			<string>七変化 遠藤</string>
+			<string>七変化 菅</string>
+			<string>七変化 品川</string>
+			<string>七変化 山下</string>
+			<string>七変化 山崎邦正</string>
+			<string>準備中</string>
+			<string>七変化 中村</string>
+			<string>七変化 高須光聖</string>
+		</array>
+	</dict>
+	<key>item7</key>
+	<dict>
+		<key>seriesName</key>
+		<string>大喜利大合戦</string>
+		<key>desc</key>
+		<string>出演者達は「噺家」として登場し「あいうえお作文」「おりこみ歌合戦」「ダジャレ合戦（バイクダジャレ合戦）」などのゲームを行う</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回大喜利大合戦</string>
+			<string>第2回大喜利大合戦</string>
+			<string>第3回大喜利大合戦</string>
+			<string>第4回大喜利大合戦</string>
+			<string>第5回大喜利大合戦</string>
+			<string>第6回大喜利大合戦</string>
+			<string>第7回大喜利大合戦</string>
+			<string>第8回大喜利大合戦</string>
+			<string>第9回大喜利大合戦</string>
+			<string>第10回大喜利大合戦</string>
+			<string>第11回大喜利大合戦</string>
+			<string>第12回大喜利大合戦</string>
+			<string>第13回大喜利大合戦</string>
+			<string>第14回大喜利大合戦</string>
+			<string>第15回大喜利大合戦</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>第1回 大喜利大合戦</string>
+			<string>第2回 大喜利大合戦</string>
+			<string>第3回 大喜利大合戦</string>
+			<string>第3回 大喜利大合戦 </string>
+			<string>第4回 大喜利大合戦</string>
+			<string>第5回 大喜利大合戦</string>
+			<string>第6回 大喜利大合戦</string>
+			<string>第7回 大喜利大合戦</string>
+			<string>第8回 大喜利大合戦</string>
+			<string>第9回 大喜利大合戦</string>
+			<string>第10回 oogiri daigassen</string>
+			<string>第11回 oogiri daigassen</string>
+			<string>第12回 oogiri daigassen</string>
+			<string>第13回 oogiri daigassen</string>
+			<string>第14回 oogiri daigassen</string>
+			<string>第15回 oogiri daigassen</string>
+		</array>
+	</dict>
+	<key>item8</key>
+	<dict>
+		<key>seriesName</key>
+		<string>対決しまっしょい</string>
+		<key>desc</key>
+		<string>大喜利とゲームを組み合わせたチーム対戦形式の企画。司会進行は浜田だが、浜田がゲームに参加する際は宮迫博之が代理で進行する。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回対決しまっしょい</string>
+			<string>第2回対決しまっしょい</string>
+			<string>ガキの使いチームvs元天然素材チーム 第3回対決しまっしょい</string>
+			<string>ガキの使いチームvs元天然素材チーム 第4回対決しまっしょい</string>
+			<string>ガキの使いチームvs元天然素材チーム 第5回対決しまっしょい</string>
+			<string>第6回対決しまっしょい</string>
+			<string>第7回対決しまっしょい</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>第1回 対決しまっしょい</string>
+			<string>第2回 対決しまっしょい</string>
+			<string>第3回 対決しまっしょい</string>
+			<string>第4回 対決しまっしょい</string>
+			<string>第5回 対決しまっしょい</string>
+			<string>準備中</string>
+			<string>準備中</string>
+		</array>
+	</dict>
+	<key>item9</key>
+	<dict>
+		<key>seriesName</key>
+		<string>おもしろVTRベスト10</string>
+		<key>desc</key>
+		<string>毎年年末（2002年除く）に放送される各年の総集編。1年間の印象深かった企画をVTRで振り返る。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>1998年 おもしろVTRベスト10</string>
+			<string>1999年 おもしろVTRベスト10</string>
+			<string>2000年 おもしろVTRベスト10</string>
+			<string>2001年 おもしろVTRベスト10</string>
+			<string>2002年 おもしろVTRベスト10</string>
+			<string>2003年 おもしろVTRベスト10</string>
+			<string>2004年 おもしろVTRベスト10</string>
+			<string>2005年 おもしろVTRベスト10</string>
+			<string>2006年 おもしろVTRベスト10</string>
+			<string>2007年 おもしろVTRベスト10</string>
+			<string>2008年 おもしろVTRベスト10</string>
+			<string>2009年 おもしろVTRベスト10</string>
+			<string>2010年 おもしろVTRベスト10</string>
+			<string>2011年 おもしろVTRベスト10</string>
+			<string>2012年 おもしろVTRベスト10</string>
+			<string>2013年 おもしろVTRベスト10</string>
+			<string>2014年 おもしろVTRベスト10</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>準備中</string>
+			<string>おもしろVTRベスト10 1999</string>
+			<string>おもしろVTRベスト10 2000</string>
+			<string>ガキの使い おもしろVTRベスト2001</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>準備中</string>
+			<string>ガキの使い おもしろVTR  2012</string>
+			<string>ガキの使い おもしろVTR  2013</string>
+			<string>ガキの使い おもしろVTR  2014</string>
+		</array>
+	</dict>
+</dict>
+</plist>
