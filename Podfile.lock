@@ -1,0 +1,26 @@
+PODS:
+  - NVActivityIndicatorView (1.1)
+  - Realm (0.94.0):
+    - Realm/Headers (= 0.94.0)
+  - Realm/Headers (0.94.0)
+  - RealmSwift (0.94.0):
+    - Realm (= 0.94.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - XCDYouTubeKit (2.2.0)
+
+DEPENDENCIES:
+  - NVActivityIndicatorView
+  - RealmSwift
+  - SDWebImage
+  - XCDYouTubeKit
+
+SPEC CHECKSUMS:
+  NVActivityIndicatorView: 9f57e25c5d7960f61c49ecaf25798fa168993c16
+  Realm: a046149653e0ca220b65b5783da907aa5b74d86c
+  RealmSwift: 5efbbf1a5c179a7237e4d428594e41619fa167ba
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  XCDYouTubeKit: 920ff5dfdf37f0f41b19610c5270b2ed23b05b13
+
+COCOAPODS: 0.38.2
