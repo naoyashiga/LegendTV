@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="axisstd-medium.otf">
+            <string>AxisStd-Medium</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KikakuHeaderView" id="U6b-Vx-4bR" customClass="KikakuHeaderView" customModule="Gaki" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="松本vs浜田・対決シリーズ/罰ゲーム" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8H-xg-wUk">
+                    <rect key="frame" x="8" y="18" width="304" height="15"/>
+                    <fontDescription key="fontDescription" name="AxisStd-Medium" family="AXIS Std" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.65098039215686276" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjm-1A-e8E" userLabel="separator">
+                    <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pVL-yr-9IZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="S8H-xg-wUk" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leadingMargin" id="C7b-l2-jRO"/>
+                <constraint firstAttribute="trailing" secondItem="S8H-xg-wUk" secondAttribute="trailing" constant="8" id="COg-9t-1H9"/>
+                <constraint firstAttribute="trailing" secondItem="Kjm-1A-e8E" secondAttribute="trailing" id="VUH-pA-d3h"/>
+                <constraint firstAttribute="centerY" secondItem="S8H-xg-wUk" secondAttribute="centerY" id="aI8-f0-Zfm"/>
+                <constraint firstItem="Kjm-1A-e8E" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="g0S-uH-3Kn"/>
+                <constraint firstAttribute="bottom" secondItem="Kjm-1A-e8E" secondAttribute="bottom" id="wDQ-yv-PsD"/>
+            </constraints>
+            <connections>
+                <outlet property="headerTitleLabel" destination="S8H-xg-wUk" id="CJ2-cW-KBd"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>

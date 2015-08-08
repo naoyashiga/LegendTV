@@ -42,6 +42,33 @@
 		9A22394A1B76C5F300364A6A /* HistoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */; };
 		9A22394B1B76C5F300364A6A /* HistoryCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */; };
 		9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22394D1B76C60600364A6A /* ContainerViewController.swift */; };
+		9A2239511B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239501B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift */; };
+		9A2239541B76C67500364A6A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239531B76C67500364A6A /* Utils.swift */; };
+		9A22395C1B76C6AA00364A6A /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239581B76C6AA00364A6A /* HistoryCollectionViewCell.swift */; };
+		9A22395D1B76C6AA00364A6A /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239591B76C6AA00364A6A /* HistoryCollectionViewCell.xib */; };
+		9A22395E1B76C6AA00364A6A /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22395A1B76C6AA00364A6A /* HistoryHeaderView.swift */; };
+		9A22395F1B76C6AA00364A6A /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22395B1B76C6AA00364A6A /* HistoryHeaderView.xib */; };
+		9A2239621B76C6BE00364A6A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239611B76C6BE00364A6A /* BaseTableViewCell.swift */; };
+		9A2239681B76C6E100364A6A /* SecondBackNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239641B76C6E100364A6A /* SecondBackNumberTableViewCell.swift */; };
+		9A2239691B76C6E100364A6A /* SecondBackNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239651B76C6E100364A6A /* SecondBackNumberTableViewCell.xib */; };
+		9A22396A1B76C6E100364A6A /* BackNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239661B76C6E100364A6A /* BackNumberTableViewCell.swift */; };
+		9A22396B1B76C6E100364A6A /* BackNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239671B76C6E100364A6A /* BackNumberTableViewCell.xib */; };
+		9A2239731B76C70000364A6A /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22396D1B76C70000364A6A /* ListTableViewCell.swift */; };
+		9A2239741B76C70000364A6A /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22396E1B76C70000364A6A /* ListTableViewCell.xib */; };
+		9A2239751B76C70000364A6A /* VideoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22396F1B76C70000364A6A /* VideoListCollectionViewCell.swift */; };
+		9A2239761B76C70000364A6A /* VideoListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239701B76C70000364A6A /* VideoListCollectionViewCell.xib */; };
+		9A2239771B76C70000364A6A /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239711B76C70000364A6A /* HomeHeaderView.swift */; };
+		9A2239781B76C70000364A6A /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239721B76C70000364A6A /* HomeHeaderView.xib */; };
+		9A2239801B76C71900364A6A /* KikakuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22397A1B76C71900364A6A /* KikakuCollectionViewCell.swift */; };
+		9A2239811B76C71900364A6A /* KikakuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22397B1B76C71900364A6A /* KikakuCollectionViewCell.xib */; };
+		9A2239821B76C71900364A6A /* KikakuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22397C1B76C71900364A6A /* KikakuHeaderView.swift */; };
+		9A2239831B76C71900364A6A /* KikakuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22397D1B76C71900364A6A /* KikakuHeaderView.xib */; };
+		9A2239841B76C71900364A6A /* KikakuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22397E1B76C71900364A6A /* KikakuFooterView.swift */; };
+		9A2239851B76C71900364A6A /* KikakuFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22397F1B76C71900364A6A /* KikakuFooterView.xib */; };
+		9A2239891B76C74000364A6A /* PlayControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239871B76C74000364A6A /* PlayControlBar.swift */; };
+		9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239881B76C74000364A6A /* PlayControlBar.xib */; };
+		9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */; };
+		9A22398F1B76C75500364A6A /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */; };
 		E6878375DF456ABCE3734545 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C5D52E1918B3E2B4FA716B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -98,6 +125,33 @@
 		9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewController.swift; sourceTree = "<group>"; };
 		9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCollectionViewController.xib; sourceTree = "<group>"; };
 		9A22394D1B76C60600364A6A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		9A2239501B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RoppongiExtensions.swift"; sourceTree = "<group>"; };
+		9A2239531B76C67500364A6A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9A2239581B76C6AA00364A6A /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A2239591B76C6AA00364A6A /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A22395A1B76C6AA00364A6A /* HistoryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
+		9A22395B1B76C6AA00364A6A /* HistoryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		9A2239611B76C6BE00364A6A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		9A2239641B76C6E100364A6A /* SecondBackNumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBackNumberTableViewCell.swift; sourceTree = "<group>"; };
+		9A2239651B76C6E100364A6A /* SecondBackNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondBackNumberTableViewCell.xib; sourceTree = "<group>"; };
+		9A2239661B76C6E100364A6A /* BackNumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackNumberTableViewCell.swift; sourceTree = "<group>"; };
+		9A2239671B76C6E100364A6A /* BackNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackNumberTableViewCell.xib; sourceTree = "<group>"; };
+		9A22396D1B76C70000364A6A /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		9A22396E1B76C70000364A6A /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		9A22396F1B76C70000364A6A /* VideoListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A2239701B76C70000364A6A /* VideoListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A2239711B76C70000364A6A /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		9A2239721B76C70000364A6A /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		9A22397A1B76C71900364A6A /* KikakuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikakuCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A22397B1B76C71900364A6A /* KikakuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KikakuCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A22397C1B76C71900364A6A /* KikakuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikakuHeaderView.swift; sourceTree = "<group>"; };
+		9A22397D1B76C71900364A6A /* KikakuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KikakuHeaderView.xib; sourceTree = "<group>"; };
+		9A22397E1B76C71900364A6A /* KikakuFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikakuFooterView.swift; sourceTree = "<group>"; };
+		9A22397F1B76C71900364A6A /* KikakuFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KikakuFooterView.xib; sourceTree = "<group>"; };
+		9A2239871B76C74000364A6A /* PlayControlBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayControlBar.swift; sourceTree = "<group>"; };
+		9A2239881B76C74000364A6A /* PlayControlBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayControlBar.xib; sourceTree = "<group>"; };
+		9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
 		A6C5D52E1918B3E2B4FA716B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7558C7440C9328214CECF2C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +216,8 @@
 		9A2238C91B76C02500364A6A /* LegendTV */ = {
 			isa = PBXGroup;
 			children = (
+				9A2239561B76C68900364A6A /* View */,
+				9A2239551B76C67800364A6A /* Utils */,
 				9A2239161B76C4FE00364A6A /* Controller */,
 				9A2238ED1B76C32000364A6A /* Common */,
 				9A2238EC1B76C30E00364A6A /* AppDelegate */,
@@ -389,6 +445,119 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
+		9A22394F1B76C64900364A6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239501B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9A2239521B76C66000364A6A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239531B76C67500364A6A /* Utils.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		9A2239551B76C67800364A6A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239521B76C66000364A6A /* Helper */,
+				9A22394F1B76C64900364A6A /* Extensions */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		9A2239561B76C68900364A6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239571B76C69700364A6A /* History */,
+				9A22398B1B76C74A00364A6A /* Favorite */,
+				9A2239861B76C72400364A6A /* PlayControlBar */,
+				9A2239791B76C70A00364A6A /* Kikaku */,
+				9A22396C1B76C6F000364A6A /* List */,
+				9A2239631B76C6D000364A6A /* BackNumber */,
+				9A2239601B76C6B200364A6A /* Base */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9A2239571B76C69700364A6A /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239581B76C6AA00364A6A /* HistoryCollectionViewCell.swift */,
+				9A2239591B76C6AA00364A6A /* HistoryCollectionViewCell.xib */,
+				9A22395A1B76C6AA00364A6A /* HistoryHeaderView.swift */,
+				9A22395B1B76C6AA00364A6A /* HistoryHeaderView.xib */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		9A2239601B76C6B200364A6A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239611B76C6BE00364A6A /* BaseTableViewCell.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9A2239631B76C6D000364A6A /* BackNumber */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239641B76C6E100364A6A /* SecondBackNumberTableViewCell.swift */,
+				9A2239651B76C6E100364A6A /* SecondBackNumberTableViewCell.xib */,
+				9A2239661B76C6E100364A6A /* BackNumberTableViewCell.swift */,
+				9A2239671B76C6E100364A6A /* BackNumberTableViewCell.xib */,
+			);
+			name = BackNumber;
+			sourceTree = "<group>";
+		};
+		9A22396C1B76C6F000364A6A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				9A22396D1B76C70000364A6A /* ListTableViewCell.swift */,
+				9A22396E1B76C70000364A6A /* ListTableViewCell.xib */,
+				9A22396F1B76C70000364A6A /* VideoListCollectionViewCell.swift */,
+				9A2239701B76C70000364A6A /* VideoListCollectionViewCell.xib */,
+				9A2239711B76C70000364A6A /* HomeHeaderView.swift */,
+				9A2239721B76C70000364A6A /* HomeHeaderView.xib */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		9A2239791B76C70A00364A6A /* Kikaku */ = {
+			isa = PBXGroup;
+			children = (
+				9A22397A1B76C71900364A6A /* KikakuCollectionViewCell.swift */,
+				9A22397B1B76C71900364A6A /* KikakuCollectionViewCell.xib */,
+				9A22397C1B76C71900364A6A /* KikakuHeaderView.swift */,
+				9A22397D1B76C71900364A6A /* KikakuHeaderView.xib */,
+				9A22397E1B76C71900364A6A /* KikakuFooterView.swift */,
+				9A22397F1B76C71900364A6A /* KikakuFooterView.xib */,
+			);
+			name = Kikaku;
+			sourceTree = "<group>";
+		};
+		9A2239861B76C72400364A6A /* PlayControlBar */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239871B76C74000364A6A /* PlayControlBar.swift */,
+				9A2239881B76C74000364A6A /* PlayControlBar.xib */,
+			);
+			name = PlayControlBar;
+			sourceTree = "<group>";
+		};
+		9A22398B1B76C74A00364A6A /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */,
+				9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */,
+			);
+			name = Favorite;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -472,16 +641,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2239831B76C71900364A6A /* KikakuHeaderView.xib in Resources */,
+				9A22395F1B76C6AA00364A6A /* HistoryHeaderView.xib in Resources */,
+				9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */,
 				9A22391D1B76C51700364A6A /* ReviewModalViewController.xib in Resources */,
 				9A2239341B76C57E00364A6A /* KikakuCollectionViewController.xib in Resources */,
 				9A2238D21B76C02500364A6A /* Main.storyboard in Resources */,
+				9A2239781B76C70000364A6A /* HomeHeaderView.xib in Resources */,
+				9A2239741B76C70000364A6A /* ListTableViewCell.xib in Resources */,
 				9A2239391B76C59000364A6A /* DetailViewController.xib in Resources */,
+				9A22395D1B76C6AA00364A6A /* HistoryCollectionViewCell.xib in Resources */,
 				9A2238D71B76C02500364A6A /* LaunchScreen.xib in Resources */,
 				9A2238D41B76C02500364A6A /* Images.xcassets in Resources */,
 				9A2239461B76C5E500364A6A /* FavoriteCollectionViewController.xib in Resources */,
+				9A2239761B76C70000364A6A /* VideoListCollectionViewCell.xib in Resources */,
+				9A2239811B76C71900364A6A /* KikakuCollectionViewCell.xib in Resources */,
 				9A22394B1B76C5F300364A6A /* HistoryCollectionViewController.xib in Resources */,
+				9A22398F1B76C75500364A6A /* FavoriteCollectionViewCell.xib in Resources */,
+				9A2239691B76C6E100364A6A /* SecondBackNumberTableViewCell.xib in Resources */,
+				9A22396B1B76C6E100364A6A /* BackNumberTableViewCell.xib in Resources */,
 				9A2239291B76C56600364A6A /* HomeCollectionViewController.xib in Resources */,
 				9A22391F1B76C51700364A6A /* LegendTV.ReviewView.xib in Resources */,
+				9A2239851B76C71900364A6A /* KikakuFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,25 +728,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A22395E1B76C6AA00364A6A /* HistoryHeaderView.swift in Sources */,
 				9A22391E1B76C51700364A6A /* ReviewView.swift in Sources */,
+				9A22396A1B76C6E100364A6A /* BackNumberTableViewCell.swift in Sources */,
+				9A2239841B76C71900364A6A /* KikakuFooterView.swift in Sources */,
 				9A2238CD1B76C02500364A6A /* AppDelegate.swift in Sources */,
 				9A2239451B76C5E500364A6A /* FavoriteCollectionViewController.swift in Sources */,
 				9A22390A1B76C3C200364A6A /* UIButton+AnimationExtension.swift in Sources */,
+				9A2239891B76C74000364A6A /* PlayControlBar.swift in Sources */,
+				9A2239621B76C6BE00364A6A /* BaseTableViewCell.swift in Sources */,
 				9A2239241B76C55500364A6A /* BaseCollectionViewController.swift in Sources */,
+				9A2239771B76C70000364A6A /* HomeHeaderView.swift in Sources */,
+				9A22395C1B76C6AA00364A6A /* HistoryCollectionViewCell.swift in Sources */,
+				9A2239541B76C67500364A6A /* Utils.swift in Sources */,
+				9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */,
 				9A2239401B76C5D500364A6A /* TopViewController.swift in Sources */,
+				9A2239751B76C70000364A6A /* VideoListCollectionViewCell.swift in Sources */,
 				9A2239411B76C5D500364A6A /* TopViewController+Settings.swift in Sources */,
 				9A2239061B76C3B900364A6A /* FontSet.swift in Sources */,
 				9A2239281B76C56600364A6A /* HomeCollectionViewController.swift in Sources */,
+				9A2239681B76C6E100364A6A /* SecondBackNumberTableViewCell.swift in Sources */,
 				9A2239141B76C44400364A6A /* Config.swift in Sources */,
 				9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */,
+				9A2239731B76C70000364A6A /* ListTableViewCell.swift in Sources */,
 				9A2239321B76C57E00364A6A /* BackNumberTableViewController.swift in Sources */,
 				9A2239311B76C57E00364A6A /* SecondBackNumberTableViewController.swift in Sources */,
 				9A2239381B76C59000364A6A /* DetailViewController.swift in Sources */,
 				9A22390C1B76C3CD00364A6A /* ImageView+Loading.swift in Sources */,
 				9A2239331B76C57E00364A6A /* KikakuCollectionViewController.swift in Sources */,
+				9A2239821B76C71900364A6A /* KikakuHeaderView.swift in Sources */,
 				9A22394A1B76C5F300364A6A /* HistoryCollectionViewController.swift in Sources */,
+				9A2239801B76C71900364A6A /* KikakuCollectionViewCell.swift in Sources */,
 				9A2239301B76C57E00364A6A /* VideoCollectionViewController.swift in Sources */,
 				9A2239151B76C44400364A6A /* Color.swift in Sources */,
+				9A2239511B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift in Sources */,
 				9A2239091B76C3C200364A6A /* ButtonSet.swift in Sources */,
 				9A2238F11B76C34A00364A6A /* DeviceUtils.swift in Sources */,
 				9A22393C1B76C5A100364A6A /* VideoPlayManager.swift in Sources */,
