@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LINEActivity.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15709825B144AF4D40179D4C6361E310</key>
+		<key>01E9E320CF37AA44D87FC65B4C4FCDA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B6C0D0AF93B6AC2D7C6DAE050B498FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8C1F16FBF3D07FAD37A8E66D3EC2DD7</key>
+		<key>DFB7EECA6086AC266704709F0ED3129C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F4DFBB6E241F10266A4C0AD25C833E9C</key>
+		<key>ECE325376D494647AF447A4BE708B5AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

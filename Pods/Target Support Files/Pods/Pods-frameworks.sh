@@ -52,6 +52,7 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods/LINEActivity.framework'
   install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'
@@ -59,6 +60,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/XCDYouTubeKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods/LINEActivity.framework'
   install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIImageView {
     func loadingImageBySDWebImage<S: Kikaku>(kikaku: S) {

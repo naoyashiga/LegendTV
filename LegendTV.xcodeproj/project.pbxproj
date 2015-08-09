@@ -176,6 +176,7 @@
 		9A2239A41B76C7CE00364A6A /* Kikaku.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kikaku.plist; sourceTree = "<group>"; };
 		9A2239A91B76C7E900364A6A /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		9A2239AC1B76C80000364A6A /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		9A2239AE1B76D4AD00364A6A /* LegendTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LegendTV-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6C5D52E1918B3E2B4FA716B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7558C7440C9328214CECF2C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,11 +241,11 @@
 		9A2238C91B76C02500364A6A /* LegendTV */ = {
 			isa = PBXGroup;
 			children = (
+				9A2238ED1B76C32000364A6A /* Common */,
 				9A2239161B76C4FE00364A6A /* Controller */,
 				9A2239901B76C78100364A6A /* Model */,
 				9A2239561B76C68900364A6A /* View */,
 				9A2239551B76C67800364A6A /* Utils */,
-				9A2238ED1B76C32000364A6A /* Common */,
 				9A2238EC1B76C30E00364A6A /* AppDelegate */,
 				9A2238D01B76C02500364A6A /* Main.storyboard */,
 				9A2238D31B76C02500364A6A /* Images.xcassets */,
@@ -258,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2238CB1B76C02500364A6A /* Info.plist */,
+				9A2239AE1B76D4AD00364A6A /* LegendTV-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -990,9 +992,12 @@
 			baseConfigurationReference = BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1001,9 +1006,11 @@
 			baseConfigurationReference = A7558C7440C9328214CECF2C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
 			};
 			name = Release;
 		};
