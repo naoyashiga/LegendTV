@@ -10,17 +10,22 @@ import UIKit
 
 protocol HistoryHeaderViewDelegate {
     func reloadPage()
-    
+    func didMoreLoadButtonTapped()
 }
 
 class HistoryHeaderView: UICollectionReusableView {
     @IBOutlet var titleLabel: UILabel!
     
+    @IBOutlet var moreLoadButton: UIButton!
     var delegate: HistoryHeaderViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    @IBAction func moreLoadButtonTapped(sender: UIButton) {
+        delegate?.didMoreLoadButtonTapped()
     }
     
     @IBAction func reloadButtonTapped(sender: UIButton) {

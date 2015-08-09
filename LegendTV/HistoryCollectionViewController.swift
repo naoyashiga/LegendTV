@@ -89,7 +89,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
                 //3件未満のとき
                 return histories.count
             } else {
-                return maxInitialHistoryCount + 1
+                return maxInitialHistoryCount
             }
         }
     }
@@ -101,7 +101,24 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: historyReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
             
             headerView.delegate = self
-            headerView.titleLabel.text = "最近見た動画"
+            
+            if isReview {
+                headerView.moreLoadButton.setTitle("", forState: .Normal)
+                
+                if histories.count < maxKikakuCount {
+                    headerView.titleLabel.text = "最新\(histories.count)/30件"
+                } else {
+                    headerView.titleLabel.text = "最新30/30件"
+                }
+                
+            } else {
+                if histories.count <= 3 {
+                    headerView.titleLabel.text = "最新\(histories.count)/30件"
+                } else {
+                    headerView.titleLabel.text = "最新3/30件"
+                }
+            }
+            
 
             return setCornerRadius(headerView: headerView)
 
@@ -120,45 +137,15 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
         
-        if isReview {
-            //レビュー済み
-            let history = histories[indexPath.row]
-            
-            cell.titleLabel.text = history.kikakuName
-            
-            cell.durationLabel.text = history.duration
-            cell.likeCountLabel.text = history.likeCount
-            cell.viewCountLabel.text = history.viewCount
-            
-            cell.thumbNailImageView.loadingImageBySDWebImage(history)
-        } else {
-            //レビューまだ
-            var maxInitialHistoryCount = 3
-            
-            if maxInitialHistoryCount > histories.count {
-                maxInitialHistoryCount = histories.count
-            }
-            
-            if indexPath.row < maxInitialHistoryCount {
-                let history = histories[indexPath.row]
-                
-                cell.titleLabel.text = history.kikakuName
-                
-                cell.durationLabel.text = history.duration
-                cell.likeCountLabel.text = history.likeCount
-                cell.viewCountLabel.text = history.viewCount
-                
-                cell.thumbNailImageView.loadingImageBySDWebImage(history)
-                
-            } else if indexPath.row == 3 {
-                cell.titleLabel.text = "履歴の表示件数を増やす"
-                
-                cell.durationLabel.text = ""
-                cell.likeCountLabel.text = ""
-                cell.viewCountLabel.text = ""
-            }
-        }
+        let history = histories[indexPath.row]
         
+        cell.titleLabel.text = history.kikakuName
+        
+        cell.durationLabel.text = history.duration
+        cell.likeCountLabel.text = history.likeCount
+        cell.viewCountLabel.text = history.viewCount
+        
+        cell.thumbNailImageView.loadingImageBySDWebImage(history)
         
         return cell
     }
@@ -167,24 +154,12 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
-        if isReview {
-            //レビュー済み
-            let history = histories[indexPath.row]
-            delegate?.sendKikakuData(kikaku: history)
-            delegate?.applyForControlBarKikakuData(kikaku: history)
-            delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
-        } else {
-            //レビューまだ
-            if indexPath.row < 3 {
-                let history = histories[indexPath.row]
-                delegate?.sendKikakuData(kikaku: history)
-                delegate?.applyForControlBarKikakuData(kikaku: history)
-                delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
-                
-            } else if indexPath.row == 3 {
-                delegate?.showReview()
-            }
-        }
+        let history = histories[indexPath.row]
+        delegate?.sendKikakuData(kikaku: history)
+        delegate?.applyForControlBarKikakuData(kikaku: history)
+        delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
+        
+//        delegate?.showReview()
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -199,6 +174,13 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     // MARK: HistoryHeaderViewDelegate
     func reloadPage() {
         collectionView?.reloadData()
+    }
+    
+    func didMoreLoadButtonTapped() {
+        
+        if !isReview {
+            delegate?.showReview()
+        }
     }
     
     //private method

@@ -11,11 +11,11 @@ import RealmSwift
 
 struct favoriteReuseId {
     static let cell = "VideoListCollectionViewCell"
-    static let headerView = "HistoryHeaderView"
+    static let headerView = "FavoriteHeaderView"
 //    static let footerView = "FavoriteFooterView"
 }
 
-class FavoriteCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate {
+class FavoriteCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, FavoriteHeaderViewDelegate {
     private var favorites: Results<Favorite> {
         get {
             let realm = Realm()
@@ -60,10 +60,15 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
         
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: favoriteReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
+            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: favoriteReuseId.headerView, forIndexPath: indexPath) as! FavoriteHeaderView
             
             headerView.delegate = self
-            headerView.titleLabel.text = "お気に入り"
+            
+            if favorites.count < 30 {
+                headerView.titleLabel.text = "最新\(favorites.count)/30件"
+            } else {
+                headerView.titleLabel.text = "最新30/30件"
+            }
             
             return setCornerRadius(headerView: headerView)
         default:
@@ -79,7 +84,6 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
         let favorite = favorites[indexPath.row]
         
         cell.titleLabel.text = favorite.kikakuName
-//        cell.thumbNailImageView.sd_setImageWithURL(NSURL(string: favorite.thumbNailImageURL))
         
         cell.durationLabel.text = favorite.duration
         cell.likeCountLabel.text = favorite.likeCount
@@ -105,7 +109,7 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
         return CGSize(width: cellSize.width, height: 50)
     }
     
-    // MARK: HistoryHeaderViewDelegate
+    // MARK: FavoriteHeaderViewDelegate
     func reloadPage() {
         collectionView?.reloadData()
     }

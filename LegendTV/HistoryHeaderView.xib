@@ -4,6 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="axisstd-bold.otf">
+            <string>AxisStd-Bold</string>
+        </mutableArray>
         <mutableArray key="axisstd-medium.otf">
             <string>AxisStd-Medium</string>
         </mutableArray>
@@ -11,12 +14,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HistoryHeaderView" customModule="Gaki" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HistoryHeaderView" customModule="LegendTV" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近見た動画" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29z-ua-c23">
-                    <rect key="frame" x="8" y="14" width="78" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="最新0/30件" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29z-ua-c23">
+                    <rect key="frame" x="8" y="14" width="110" height="21"/>
                     <fontDescription key="fontDescription" name="AxisStd-Medium" family="AXIS Std" pointSize="13"/>
                     <color key="textColor" red="1" green="0.65098039215686276" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -40,20 +43,34 @@
                         <action selector="reloadButtonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="gTM-6w-RgK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WB-jz-BWz">
+                    <rect key="frame" x="182" y="10" width="75" height="30"/>
+                    <fontDescription key="fontDescription" name="AxisStd-Bold" family="AXIS Std" pointSize="15"/>
+                    <state key="normal" title="もっと見る">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="moreLoadButtonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="mAP-g4-ofg"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="29z-ua-c23" secondAttribute="bottom" constant="15" id="24G-bd-q7A"/>
                 <constraint firstItem="heV-3V-yak" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="14" id="4jp-v7-bVJ"/>
                 <constraint firstItem="29z-ua-c23" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="14" id="6x8-6s-upO"/>
+                <constraint firstItem="1WB-jz-BWz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="Fne-qu-xtk"/>
+                <constraint firstItem="heV-3V-yak" firstAttribute="leading" secondItem="1WB-jz-BWz" secondAttribute="trailing" constant="14" id="Tvc-Z2-V2r"/>
                 <constraint firstAttribute="trailing" secondItem="Z0H-zy-8y4" secondAttribute="trailing" id="XWW-NU-2vD"/>
                 <constraint firstItem="Z0H-zy-8y4" firstAttribute="top" secondItem="heV-3V-yak" secondAttribute="bottom" constant="12" id="e1m-th-so3"/>
                 <constraint firstItem="Z0H-zy-8y4" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="ecT-gH-vHa"/>
+                <constraint firstItem="Z0H-zy-8y4" firstAttribute="top" secondItem="1WB-jz-BWz" secondAttribute="bottom" constant="9" id="efs-ya-d29"/>
                 <constraint firstAttribute="trailing" secondItem="heV-3V-yak" secondAttribute="trailing" constant="8" id="l6P-TE-fRC"/>
                 <constraint firstAttribute="bottom" secondItem="Z0H-zy-8y4" secondAttribute="bottom" id="tLT-yb-rJ3"/>
                 <constraint firstItem="29z-ua-c23" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="zhJ-Ur-lcK"/>
             </constraints>
             <connections>
+                <outlet property="moreLoadButton" destination="1WB-jz-BWz" id="QGv-85-acn"/>
                 <outlet property="titleLabel" destination="29z-ua-c23" id="Byv-cn-Vdd"/>
             </connections>
         </collectionReusableView>
