@@ -14,11 +14,11 @@ extension TopViewController {
     func shareButtonTapped(sender:UIButton!){
         var sharedText = videoTitle
         let baseURL = "https://www.youtube.com/watch?v="
-        var sharedURL = NSURL(string: baseURL + videoId)!
+        var sharedURL = NSURL(string: baseURL + videoID)!
         
         var activityItems = [AnyObject]()
         
-        if !videoId.isEmpty {
+        if !videoID.isEmpty {
             if let sharedImage = videoThunmNailImageView.image {
                 activityItems = [sharedText,sharedURL,sharedImage]
             } else {

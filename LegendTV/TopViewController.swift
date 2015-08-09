@@ -14,7 +14,7 @@ class TopViewController: UIViewController {
     @IBOutlet var playerView: UIView!
     @IBOutlet var containerView: UIView!
     
-    var videoId = ""
+    var videoID = ""
     var videoTitle = ""
     var videoThunmNailImageView = UIImageView()
     

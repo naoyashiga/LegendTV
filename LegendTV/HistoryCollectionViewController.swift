@@ -159,7 +159,6 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         delegate?.applyForControlBarKikakuData(kikaku: history)
         delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
         
-//        delegate?.showReview()
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -182,6 +181,4 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             delegate?.showReview()
         }
     }
-    
-    //private method
 }

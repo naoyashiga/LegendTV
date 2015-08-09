@@ -52,7 +52,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
     }
     
     func sendVideoData(#story: Story) {
-        videoId = story.videoID
+        videoID = story.videoID
         videoTitle = story.title
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
         
@@ -60,7 +60,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
     }
     
     func sendKikakuData<T: Kikaku>(#kikaku: T) {
-        videoId = kikaku.videoID
+        videoID = kikaku.videoID
         videoTitle = kikaku.kikakuName
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: kikaku.thumbNailImageURL))
         
@@ -69,7 +69,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
     
     private func applyVideoPlayManager() {
         //videoId,videoTitleが更新済みであることに注意
-        VideoPlayManager.sharedManager.setVideoPlayer(videoID: videoId, playerView: playerView)
+        VideoPlayManager.sharedManager.setVideoPlayer(videoID: videoID, playerView: playerView)
         VideoPlayManager.sharedManager.setPlayingInfo(title: videoTitle, artWorkImage: videoThunmNailImageView.image)
         VideoPlayManager.sharedManager.delegate = self
         
