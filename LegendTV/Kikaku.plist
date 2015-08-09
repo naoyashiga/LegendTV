@@ -493,5 +493,24 @@
 			<string>第5回 ヘイポーうすっぺら裁判</string>
 		</array>
 	</dict>
+	<key>item12</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ヘイポーときめきデート</string>
+		<key>desc</key>
+		<string>なお、企画自体は全て台本に基づいて作り込まれたものであり、フィクションである。但しヘイポーのセクハラ行為がそれに該当するか否か（台本に基づいてやっただけなのか、それとも台本に乗じて本能を出しまくったのか）は謎。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>ヘイポーときめきデート 西川史子</string>
+			<string>ヘイポーときめきデート 根本はるみ</string>
+			<string>ヘイポーときめきデート カイヤ</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い ヘイポーときめきデート 西川史子</string>
+			<string>準備中</string>
+			<string>ガキの使い ヘイポーときめきデート カイヤ</string>
+		</array>
+	</dict>
 </dict>
 </plist>
