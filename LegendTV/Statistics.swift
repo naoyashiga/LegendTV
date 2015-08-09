@@ -7,25 +7,19 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class Statistics: HousoushitsuBase {
+class Statistics {
     var viewCount = ""
     var likeCount = ""
     
-    override init(data: NSDictionary) {
-        super.init(data: data)
-//        let contentsDetails = data["statistics"] as! NSDictionary
-//        viewCount = contentsDetails.valueForKeyPath("viewCount") as! String
-//        likeCount = contentsDetails.valueForKeyPath("likeCount") as! String
+    init(json: JSON) {
+        if let viewCount = json["statistics"]["viewCount"].string {
+            self.viewCount = viewCount
+        }
         
-        if let contentsDetails = data["statistics"] as? NSDictionary {
-            if let cnt = contentsDetails.valueForKeyPath("viewCount") as? String {
-                viewCount = cnt
-            }
-            
-            if let cnt = contentsDetails.valueForKeyPath("likeCount") as? String {
-                likeCount = cnt
-            }
+        if let likeCount = json["statistics"]["likeCount"].string {
+            self.likeCount = likeCount
         }
     }
 }

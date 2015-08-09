@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class HttpService {
-    class func getJSON(url: String, callback:((NSArray) -> Void)) {
+    class func getJSON(url: String, callback:([JSON]) -> Void) {
 //        var nsURL = NSURL(string: url)!
         
         if let nsURL = NSURL(string: url) {
@@ -21,14 +22,19 @@ class HttpService {
                 println("error")
             }
             
-            if data != nil {
-                if let jsonData = NSJSONSerialization.JSONObjectWithData( data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary {
-                    
-                    if let arry = jsonData.objectForKey("items") as? NSArray {
-                        callback(arry)
-                    }
-                }
+            let json = JSON(data: data)
+            if let items = json["items"].array {
+                callback(items)
             }
+            
+//            if data != nil {
+//                if let jsonData = NSJSONSerialization.JSONObjectWithData( data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary {
+//                    
+//                    if let arry = jsonData.objectForKey("items") as? NSArray {
+//                        callback(arry)
+//                    }
+//                }
+//            }
             
             session.invalidateAndCancel()
             

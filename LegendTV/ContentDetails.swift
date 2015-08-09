@@ -7,18 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class ContentDetails: HousoushitsuBase {
+class ContentDetails {
     var duration = ""
     
-    override init(data: NSDictionary) {
-        super.init(data: data)
-//        let contentsDetails = data["contentDetails"] as! NSDictionary
+    init(json: JSON) {
         
-        if let contentsDetails = data["contentDetails"] as? NSDictionary {
-            if let d = contentsDetails.valueForKeyPath("duration") as? String {
-                duration = d
-            }
+        if let duration = json["contentDetails"]["duration"].string {
+            self.duration = duration
+            
         }
     }
 }

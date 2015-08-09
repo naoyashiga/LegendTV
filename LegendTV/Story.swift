@@ -7,27 +7,26 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class Story: HousoushitsuBase {
+class Story {
     var title = ""
     var url = ""
     var videoId = ""
     var seriesName = ""
     
-    override init(data: NSDictionary) {
-        super.init(data: data)
+    init(json: JSON) {
         
-        if let snippet = data["snippet"] as? NSDictionary {
-            title = Utils.getStringFromJSON(snippet, key: "title")
-            if let str = snippet.valueForKeyPath("thumbnails.default.url") as? String {
-                url = str
-            }
+        if let title = json["snippet"]["title"].string {
+            self.title = title
+        }
+    
+        if let url = json["snippet"]["thumbnails"]["default"]["url"].string {
+            self.url = url
         }
         
-        if let id = data["id"] as? NSDictionary {
-            if let str = id.valueForKeyPath("videoId") as? String {
-                videoId = str
-            }
+        if let videoID = json["id"]["videoId"].string {
+            self.videoId = videoID
         }
     }
 }

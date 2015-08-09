@@ -15,10 +15,11 @@ class HousoushitsuObjectHandler {
         var stories = [Story]()
 //        println(url)
         
-        HttpService.getJSON(url){ jsonData in
+        HttpService.getJSON(url){ jsonItems in
             
-            for storyData in jsonData {
-                let story = Story(data: storyData as! NSDictionary)
+            for item in jsonItems {
+//                let story = Story(data: storyData as! NSDictionary)
+                let story = Story(json: item)
                 stories.append(story)
             }
             
@@ -34,9 +35,10 @@ class HousoushitsuObjectHandler {
     class func getContentDetails(url: String, callback:(([ContentDetails]) -> Void)){
         var contentDetails = [ContentDetails]()
         
-        HttpService.getJSON(url){ jsonData in
-            for contentDetailsData in jsonData {
-                let duration = ContentDetails(data: contentDetailsData as! NSDictionary)
+        HttpService.getJSON(url){ jsonItems in
+            
+            for item in jsonItems {
+                let duration = ContentDetails(json: item)
                 contentDetails.append(duration)
             }
             
@@ -52,9 +54,10 @@ class HousoushitsuObjectHandler {
     class func getStatistics(url: String, callback:(([Statistics]) -> Void)){
         var statistics = [Statistics]()
         
-        HttpService.getJSON(url){ jsonData in
-            for statisticsData in jsonData {
-                let result = Statistics(data: statisticsData as! NSDictionary)
+        HttpService.getJSON(url){ jsonItems in
+            
+            for item in jsonItems {
+                let result = Statistics(json: item)
                 statistics.append(result)
             }
             

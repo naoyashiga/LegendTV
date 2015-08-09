@@ -69,7 +69,6 @@
 		9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239881B76C74000364A6A /* PlayControlBar.xib */; };
 		9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */; };
 		9A22398F1B76C75500364A6A /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */; };
-		9A2239951B76C7AB00364A6A /* HousoushitsuBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239921B76C7AB00364A6A /* HousoushitsuBase.swift */; };
 		9A2239961B76C7AB00364A6A /* HousoushitsuObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */; };
 		9A2239971B76C7AB00364A6A /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239941B76C7AB00364A6A /* HttpService.swift */; };
 		9A22399D1B76C7BE00364A6A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239991B76C7BE00364A6A /* Story.swift */; };
@@ -172,7 +171,6 @@
 		9A2239881B76C74000364A6A /* PlayControlBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayControlBar.xib; sourceTree = "<group>"; };
 		9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
-		9A2239921B76C7AB00364A6A /* HousoushitsuBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousoushitsuBase.swift; sourceTree = "<group>"; };
 		9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousoushitsuObjectHandler.swift; sourceTree = "<group>"; };
 		9A2239941B76C7AB00364A6A /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		9A2239991B76C7BE00364A6A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -626,7 +624,6 @@
 		9A2239911B76C7A000364A6A /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				9A2239921B76C7AB00364A6A /* HousoushitsuBase.swift */,
 				9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */,
 				9A2239941B76C7AB00364A6A /* HttpService.swift */,
 			);
@@ -879,7 +876,6 @@
 				9A2239541B76C67500364A6A /* Utils.swift in Sources */,
 				9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */,
 				9A2239401B76C5D500364A6A /* TopViewController.swift in Sources */,
-				9A2239951B76C7AB00364A6A /* HousoushitsuBase.swift in Sources */,
 				9A2239751B76C70000364A6A /* VideoListCollectionViewCell.swift in Sources */,
 				9A2239411B76C5D500364A6A /* TopViewController+Settings.swift in Sources */,
 				9A2239061B76C3B900364A6A /* FontSet.swift in Sources */,
