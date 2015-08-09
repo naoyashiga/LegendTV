@@ -91,7 +91,7 @@ class VideoCollectionViewController: BaseCollectionViewController, UICollectionV
         
         cell.thumbNailImageView.loadingStoryImageBySDWebImage(story)
         
-        VideoInfo.getDurationTimes(story.videoId){ contentDetails in
+        VideoInfo.getDurationTimes(story.videoID){ contentDetails in
             if contentDetails.isEmpty {
                 cell.durationLabel.text = "??:??"
             } else {
@@ -100,7 +100,7 @@ class VideoCollectionViewController: BaseCollectionViewController, UICollectionV
             }
         }
         
-        VideoInfo.getStatistics(story.videoId){ statistics in
+        VideoInfo.getStatistics(story.videoID){ statistics in
             if statistics.isEmpty {
                 cell.viewCountLabel.text = "?"
                 cell.likeCountLabel.text = "?"

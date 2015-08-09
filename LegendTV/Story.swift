@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class Story {
     var title = ""
-    var url = ""
-    var videoId = ""
+    var thumbNailImageURL = ""
+    var videoID = ""
     var seriesName = ""
     
     init(json: JSON) {
@@ -21,12 +21,12 @@ class Story {
             self.title = title
         }
     
-        if let url = json["snippet"]["thumbnails"]["default"]["url"].string {
-            self.url = url
+        if let thumbNailImageURL = json["snippet"]["thumbnails"]["default"]["url"].string {
+            self.thumbNailImageURL = thumbNailImageURL
         }
         
         if let videoID = json["id"]["videoId"].string {
-            self.videoId = videoID
+            self.videoID = videoID
         }
     }
 }

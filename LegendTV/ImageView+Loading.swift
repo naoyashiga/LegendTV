@@ -29,7 +29,7 @@ extension UIImageView {
     func loadingStoryImageBySDWebImage(story: Story) {
         
         sd_setImageWithURL(
-            NSURL(string: story.url),
+            NSURL(string: story.thumbNailImageURL),
             placeholderImage: UIImage(named: "loading.png"),
             completed: { (image, error, type, URL) -> Void in
                 

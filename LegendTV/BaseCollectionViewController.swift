@@ -113,7 +113,7 @@ class BaseCollectionViewController: UICollectionViewController, UICollectionView
     
     func getDurationTimeAndStatistics(#story: Story, cell: VideoListCollectionViewCell, myCallback: (VideoListCollectionViewCell) -> ()) {
         
-        VideoInfo.getDurationTimes(story.videoId){ contentDetails in
+        VideoInfo.getDurationTimes(story.videoID){ contentDetails in
             if contentDetails.isEmpty {
                 cell.durationLabel.text = "??:??"
             } else {
@@ -123,7 +123,7 @@ class BaseCollectionViewController: UICollectionViewController, UICollectionView
             myCallback(cell)
         }
         
-        VideoInfo.getStatistics(story.videoId){ statistics in
+        VideoInfo.getStatistics(story.videoID){ statistics in
             if statistics.isEmpty {
                 cell.viewCountLabel.text = "?"
                 cell.likeCountLabel.text = "?"

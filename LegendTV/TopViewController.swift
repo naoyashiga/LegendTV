@@ -247,7 +247,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         
         controlBarKikakuName.text = story.title
         controlBarSeriesName.text = story.seriesName
-        controlBarThumbNaiImageView.sd_setImageWithURL(NSURL(string: story.url))
+        controlBarThumbNaiImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
     }
     
     func applyForControlBarKikakuData<T: Kikaku>(#kikaku: T) {
@@ -277,7 +277,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         if let playingStory = playingStory {
             
             let realm = Realm()
-            let predicate = NSPredicate(format: "videoID == %@", playingStory.videoId)
+            let predicate = NSPredicate(format: "videoID == %@", playingStory.videoID)
             
             if realm.objects(Favorite).filter(predicate).count == 0 {
                 //お気に入り未登録
@@ -325,7 +325,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
             }
             
             if let story = story {
-                predicate = NSPredicate(format: "videoID == %@", story.videoId)
+                predicate = NSPredicate(format: "videoID == %@", story.videoID)
             }
             
             if let predicate = predicate {
@@ -356,10 +356,10 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
     }
     
     private func saveKikaku<T: Kikaku>(#kikaku: T, cell: VideoListCollectionViewCell, story: Story) {
-        kikaku.videoID = story.videoId
+        kikaku.videoID = story.videoID
         kikaku.kikakuName = story.title
         kikaku.seriesName = story.seriesName
-        kikaku.thumbNailImageURL = story.url
+        kikaku.thumbNailImageURL = story.thumbNailImageURL
         
         kikaku.duration = cell.durationLabel.text!
         kikaku.viewCount = cell.viewCountLabel.text!
@@ -439,9 +439,9 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
     }
     
     func sendVideoData(#story: Story) {
-        videoId = story.videoId
+        videoId = story.videoID
         videoTitle = story.title
-        videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.url))
+        videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
         
         applyVideoPlayManager()
     }
