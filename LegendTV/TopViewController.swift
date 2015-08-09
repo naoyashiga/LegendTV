@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 import Accounts
-import LINEActivity
 
 class TopViewController: UIViewController {
     @IBOutlet var playerView: UIView!
@@ -107,110 +106,8 @@ class TopViewController: UIViewController {
         applyFavoriteButtonStateByPlayingKikaku()
     }
     
-    func shareButtonTapped(sender:UIButton!){
-        var sharedText = videoTitle
-        let baseURL = "https://www.youtube.com/watch?v="
-        var sharedURL = NSURL(string: baseURL + videoId)!
-        
-        var activityItems = [AnyObject]()
-        
-        if !videoId.isEmpty {
-            if let sharedImage = videoThunmNailImageView.image {
-                activityItems = [sharedText,sharedURL,sharedImage]
-            } else {
-                activityItems = [sharedText,sharedURL]
-            }
-        }
-        
-        let LineKit = LINEActivity()
-        let myApplicationActivities = [LineKit]
-        
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: myApplicationActivities)
-        
-        let excludedActivityTypes = [
-            UIActivityTypePostToWeibo,
-            UIActivityTypeSaveToCameraRoll,
-            UIActivityTypePrint
-        ]
-        
-        activityVC.excludedActivityTypes = excludedActivityTypes
-        
-        presentViewController(activityVC, animated: true, completion: nil)
-        
-    }
-    
-    func foldVideoControlButtonTapped(sender:UIButton!){
-        
-        if sender.selected {
-            //Playerを開く
-            sender.selected = false
-            
-            playerViewHeightConstraint.constant = 170
-            
-        } else {
-            //Playerを閉じる
-            sender.selected = true
-            
-            //TODO:もう一度プレイヤーを開くと、ローディングは非表示になる
-            checkVideoPlayerState()
-            
-            playerViewHeightConstraint.constant = 0
-        }
-        
-        UIView.animateWithDuration(
-            0.6,
-            delay: 0.1,
-            usingSpringWithDamping: 0.7,
-            initialSpringVelocity: 0.0,
-            options: nil,
-            animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        
-        resizedVC()
-    }
     
     //MARK: private method
-    private func addActivityIndicatorView() {
-        let frame = CGRect(x: playerView.center.x - 40 / 2, y: playerView.center.y - 20, width: 40, height: 40)
-        let activityType = NVActivityIndicatorType.LineScale
-        activityIndicatorView = NVActivityIndicatorView(frame: frame, type: activityType)
-        
-        if let activityIndicatorView = activityIndicatorView {
-            activityIndicatorView.tag = activityIndicatorViewTagNumber
-            view.addSubview(activityIndicatorView)
-        }
-    }
-    
-    private func startActivityIndicatorView() {
-        addActivityIndicatorView()
-        
-        if let indicator = activityIndicatorView {
-            indicator.startAnimation()
-        }
-    }
-    
-    func stopActivityIndicatorView() {
-        playOrPauseButtonVerticalConstraint.constant = 14
-        
-        if let indicator = activityIndicatorView {
-            UIView.animateWithDuration(
-                0.6,
-                delay: 0.1,
-                usingSpringWithDamping: 0.7,
-                initialSpringVelocity: 0.0,
-                options: nil,
-                animations: {
-                    indicator.alpha = 0
-                    indicator.layer.opacity = 0
-                    
-                    self.view.layoutIfNeeded()
-                }, completion: { _ in
-                    indicator.stopAnimation()
-                    indicator.removeFromSuperview()
-            })
-        }
-    }
     
     func videoDisplayAnimation() {
         playOrPauseButtonVerticalConstraint.constant = 74
@@ -386,10 +283,4 @@ class TopViewController: UIViewController {
             realm.add(tmpKikaku, update: true)
         }
     }
-    
-    //MARK: KikakuCollectionViewControllerDelegate
-    func transitionViewController(#ToVC: BaseTableViewController) {
-        navigationController?.pushViewController(ToVC, animated: true)
-    }
-    
 }

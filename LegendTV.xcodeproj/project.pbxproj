@@ -88,6 +88,9 @@
 		9A2239C91B76F4B200364A6A /* FavoriteHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */; };
 		9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */; };
 		9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */; };
+		9AE212EF1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */; };
+		9AE212F11B776B2F00C89B6A /* TopViewController+KikakuCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212F01B776B2F00C89B6A /* TopViewController+KikakuCollectionViewControllerDelegate.swift */; };
+		9AE212F31B776BE600C89B6A /* TopViewController+ButtonTapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212F21B776BE600C89B6A /* TopViewController+ButtonTapped.swift */; };
 		E6878375DF456ABCE3734545 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C5D52E1918B3E2B4FA716B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -189,6 +192,9 @@
 		9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteHeaderView.xib; sourceTree = "<group>"; };
 		9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+BaseCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+VideoPlayManagerDelegate.swift"; sourceTree = "<group>"; };
+		9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+ActivityIndicatorView.swift"; sourceTree = "<group>"; };
+		9AE212F01B776B2F00C89B6A /* TopViewController+KikakuCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+KikakuCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		9AE212F21B776BE600C89B6A /* TopViewController+ButtonTapped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+ButtonTapped.swift"; sourceTree = "<group>"; };
 		A6C5D52E1918B3E2B4FA716B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7558C7440C9328214CECF2C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -449,6 +455,9 @@
 				9A22393F1B76C5D500364A6A /* TopViewController+Settings.swift */,
 				9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */,
 				9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */,
+				9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */,
+				9AE212F01B776B2F00C89B6A /* TopViewController+KikakuCollectionViewControllerDelegate.swift */,
+				9AE212F21B776BE600C89B6A /* TopViewController+ButtonTapped.swift */,
 			);
 			name = Top;
 			sourceTree = "<group>";
@@ -852,6 +861,7 @@
 				9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */,
 				9A2239731B76C70000364A6A /* ListTableViewCell.swift in Sources */,
 				9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */,
+				9AE212F11B776B2F00C89B6A /* TopViewController+KikakuCollectionViewControllerDelegate.swift in Sources */,
 				9A2239311B76C57E00364A6A /* SecondBackNumberTableViewController.swift in Sources */,
 				9A22399F1B76C7BE00364A6A /* Statistics.swift in Sources */,
 				9A2239BE1B76E50600364A6A /* NVActivityIndicatorShape.swift in Sources */,
@@ -865,12 +875,14 @@
 				9A2239B41B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				9A2239801B76C71900364A6A /* KikakuCollectionViewCell.swift in Sources */,
 				9A2239301B76C57E00364A6A /* VideoCollectionViewController.swift in Sources */,
+				9AE212F31B776BE600C89B6A /* TopViewController+ButtonTapped.swift in Sources */,
 				9A2239151B76C44400364A6A /* Color.swift in Sources */,
 				9A2239511B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift in Sources */,
 				9A22399E1B76C7BE00364A6A /* ContentDetails.swift in Sources */,
 				9A2239091B76C3C200364A6A /* ButtonSet.swift in Sources */,
 				9A2238F11B76C34A00364A6A /* DeviceUtils.swift in Sources */,
 				9A22393C1B76C5A100364A6A /* VideoPlayManager.swift in Sources */,
+				9AE212EF1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift in Sources */,
 				9A2239BF1B76E50600364A6A /* NVActivityIndicatorView.swift in Sources */,
 				9A2239AA1B76C7E900364A6A /* Favorite.swift in Sources */,
 				9A2239231B76C55500364A6A /* BaseTableViewController.swift in Sources */,
@@ -936,8 +948,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -959,7 +971,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "55ae8035-a9f3-4a08-90b2-61bf110c203f";
+				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -982,8 +994,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -998,7 +1010,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "55ae8035-a9f3-4a08-90b2-61bf110c203f";
+				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1010,11 +1022,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55ae8035-a9f3-4a08-90b2-61bf110c203f";
+				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1026,11 +1038,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Naoya Sugimoto (S8GGSYBVK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naoya Sugimoto (5JW3B2ZP2Q)";
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55ae8035-a9f3-4a08-90b2-61bf110c203f";
+				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
 			};
 			name = Release;
