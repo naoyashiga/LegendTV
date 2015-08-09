@@ -642,5 +642,46 @@
 			<string>ガキの使い 蛍原 100のコト</string>
 		</array>
 	</dict>
+	<key>item15</key>
+	<dict>
+		<key>seriesName</key>
+		<string>村上ショージの教室シリーズ</string>
+		<key>desc</key>
+		<string>村上ショージが先生になり、ガキメンバーに様々なことを教える企画。しかしショージの意味不明な言動、理不尽な激怒などにメンバーは終始苦笑いの連続で、毎回「今回の企画にあまり期待しないで下さい。最後まで特に何も起こりません」のテロップが入る。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>忍者教室</string>
+			<string>グリーンベレー教室</string>
+			<string>海賊教室</string>
+			<string>パイロット教室</string>
+			<string>ピエロ教室</string>
+			<string>ゴーストバスターズ教室</string>
+			<string>舞妓はん教室</string>
+			<string>ドラキュラ教室</string>
+			<string>闘牛士教室</string>
+			<string>村上ショージの教室シリーズ 総集編</string>
+			<string>第2回忍者教室</string>
+			<string>殿様教室</string>
+			<string>マイケル・ジャクソン教室</string>
+			<string>神様教室</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い 忍者教室</string>
+			<string>ガキの使い グリーンベレー教室</string>
+			<string>ガキの使い 海賊教室</string>
+			<string>ガキの使い パイロット教室</string>
+			<string>ガキの使い ピエロ教室</string>
+			<string>ガキの使い ゴーストバスターズ教室</string>
+			<string>ガキの使い 舞妓はん教室</string>
+			<string>ガキの使い ドラキュラ教室</string>
+			<string>ガキの使い 闘牛士教室</string>
+			<string>ガキの使い 総集編　教室</string>
+			<string>ガキの使い 村上 忍者教室 2010</string>
+			<string>ガキの使い 殿様教室</string>
+			<string>ガキの使い マイケル・ジャクソン教室</string>
+			<string>ガキの使い 神様教室</string>
+		</array>
+	</dict>
 </dict>
 </plist>
