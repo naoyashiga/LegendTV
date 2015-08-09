@@ -599,5 +599,48 @@
 			<string>ガキの使い  きき緑茶</string>
 		</array>
 	</dict>
+	<key>item14</key>
+	<dict>
+		<key>seriesName</key>
+		<string>クイズ 500のコト→クイズ 100のコト</string>
+		<key>desc</key>
+		<string>メンバー1人に関するクイズ500問（10回目以降は100問）を残りの4人が解答者として答えていくクイズ企画。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回 クイズ田中の500のコト</string>
+			<string>第2回 クイズ浜田の500のコト</string>
+			<string>第3回 クイズIKKOの500のコト</string>
+			<string>第4回 クイズ山崎邦正の妻の500のコト</string>
+			<string>第5回 クイズ楳図かずおの500のコト</string>
+			<string>第6回 クイズ和田アキ子の500のコト</string>
+			<string>第7回 クイズマネージャー藤原寛の500のコト</string>
+			<string>第8回 クイズ佐野元春の500のコト</string>
+			<string>第9回 クイズマツコ・デラックスの500のコト</string>
+			<string>第10回 クイズ田原総一朗の100のコト</string>
+			<string>第11回 クイズキダ・タローの100のコト</string>
+			<string>第12回 クイズ松本人志の100のコト</string>
+			<string>第13回 クイズブランド王ロイヤル森田勉の100のコト</string>
+			<string>第14回 クイズ振分親方の100のコト</string>
+			<string>第15回 クイズ蛍原徹の100のコト</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い 田中の500のコト</string>
+			<string>第2回 クイズ浜田の500のコト</string>
+			<string>ガキの使い IKKOの500のコト</string>
+			<string>ガキの使い 山崎あや 500のコト</string>
+			<string>ガキの使い 楳図かずお 500のコト</string>
+			<string>ガキの使い 和田アキ子 500のコト</string>
+			<string>ガキの使い 藤原 500のコト</string>
+			<string>ガキの使い 佐野元春 500のコト</string>
+			<string>ガキの使い マツコ 500のコト</string>
+			<string>ガキの使い 田原 500のコト</string>
+			<string>ガキの使い キダタロー 100のコト</string>
+			<string>ガキの使い 松本人志 100のコト</string>
+			<string>ガキの使い 森田勉 100のコト</string>
+			<string>ガキの使い 振分 100のコト</string>
+			<string>ガキの使い 蛍原 100のコト</string>
+		</array>
+	</dict>
 </dict>
 </plist>
