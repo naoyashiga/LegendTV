@@ -86,6 +86,8 @@
 		9A2239C51B76E7AA00364A6A /* axisstd-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C41B76E7AA00364A6A /* axisstd-light.otf */; };
 		9A2239C81B76F4B200364A6A /* FavoriteHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239C61B76F4B200364A6A /* FavoriteHeaderView.swift */; };
 		9A2239C91B76F4B200364A6A /* FavoriteHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */; };
+		9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */; };
+		9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */; };
 		E6878375DF456ABCE3734545 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C5D52E1918B3E2B4FA716B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -185,6 +187,8 @@
 		9A2239C41B76E7AA00364A6A /* axisstd-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "axisstd-light.otf"; path = "../axisstd-light.otf"; sourceTree = "<group>"; };
 		9A2239C61B76F4B200364A6A /* FavoriteHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteHeaderView.swift; sourceTree = "<group>"; };
 		9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteHeaderView.xib; sourceTree = "<group>"; };
+		9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+BaseCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+VideoPlayManagerDelegate.swift"; sourceTree = "<group>"; };
 		A6C5D52E1918B3E2B4FA716B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7558C7440C9328214CECF2C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 			children = (
 				9A22393E1B76C5D500364A6A /* TopViewController.swift */,
 				9A22393F1B76C5D500364A6A /* TopViewController+Settings.swift */,
+				9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */,
+				9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */,
 			);
 			name = Top;
 			sourceTree = "<group>";
@@ -828,6 +834,7 @@
 				9A2239451B76C5E500364A6A /* FavoriteCollectionViewController.swift in Sources */,
 				9A22390A1B76C3C200364A6A /* UIButton+AnimationExtension.swift in Sources */,
 				9A2239891B76C74000364A6A /* PlayControlBar.swift in Sources */,
+				9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */,
 				9A2239A01B76C7BE00364A6A /* VideoInfo.swift in Sources */,
 				9A2239621B76C6BE00364A6A /* BaseTableViewCell.swift in Sources */,
 				9A2239241B76C55500364A6A /* BaseCollectionViewController.swift in Sources */,
@@ -844,6 +851,7 @@
 				9A2239141B76C44400364A6A /* Config.swift in Sources */,
 				9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */,
 				9A2239731B76C70000364A6A /* ListTableViewCell.swift in Sources */,
+				9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */,
 				9A2239311B76C57E00364A6A /* SecondBackNumberTableViewController.swift in Sources */,
 				9A22399F1B76C7BE00364A6A /* Statistics.swift in Sources */,
 				9A2239BE1B76E50600364A6A /* NVActivityIndicatorShape.swift in Sources */,

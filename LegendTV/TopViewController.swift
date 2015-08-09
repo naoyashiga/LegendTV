@@ -11,10 +11,7 @@ import RealmSwift
 import Accounts
 import LINEActivity
 
-protocol TopViewControllerDelegate {
-}
-
-class TopViewController: UIViewController, BaseCollectionViewControllerDelegate, VideoPlayManagerDelegate {
+class TopViewController: UIViewController {
     @IBOutlet var playerView: UIView!
     @IBOutlet var containerView: UIView!
     
@@ -31,9 +28,6 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
     }
     
     var playingKikaku: Kikaku?
-    
-    var delegate: TopViewControllerDelegate?
-//    var containerVCDelegate: ContainerViewControllerDelegate?
     
     @IBOutlet var playerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var controlBarHeightConstraint: NSLayoutConstraint!
@@ -196,7 +190,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         }
     }
     
-    private func stopActivityIndicatorView() {
+    func stopActivityIndicatorView() {
         playOrPauseButtonVerticalConstraint.constant = 14
         
         if let indicator = activityIndicatorView {
@@ -218,7 +212,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         }
     }
     
-    private func videoDisplayAnimation() {
+    func videoDisplayAnimation() {
         playOrPauseButtonVerticalConstraint.constant = 74
         
         checkVideoPlayerState()
@@ -355,7 +349,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         }
     }
     
-    private func saveKikaku<T: Kikaku>(#kikaku: T, cell: VideoListCollectionViewCell, story: Story) {
+    func saveKikaku<T: Kikaku>(#kikaku: T, cell: VideoListCollectionViewCell, story: Story) {
         kikaku.videoID = story.videoID
         kikaku.kikakuName = story.title
         kikaku.seriesName = story.seriesName
@@ -375,7 +369,7 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         }
     }
     
-    private func saveKikakuFromFavoriteOrHistory<T: Kikaku>(#tmpKikaku: T,savedKikaku: T) {
+    func saveKikakuFromFavoriteOrHistory<T: Kikaku>(#tmpKikaku: T,savedKikaku: T) {
         tmpKikaku.videoID = savedKikaku.videoID
         tmpKikaku.kikakuName = savedKikaku.kikakuName
         tmpKikaku.seriesName = savedKikaku.seriesName
@@ -393,114 +387,9 @@ class TopViewController: UIViewController, BaseCollectionViewControllerDelegate,
         }
     }
     
+    //MARK: KikakuCollectionViewControllerDelegate
     func transitionViewController(#ToVC: BaseTableViewController) {
         navigationController?.pushViewController(ToVC, animated: true)
     }
     
-    //MARK: BaseCollectionViewControllerDelegate
-    func saveHistory(#story: Story, cell: VideoListCollectionViewCell) {
-        
-        playingCell = cell
-        playingStory = story
-
-        
-        let history = History()
-        saveKikaku(kikaku: history, cell: cell, story: story)
-    }
-    
-    func saveHistoryFromFavoriteOrHistory(#kikaku: Kikaku, cell: VideoListCollectionViewCell) {
-        playingCell = cell
-        playingKikaku = kikaku
-        
-        if kikaku is Favorite {
-            favoriteButton.selected = true
-            let history = History()
-            saveKikakuFromFavoriteOrHistory(tmpKikaku: history, savedKikaku: kikaku)
-            
-        } else if kikaku is History {
-            //履歴から再生のときに、お気に入り登録されているかをチェック
-            let realm = Realm()
-            let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
-            
-            if realm.objects(Favorite).filter(predicate).count == 0 {
-                //お気に入り未登録
-                favoriteButton.selected = false
-            } else {
-                //お気に入り登録済み
-                favoriteButton.selected = true
-            }
-            
-            //履歴の更新
-            realm.write {
-                kikaku.createdAt = NSDate().timeIntervalSince1970
-                realm.add(kikaku, update: true)
-            }
-        }
-    }
-    
-    func sendVideoData(#story: Story) {
-        videoId = story.videoID
-        videoTitle = story.title
-        videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
-        
-        applyVideoPlayManager()
-    }
-    
-    func sendKikakuData<T: Kikaku>(#kikaku: T) {
-        videoId = kikaku.videoID
-        videoTitle = kikaku.kikakuName
-        videoThunmNailImageView.sd_setImageWithURL(NSURL(string: kikaku.thumbNailImageURL))
-        
-        applyVideoPlayManager()
-    }
-    
-    private func applyVideoPlayManager() {
-        //videoId,videoTitleが更新済みであることに注意
-        VideoPlayManager.sharedManager.setVideoPlayer(videoID: videoId, playerView: playerView)
-        VideoPlayManager.sharedManager.setPlayingInfo(title: videoTitle, artWorkImage: videoThunmNailImageView.image)
-        VideoPlayManager.sharedManager.delegate = self
-        
-        addShareButton()
-        addFoldVideoControlButton()
-        
-        videoDisplayAnimation()
-    }
-    
-    func showReview() {
-        let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
-        reviewVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        
-        navigationController?.presentViewController(reviewVC, animated: true, completion: nil)
-    }
-    
-    //MARK:
-    func videoPlayerDidChangeState(note: NSNotification) {
-        checkVideoPlayerState()
-    }
-    
-    private func checkVideoPlayerState() {
-        if let videoVC = VideoPlayManager.sharedManager.videoPlayerViewController {
-            
-            switch videoVC.moviePlayer.playbackState {
-            case .Paused,.Stopped:
-                playOrPauseButton.selected = false
-                for subView in view.subviews {
-                    if let loadingView = subView.viewWithTag(activityIndicatorViewTagNumber) as? NVActivityIndicatorView {
-                        loadingView.stopAnimation()
-                        loadingView.removeFromSuperview()
-                    }
-                }
-                
-            case .Playing:
-                playOrPauseButton.selected = true
-                stopActivityIndicatorView()
-                
-                break
-            default:
-                break
-            }
-        }
-    
-    }
 }
-

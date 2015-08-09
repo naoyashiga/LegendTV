@@ -44,7 +44,7 @@ struct cellMargin {
     static let horizontal:CGFloat = 20.0
 }
 
-class BaseCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, TopViewControllerDelegate {
+class BaseCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var activityIndicator = UIActivityIndicatorView()
     var delegate: BaseCollectionViewControllerDelegate?
     var refreshControl = UIRefreshControl()

@@ -47,7 +47,6 @@ extension TopViewController {
                 if let homeVC = containerVC.controllerArray[0] as? HomeCollectionViewController {
                     homeVC.delegate = self
                     homeVC.collectionView?.frame.size.height = resizedHeight
-                    self.delegate = homeVC
                 }
                 
                 if let kikakuVC = containerVC.controllerArray[1] as? KikakuCollectionViewController {
