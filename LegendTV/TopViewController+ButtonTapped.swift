@@ -10,7 +10,51 @@ import Foundation
 import LINEActivity
 
 extension TopViewController {
+    
+    func didPlayOrPauseButtonTapped(sender: UIButton) {
+        sender.playBounceAnimation()
+        
+        if let videoVC = VideoPlayManager.sharedManager.videoPlayerViewController {
+            switch videoVC.moviePlayer.playbackState {
+            case .Paused,.Stopped:
+                
+                videoVC.moviePlayer.play()
+                sender.selected = true
+                
+                break
+            case .Playing:
+                
+                videoVC.moviePlayer.pause()
+                sender.selected = false
+                
+                break
+            default:
+                break
+            }
+        }
+        
+    }
 
+    func didFullScreenButtonTapped(sender: UIButton) {
+        
+        sender.playBounceAnimation()
+        
+        if let videoVC = VideoPlayManager.sharedManager.videoPlayerViewController {
+            videoVC.moviePlayer.setFullscreen(true, animated: true)
+        }
+    }
+    
+    func didFavoriteButtonTapped(sender: UIButton) {
+        
+        sender.playBounceAnimation()
+        
+        if let playingStory = playingStory {
+            checkFavorite(kikaku: nil, story: playingStory)
+        }
+        
+        applyFavoriteButtonStateByPlayingKikaku()
+    }
+    
     func shareButtonTapped(sender:UIButton!){
         var sharedText = videoTitle
         let baseURL = "https://www.youtube.com/watch?v="

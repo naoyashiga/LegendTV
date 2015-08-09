@@ -26,18 +26,18 @@
 		9A2239231B76C55500364A6A /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239211B76C55500364A6A /* BaseTableViewController.swift */; };
 		9A2239241B76C55500364A6A /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239221B76C55500364A6A /* BaseCollectionViewController.swift */; };
 		9A2239281B76C56600364A6A /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239261B76C56600364A6A /* HomeCollectionViewController.swift */; };
-		9A2239291B76C56600364A6A /* HomeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239271B76C56600364A6A /* HomeCollectionViewController.xib */; };
+		9A2239291B76C56600364A6A /* LegendTV.HomeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239271B76C56600364A6A /* LegendTV.HomeCollectionViewController.xib */; };
 		9A2239301B76C57E00364A6A /* VideoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22392B1B76C57E00364A6A /* VideoCollectionViewController.swift */; };
 		9A2239311B76C57E00364A6A /* SecondBackNumberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22392C1B76C57E00364A6A /* SecondBackNumberTableViewController.swift */; };
 		9A2239331B76C57E00364A6A /* KikakuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22392E1B76C57E00364A6A /* KikakuCollectionViewController.swift */; };
-		9A2239341B76C57E00364A6A /* KikakuCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22392F1B76C57E00364A6A /* KikakuCollectionViewController.xib */; };
+		9A2239341B76C57E00364A6A /* LegendTV.KikakuCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22392F1B76C57E00364A6A /* LegendTV.KikakuCollectionViewController.xib */; };
 		9A22393C1B76C5A100364A6A /* VideoPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22393B1B76C5A100364A6A /* VideoPlayManager.swift */; };
 		9A2239401B76C5D500364A6A /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22393E1B76C5D500364A6A /* TopViewController.swift */; };
 		9A2239411B76C5D500364A6A /* TopViewController+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22393F1B76C5D500364A6A /* TopViewController+Settings.swift */; };
 		9A2239451B76C5E500364A6A /* FavoriteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239431B76C5E500364A6A /* FavoriteCollectionViewController.swift */; };
-		9A2239461B76C5E500364A6A /* FavoriteCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239441B76C5E500364A6A /* FavoriteCollectionViewController.xib */; };
+		9A2239461B76C5E500364A6A /* LegendTV.FavoriteCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239441B76C5E500364A6A /* LegendTV.FavoriteCollectionViewController.xib */; };
 		9A22394A1B76C5F300364A6A /* HistoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */; };
-		9A22394B1B76C5F300364A6A /* HistoryCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */; };
+		9A22394B1B76C5F300364A6A /* LegendTV.HistoryCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239491B76C5F300364A6A /* LegendTV.HistoryCollectionViewController.xib */; };
 		9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22394D1B76C60600364A6A /* ContainerViewController.swift */; };
 		9A2239511B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239501B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift */; };
 		9A22395C1B76C6AA00364A6A /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239581B76C6AA00364A6A /* HistoryCollectionViewCell.swift */; };
@@ -128,18 +128,18 @@
 		9A2239211B76C55500364A6A /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9A2239221B76C55500364A6A /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		9A2239261B76C56600364A6A /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
-		9A2239271B76C56600364A6A /* HomeCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewController.xib; sourceTree = "<group>"; };
+		9A2239271B76C56600364A6A /* LegendTV.HomeCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendTV.HomeCollectionViewController.xib; sourceTree = "<group>"; };
 		9A22392B1B76C57E00364A6A /* VideoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewController.swift; sourceTree = "<group>"; };
 		9A22392C1B76C57E00364A6A /* SecondBackNumberTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBackNumberTableViewController.swift; sourceTree = "<group>"; };
 		9A22392E1B76C57E00364A6A /* KikakuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KikakuCollectionViewController.swift; sourceTree = "<group>"; };
-		9A22392F1B76C57E00364A6A /* KikakuCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KikakuCollectionViewController.xib; sourceTree = "<group>"; };
+		9A22392F1B76C57E00364A6A /* LegendTV.KikakuCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendTV.KikakuCollectionViewController.xib; sourceTree = "<group>"; };
 		9A22393B1B76C5A100364A6A /* VideoPlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayManager.swift; sourceTree = "<group>"; };
 		9A22393E1B76C5D500364A6A /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		9A22393F1B76C5D500364A6A /* TopViewController+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+Settings.swift"; sourceTree = "<group>"; };
 		9A2239431B76C5E500364A6A /* FavoriteCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewController.swift; sourceTree = "<group>"; };
-		9A2239441B76C5E500364A6A /* FavoriteCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCollectionViewController.xib; sourceTree = "<group>"; };
+		9A2239441B76C5E500364A6A /* LegendTV.FavoriteCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendTV.FavoriteCollectionViewController.xib; sourceTree = "<group>"; };
 		9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewController.swift; sourceTree = "<group>"; };
-		9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCollectionViewController.xib; sourceTree = "<group>"; };
+		9A2239491B76C5F300364A6A /* LegendTV.HistoryCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegendTV.HistoryCollectionViewController.xib; sourceTree = "<group>"; };
 		9A22394D1B76C60600364A6A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		9A2239501B76C65400364A6A /* UICollectionView+RoppongiExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RoppongiExtensions.swift"; sourceTree = "<group>"; };
 		9A2239581B76C6AA00364A6A /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2239261B76C56600364A6A /* HomeCollectionViewController.swift */,
-				9A2239271B76C56600364A6A /* HomeCollectionViewController.xib */,
+				9A2239271B76C56600364A6A /* LegendTV.HomeCollectionViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -435,7 +435,7 @@
 				9A22392B1B76C57E00364A6A /* VideoCollectionViewController.swift */,
 				9A22392C1B76C57E00364A6A /* SecondBackNumberTableViewController.swift */,
 				9A22392E1B76C57E00364A6A /* KikakuCollectionViewController.swift */,
-				9A22392F1B76C57E00364A6A /* KikakuCollectionViewController.xib */,
+				9A22392F1B76C57E00364A6A /* LegendTV.KikakuCollectionViewController.xib */,
 			);
 			name = BackNumber;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2239431B76C5E500364A6A /* FavoriteCollectionViewController.swift */,
-				9A2239441B76C5E500364A6A /* FavoriteCollectionViewController.xib */,
+				9A2239441B76C5E500364A6A /* LegendTV.FavoriteCollectionViewController.xib */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */,
-				9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */,
+				9A2239491B76C5F300364A6A /* LegendTV.HistoryCollectionViewController.xib */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -749,7 +749,7 @@
 				9A22395F1B76C6AA00364A6A /* HistoryHeaderView.xib in Resources */,
 				9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */,
 				9A22391D1B76C51700364A6A /* ReviewModalViewController.xib in Resources */,
-				9A2239341B76C57E00364A6A /* KikakuCollectionViewController.xib in Resources */,
+				9A2239341B76C57E00364A6A /* LegendTV.KikakuCollectionViewController.xib in Resources */,
 				9A2238D21B76C02500364A6A /* Main.storyboard in Resources */,
 				9A2239781B76C70000364A6A /* HomeHeaderView.xib in Resources */,
 				9A2239741B76C70000364A6A /* ListTableViewCell.xib in Resources */,
@@ -757,15 +757,15 @@
 				9A2238D71B76C02500364A6A /* LaunchScreen.xib in Resources */,
 				9A2238D41B76C02500364A6A /* Images.xcassets in Resources */,
 				9A2239A71B76C7CE00364A6A /* Kikaku.plist in Resources */,
-				9A2239461B76C5E500364A6A /* FavoriteCollectionViewController.xib in Resources */,
+				9A2239461B76C5E500364A6A /* LegendTV.FavoriteCollectionViewController.xib in Resources */,
 				9A2239761B76C70000364A6A /* VideoListCollectionViewCell.xib in Resources */,
 				9A2239811B76C71900364A6A /* KikakuCollectionViewCell.xib in Resources */,
-				9A22394B1B76C5F300364A6A /* HistoryCollectionViewController.xib in Resources */,
+				9A22394B1B76C5F300364A6A /* LegendTV.HistoryCollectionViewController.xib in Resources */,
 				9A22398F1B76C75500364A6A /* FavoriteCollectionViewCell.xib in Resources */,
 				9A2239691B76C6E100364A6A /* SecondBackNumberTableViewCell.xib in Resources */,
 				9A22396B1B76C6E100364A6A /* BackNumberTableViewCell.xib in Resources */,
 				9A2239C91B76F4B200364A6A /* FavoriteHeaderView.xib in Resources */,
-				9A2239291B76C56600364A6A /* HomeCollectionViewController.xib in Resources */,
+				9A2239291B76C56600364A6A /* LegendTV.HomeCollectionViewController.xib in Resources */,
 				9A22391F1B76C51700364A6A /* LegendTV.ReviewView.xib in Resources */,
 				9A2239851B76C71900364A6A /* KikakuFooterView.xib in Resources */,
 			);

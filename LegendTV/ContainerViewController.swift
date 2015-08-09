@@ -12,13 +12,20 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
     var pageMenu : CAPSPageMenu?
     var controllerArray : [BaseCollectionViewController] = []
     
+    private struct nibName {
+        static let homeVC = NSStringFromClass(HomeCollectionViewController.self)
+        static let kikakuVC = NSStringFromClass(KikakuCollectionViewController.self)
+        static let favVC = NSStringFromClass(FavoriteCollectionViewController.self)
+        static let historyVC = NSStringFromClass(HistoryCollectionViewController.self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeVC = HomeCollectionViewController(nibName: "HomeCollectionViewController", bundle: nil)
-        let kikakuVC = KikakuCollectionViewController(nibName: "KikakuCollectionViewController", bundle: nil)
-        let favVC = FavoriteCollectionViewController(nibName: "FavoriteCollectionViewController", bundle: nil)
-        let historyVC = HistoryCollectionViewController(nibName: "HistoryCollectionViewController", bundle: nil)
+        let homeVC = HomeCollectionViewController(nibName: nibName.homeVC, bundle: nil)
+        let kikakuVC = KikakuCollectionViewController(nibName: nibName.kikakuVC, bundle: nil)
+        let favVC = FavoriteCollectionViewController(nibName: nibName.favVC, bundle: nil)
+        let historyVC = HistoryCollectionViewController(nibName: nibName.historyVC, bundle: nil)
         
         
         homeVC.title = "ピックアップ"

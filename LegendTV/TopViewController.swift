@@ -28,23 +28,26 @@ class TopViewController: UIViewController {
     
     var playingKikaku: Kikaku?
     
+    var collectionViewHeight: CGFloat = 600
+    var activityIndicatorView: NVActivityIndicatorView?
+    let activityIndicatorViewTagNumber: Int = 1
+    
     @IBOutlet var playerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var controlBarHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var playOrPauseButtonVerticalConstraint: NSLayoutConstraint!
     @IBOutlet var favoriteButton: UIButton!
+    
     @IBOutlet var playOrPauseButton: UIButton! {
         didSet {
             playOrPauseButton.selected = true
         }
     }
+    
     @IBOutlet var controlBarSeriesName: UILabel!
     @IBOutlet var controlBarKikakuName: UILabel!
     @IBOutlet var controlBarThumbNaiImageView: UIImageView!
     
-    var collectionViewHeight: CGFloat = 600
-    var activityIndicatorView: NVActivityIndicatorView?
-    let activityIndicatorViewTagNumber: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,46 +69,16 @@ class TopViewController: UIViewController {
     
     //MARK: action method
     @IBAction func playOrPauseButtonTapped(sender: UIButton) {
-        sender.playBounceAnimation()
-        
-        if let videoVC = VideoPlayManager.sharedManager.videoPlayerViewController {
-            switch videoVC.moviePlayer.playbackState {
-            case .Paused,.Stopped:
-                
-                videoVC.moviePlayer.play()
-                sender.selected = true
-                
-                break
-            case .Playing:
-                
-                videoVC.moviePlayer.pause()
-                sender.selected = false
-                
-                break
-            default:
-                break
-            }
-        }
+        didPlayOrPauseButtonTapped(sender)
     }
     
     @IBAction func fullScreenButtonTapped(sender: UIButton) {
-        sender.playBounceAnimation()
-        
-        if let videoVC = VideoPlayManager.sharedManager.videoPlayerViewController {
-            videoVC.moviePlayer.setFullscreen(true, animated: true)
-        }
+        didFullScreenButtonTapped(sender)
     }
     
     @IBAction func favoriteButtonTapped(sender: UIButton) {
-        sender.playBounceAnimation()
-        
-        if let playingStory = playingStory {
-            checkFavorite(kikaku: nil, story: playingStory)
-        }
-        
-        applyFavoriteButtonStateByPlayingKikaku()
+        didFavoriteButtonTapped(sender)
     }
-    
     
     //MARK: private method
     
@@ -183,7 +156,7 @@ class TopViewController: UIViewController {
         }
     }
     
-    private func applyFavoriteButtonStateByPlayingKikaku() {
+    func applyFavoriteButtonStateByPlayingKikaku() {
         
         if let playingKikaku = playingKikaku {
             
@@ -205,7 +178,7 @@ class TopViewController: UIViewController {
         }
     }
     
-    private func checkFavorite(#kikaku: Kikaku?,story: Story?) {
+    func checkFavorite(#kikaku: Kikaku?,story: Story?) {
         
         if favoriteButton.selected {
             let realm = Realm()
