@@ -99,10 +99,32 @@
 		<key>kikakuList</key>
 		<array>
 			<string>山崎ケツ公開スパーリング!!</string>
+			<string>第2回 山崎ケツリベンジ KETSU-1グランプリ!!</string>
+			<string>芸能界因縁のリベンジマッチ! 山崎VSモリマン エンドレスバトル!!</string>
+			<string>炎のファイナルリベンジマッチ in後楽園ホール</string>
+			<string>嵐のラストファイナルリベンジマッチ</string>
+			<string>今世紀最後のスーパーファイナルリベンジマッチ!!</string>
+			<string>今世紀初! ラストファイナルリベンジマッチ</string>
+			<string>因縁のファイナルリベンジドリームマッチ</string>
+			<string>魂のスーパーファイナルリベンジマッチ</string>
+			<string>伝説のスーパーファイナルリベンジマッチ</string>
+			<string>奇跡のスーパーファイナル引退リベンジマッチ</string>
+			<string>炎のファイナルリベンジマッチ</string>
 		</array>
 		<key>queries</key>
 		<array>
 			<string>ガキの使い 山崎ケツ公開スパーリング</string>
+			<string>第2回 山崎ケツリベンジ KETSU-1グランプリ!!</string>
+			<string>ガキの使い 芸能界因縁のリベンジマッチ</string>
+			<string>ガキの使い Gaki No Tsukai Episodes 429 ( 1998 ) Yamasaki vs Moriman</string>
+			<string>ガキの使い Gaki No Tsukai Episodes Yamasaki vs Moriman 445 </string>
+			<string>ガキの使い moriman 2000</string>
+			<string>ガキの使い 今世紀初! ラストファイナル</string>
+			<string>ガキの使い モリマン 2003</string>
+			<string>ガキの使い moriman 2005</string>
+			<string>準備中</string>
+			<string>ガキの使い モリマン 奇跡</string>
+			<string>ガキの使い </string>
 		</array>
 	</dict>
 	<key>item3</key>
@@ -425,6 +447,27 @@
 			<string>ガキの使い おもしろVTR  2012</string>
 			<string>ガキの使い おもしろVTR  2013</string>
 			<string>ガキの使い おもしろVTR  2014</string>
+		</array>
+	</dict>
+	<key>item10</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ヘイポー人体実験シリーズ</string>
+		<key>desc</key>
+		<string>ダミーロケ（例「かくれんぼで賞金100万円」）の途中で宇宙人、加賀百万石のお殿様、赤ちゃん（ポーちゃん）、ナポレオンなどのキャラに扮したヘイポーが発見され、ダウンタウンらが様々な人体実験（例えば低周波治療器）を加えてリアクションを楽しむ。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回ヘイポー人体実験シリーズ 宇宙人</string>
+			<string>第2回ヘイポー人体実験シリーズ 殿様</string>
+			<string>第3回ヘイポー人体実験シリーズ 赤ちゃん</string>
+			<string>第4回ヘイポー人体実験シリーズ ナポレオン</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>第1回ヘイポー人体実験シリーズ 宇宙人</string>
+			<string>第2回ヘイポー人体実験シリーズ 殿様</string>
+			<string>第3回ヘイポー人体実験シリーズ 赤ちゃん</string>
+			<string>準備中</string>
 		</array>
 	</dict>
 </dict>
