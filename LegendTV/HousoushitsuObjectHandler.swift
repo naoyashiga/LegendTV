@@ -13,12 +13,10 @@ class HousoushitsuObjectHandler {
     
     class func getStories(url: String, callback:(([Story]) -> Void)){
         var stories = [Story]()
-//        println(url)
         
         HttpService.getJSON(url){ jsonItems in
             
             for item in jsonItems {
-//                let story = Story(data: storyData as! NSDictionary)
                 let story = Story(json: item)
                 stories.append(story)
             }

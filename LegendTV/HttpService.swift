@@ -12,35 +12,25 @@ import SwiftyJSON
 
 class HttpService {
     class func getJSON(url: String, callback:([JSON]) -> Void) {
-//        var nsURL = NSURL(string: url)!
         
         if let nsURL = NSURL(string: url) {
             var session = NSURLSession.sharedSession()
-        var task = session.dataTaskWithURL(nsURL, completionHandler: { data, response, error -> Void in
             
-            if error != nil{
-                println("error")
+            var task = session.dataTaskWithURL(nsURL){ data, response, error in
+                if error != nil{
+                    println("error")
+                }
+                
+                let json = JSON(data: data)
+                if let items = json["items"].array {
+                    callback(items)
+                }
+                
+                session.invalidateAndCancel()
+                
             }
             
-            let json = JSON(data: data)
-            if let items = json["items"].array {
-                callback(items)
-            }
-            
-//            if data != nil {
-//                if let jsonData = NSJSONSerialization.JSONObjectWithData( data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary {
-//                    
-//                    if let arry = jsonData.objectForKey("items") as? NSArray {
-//                        callback(arry)
-//                    }
-//                }
-//            }
-            
-            session.invalidateAndCancel()
-            
-        })
-        task.resume()
-            
+            task.resume()
         }
     }
 }
