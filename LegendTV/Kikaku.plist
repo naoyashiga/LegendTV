@@ -470,5 +470,28 @@
 			<string>準備中</string>
 		</array>
 	</dict>
+	<key>item11</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ヘイポーうすっぺら裁判</string>
+		<key>desc</key>
+		<string>日頃のビビリ・スケベ・虚言癖などを事実に基づいて検証。ヘイポーは開き直って釈明したり、不可解な弁明をした後にいちいち無意味に同意を求めては「アラ？ 違うの？」と口走ったりと、毎回陪審員らの失笑や顰蹙を買っている。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>第1回 ヘイポーうすっぺら裁判</string>
+			<string>第2回 ヘイポーうすっぺら裁判</string>
+			<string>第3回 ヘイポーうすっぺら裁判</string>
+			<string>第4回 ヘイポーうすっぺら裁判</string>
+			<string>第5回 ヘイポーうすっぺら裁判</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>第1回 ヘイポーうすっぺら裁判</string>
+			<string>第2回 ヘイポーうすっぺら裁判</string>
+			<string>準備中</string>
+			<string>第4回 ヘイポーうすっぺら裁判</string>
+			<string>第5回 ヘイポーうすっぺら裁判</string>
+		</array>
+	</dict>
 </dict>
 </plist>
