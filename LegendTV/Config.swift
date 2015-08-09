@@ -14,5 +14,4 @@ struct Config {
     static let REQUEST_SEARCH_URL = REQUEST_BASE_URL + "search?key=\(API_KEY)&type=video&"
     static let REQUEST_CONTENT_DETAILS_URL = REQUEST_BASE_URL + "videos?key=\(API_KEY)&part=contentDetails&"
     static let REQUEST_STATISTICS_URL = REQUEST_BASE_URL + "videos?key=\(API_KEY)&part=statistics&"
-    
 }

@@ -45,9 +45,7 @@ class VideoPlayManager: NSObject {
     }
     
     func moviePlayerDidChangeState(note: NSNotification) {
-        //TODO: ローディングを消す
         delegate?.videoPlayerDidChangeState(note)
-        
     }
     
     func setPlayingInfo(#title: String, artWorkImage: UIImage?) {

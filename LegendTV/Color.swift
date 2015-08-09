@@ -49,20 +49,8 @@ extension UIColor {
         return UIColor.hexStr("ffffff", alpha: 1)
     }
     
-    class func cellDarkBackgroundColor() -> UIColor {
-        return UIColor.hexStr("efefef", alpha: 1)
-    }
-    
     class func cellSelectedBackgroundColor() -> UIColor {
         return UIColor.hexStr("ffa633", alpha: 1)
-    }
-    
-    class func tableHeaderBackgroundColor() -> UIColor {
-        return UIColor.hexStr("ffa633", alpha: 1)
-    }
-    
-    class func tableHeaderTextColor() -> UIColor {
-        return UIColor.hexStr("ffffff", alpha: 1)
     }
     
     class func kikakuTitleInPreparationColor() -> UIColor {
