@@ -49,13 +49,20 @@ class SecondBackNumberTableViewController: BaseTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BackNumberTableViewCell
         
-        if queries[indexPath.row] == "準備中" {
-            cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
-            cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]
+        if indexPath.row < queries.count {
+            
+            if queries[indexPath.row] == "準備中" {
+                cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
+                cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]
+            } else {
+                cell.backNumberLabel.textColor = UIColor.kikakuTitleColor()
+                cell.backNumberLabel.text = kikakuList[indexPath.row]
+            }
+            
         } else {
-            cell.backNumberLabel.textColor = UIColor.kikakuTitleColor()
-            cell.backNumberLabel.text = kikakuList[indexPath.row]
+            println("indexPath.row index error")
         }
+        
         
         cell.layoutIfNeeded()
         cell.separatorInset = UIEdgeInsetsZero

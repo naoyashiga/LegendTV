@@ -512,5 +512,92 @@
 			<string>ガキの使い ヘイポーときめきデート カイヤ</string>
 		</array>
 	</dict>
+	<key>item13</key>
+	<dict>
+		<key>seriesName</key>
+		<string>ききシリーズ</string>
+		<key>desc</key>
+		<string>「このひと口[19]に命をかけろ」をキャッチフレーズに行われるきき味企画。不定期ではあるが、現在まで37回行われている恒例企画の1つ。</string>
+		<key>kikakuList</key>
+		<array>
+			<string>きき缶コーヒー</string>
+			<string>ききお茶</string>
+			<string>ききタバコ</string>
+			<string>ききカレー</string>
+			<string>ききビール</string>
+			<string>きき焼きそば</string>
+			<string>きき食パン</string>
+			<string>きき歯みがき粉</string>
+			<string>きき肉まん</string>
+			<string>ききプリン</string>
+			<string>ききインスタントご飯</string>
+			<string>ききヨーグルト</string>
+			<string>ききチョコレート</string>
+			<string>ききオレンジジュース</string>
+			<string>ききインスタントみそ汁</string>
+			<string>ききレモンティー</string>
+			<string>ききマヨネーズ</string>
+			<string>きき焼肉のたれ</string>
+			<string>きき牛乳</string>
+			<string>きき烏龍茶</string>
+			<string>ききポン酢</string>
+			<string>ききとんかつソース</string>
+			<string>きき納豆</string>
+			<string>ききケチャップ</string>
+			<string>ききハム</string>
+			<string>ききコーンスープ</string>
+			<string>ききいちごジャム</string>
+			<string>ききりんごジュース</string>
+			<string>ききポテトチップス</string>
+			<string>ききツナ缶</string>
+			<string>きき水ようかん</string>
+			<string>ききカステラ</string>
+			<string>きき魚肉ソーセージ</string>
+			<string>きき食べるラー油</string>
+			<string>ききノンアルコールビール</string>
+			<string>ききチーズ</string>
+			<string>きき緑茶</string>
+		</array>
+		<key>queries</key>
+		<array>
+			<string>ガキの使い 缶コーヒー</string>
+			<string>ガキの使い ききシリーズ お茶</string>
+			<string>ガキの使い  ききタバコ</string>
+			<string>ガキの使い  ききカレー</string>
+			<string>ガキの使い  ききビール</string>
+			<string>ガキの使い  きき焼きそば</string>
+			<string>ガキの使い  きき食パン</string>
+			<string>ガキの使い  きき歯みがき粉</string>
+			<string>ガキの使い  きき肉まん</string>
+			<string>ガキの使い  ききプリン</string>
+			<string>ガキの使い  ききインスタントご飯</string>
+			<string>ガキの使い  ききヨーグルト</string>
+			<string>ガキの使い  ききチョコレート</string>
+			<string>ガキの使い  ききオレンジジュース</string>
+			<string>ガキの使い  ききインスタントみそ汁</string>
+			<string>ガキの使い  ききレモンティー</string>
+			<string>ガキの使い  ききマヨネーズ</string>
+			<string>ガキの使い  きき焼肉のたれ</string>
+			<string>ガキの使い  きき牛乳</string>
+			<string>ガキの使い  きき烏龍茶</string>
+			<string>ガキの使い  ききポン酢</string>
+			<string>ガキの使い  ききとんかつソース</string>
+			<string>ガキの使い  きき納豆</string>
+			<string>ガキの使い  ききケチャップ</string>
+			<string>ガキの使い  ききハム</string>
+			<string>ガキの使い  ききコーンスープ</string>
+			<string>ガキの使い  ききいちごジャム</string>
+			<string>ガキの使い  ききりんごジュース</string>
+			<string>ガキの使い  ききポテトチップス</string>
+			<string>ガキの使い  ききツナ缶</string>
+			<string>ガキの使い  きき水ようかん</string>
+			<string>ガキの使い  ききカステラ</string>
+			<string>ガキの使い  きき魚肉ソーセージ</string>
+			<string>ガキの使い  きき食べるラー油</string>
+			<string>ガキの使い  ききノンアルコールビール</string>
+			<string>ガキの使い  ききチーズ</string>
+			<string>ガキの使い  きき緑茶</string>
+		</array>
+	</dict>
 </dict>
 </plist>
