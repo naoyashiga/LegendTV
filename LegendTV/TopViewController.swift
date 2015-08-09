@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Accounts
+import LINEActivity
 
 protocol TopViewControllerDelegate {
 }

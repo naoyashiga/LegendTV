@@ -53,7 +53,6 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/LINEActivity.framework'
-  install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'
   install_framework 'Pods/SDWebImage.framework'
@@ -61,7 +60,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/LINEActivity.framework'
-  install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'
   install_framework 'Pods/SDWebImage.framework'

@@ -81,6 +81,15 @@
 		9A2239A71B76C7CE00364A6A /* Kikaku.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239A41B76C7CE00364A6A /* Kikaku.plist */; };
 		9A2239AA1B76C7E900364A6A /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239A91B76C7E900364A6A /* Favorite.swift */; };
 		9A2239AD1B76C80000364A6A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239AC1B76C80000364A6A /* History.swift */; };
+		9A2239B41B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239B21B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m */; };
+		9A2239B51B76D6FD00364A6A /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239B31B76D6FD00364A6A /* CAPSPageMenu.swift */; };
+		9A2239BC1B76E50600364A6A /* NVActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239B81B76E50600364A6A /* NVActivityIndicatorAnimationLineScale.swift */; };
+		9A2239BD1B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239B91B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift */; };
+		9A2239BE1B76E50600364A6A /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239BA1B76E50600364A6A /* NVActivityIndicatorShape.swift */; };
+		9A2239BF1B76E50600364A6A /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239BB1B76E50600364A6A /* NVActivityIndicatorView.swift */; };
+		9A2239C21B76E70300364A6A /* axisstd-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C01B76E70300364A6A /* axisstd-bold.otf */; };
+		9A2239C31B76E70300364A6A /* axisstd-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C11B76E70300364A6A /* axisstd-medium.otf */; };
+		9A2239C51B76E7AA00364A6A /* axisstd-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C41B76E7AA00364A6A /* axisstd-light.otf */; };
 		E6878375DF456ABCE3734545 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C5D52E1918B3E2B4FA716B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -109,9 +118,6 @@
 		9A2239071B76C3C200364A6A /* ButtonSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSet.swift; sourceTree = "<group>"; };
 		9A2239081B76C3C200364A6A /* UIButton+AnimationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AnimationExtension.swift"; sourceTree = "<group>"; };
 		9A22390B1B76C3CD00364A6A /* ImageView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+Loading.swift"; sourceTree = "<group>"; };
-		9A22390E1B76C42200364A6A /* axisstd-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "axisstd-light.otf"; sourceTree = "<group>"; };
-		9A22390F1B76C42200364A6A /* axisstd-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "axisstd-medium.otf"; sourceTree = "<group>"; };
-		9A2239101B76C42200364A6A /* axisstd-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "axisstd-bold.otf"; sourceTree = "<group>"; };
 		9A2239121B76C44400364A6A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9A2239131B76C44400364A6A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9A2239181B76C51700364A6A /* ReviewModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewModalViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +183,16 @@
 		9A2239A91B76C7E900364A6A /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		9A2239AC1B76C80000364A6A /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		9A2239AE1B76D4AD00364A6A /* LegendTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LegendTV-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A2239B11B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
+		9A2239B21B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
+		9A2239B31B76D6FD00364A6A /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		9A2239B81B76E50600364A6A /* NVActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
+		9A2239B91B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
+		9A2239BA1B76E50600364A6A /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		9A2239BB1B76E50600364A6A /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorView.swift; sourceTree = "<group>"; };
+		9A2239C01B76E70300364A6A /* axisstd-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "axisstd-bold.otf"; path = "../axisstd-bold.otf"; sourceTree = "<group>"; };
+		9A2239C11B76E70300364A6A /* axisstd-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "axisstd-medium.otf"; path = "../axisstd-medium.otf"; sourceTree = "<group>"; };
+		9A2239C41B76E7AA00364A6A /* axisstd-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "axisstd-light.otf"; path = "../axisstd-light.otf"; sourceTree = "<group>"; };
 		A6C5D52E1918B3E2B4FA716B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7558C7440C9328214CECF2C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA7E1E7F1A843368EAB3B800 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,12 +257,12 @@
 		9A2238C91B76C02500364A6A /* LegendTV */ = {
 			isa = PBXGroup;
 			children = (
+				9A2238EC1B76C30E00364A6A /* AppDelegate */,
 				9A2238ED1B76C32000364A6A /* Common */,
 				9A2239161B76C4FE00364A6A /* Controller */,
 				9A2239901B76C78100364A6A /* Model */,
 				9A2239561B76C68900364A6A /* View */,
 				9A2239551B76C67800364A6A /* Utils */,
-				9A2238EC1B76C30E00364A6A /* AppDelegate */,
 				9A2238D01B76C02500364A6A /* Main.storyboard */,
 				9A2238D31B76C02500364A6A /* Images.xcassets */,
 				9A2238D51B76C02500364A6A /* LaunchScreen.xib */,
@@ -260,6 +276,9 @@
 			children = (
 				9A2238CB1B76C02500364A6A /* Info.plist */,
 				9A2239AE1B76D4AD00364A6A /* LegendTV-Bridging-Header.h */,
+				9A2239B11B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.h */,
+				9A2239B21B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m */,
+				9A2239B31B76D6FD00364A6A /* CAPSPageMenu.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,6 +328,7 @@
 		9A2238EF1B76C33000364A6A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9A2239B71B76E4FB00364A6A /* ActivityIndicator */,
 				9A2239111B76C43400364A6A /* Config */,
 				9A2239041B76C3A600364A6A /* Fonts */,
 				9A2239031B76C3A000364A6A /* Button */,
@@ -346,9 +366,9 @@
 		9A22390D1B76C41600364A6A /* axis */ = {
 			isa = PBXGroup;
 			children = (
-				9A22390E1B76C42200364A6A /* axisstd-light.otf */,
-				9A22390F1B76C42200364A6A /* axisstd-medium.otf */,
-				9A2239101B76C42200364A6A /* axisstd-bold.otf */,
+				9A2239C01B76E70300364A6A /* axisstd-bold.otf */,
+				9A2239C11B76E70300364A6A /* axisstd-medium.otf */,
+				9A2239C41B76E7AA00364A6A /* axisstd-light.otf */,
 			);
 			name = axis;
 			sourceTree = "<group>";
@@ -644,6 +664,17 @@
 			name = History;
 			sourceTree = "<group>";
 		};
+		9A2239B71B76E4FB00364A6A /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				9A2239B81B76E50600364A6A /* NVActivityIndicatorAnimationLineScale.swift */,
+				9A2239B91B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift */,
+				9A2239BA1B76E50600364A6A /* NVActivityIndicatorShape.swift */,
+				9A2239BB1B76E50600364A6A /* NVActivityIndicatorView.swift */,
+			);
+			name = ActivityIndicator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -727,6 +758,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2239C51B76E7AA00364A6A /* axisstd-light.otf in Resources */,
+				9A2239C21B76E70300364A6A /* axisstd-bold.otf in Resources */,
+				9A2239C31B76E70300364A6A /* axisstd-medium.otf in Resources */,
 				9A2239831B76C71900364A6A /* KikakuHeaderView.xib in Resources */,
 				9A22395F1B76C6AA00364A6A /* HistoryHeaderView.xib in Resources */,
 				9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */,
@@ -837,6 +871,7 @@
 				9A2239411B76C5D500364A6A /* TopViewController+Settings.swift in Sources */,
 				9A2239061B76C3B900364A6A /* FontSet.swift in Sources */,
 				9A2239281B76C56600364A6A /* HomeCollectionViewController.swift in Sources */,
+				9A2239BD1B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				9A2239681B76C6E100364A6A /* SecondBackNumberTableViewCell.swift in Sources */,
 				9A2239141B76C44400364A6A /* Config.swift in Sources */,
 				9A22394E1B76C60600364A6A /* ContainerViewController.swift in Sources */,
@@ -846,11 +881,15 @@
 				9A2239A61B76C7CE00364A6A /* KikakuName.swift in Sources */,
 				9A2239381B76C59000364A6A /* DetailViewController.swift in Sources */,
 				9A22399F1B76C7BE00364A6A /* Statistics.swift in Sources */,
+				9A2239BE1B76E50600364A6A /* NVActivityIndicatorShape.swift in Sources */,
 				9A22390C1B76C3CD00364A6A /* ImageView+Loading.swift in Sources */,
+				9A2239BC1B76E50600364A6A /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
 				9A2239331B76C57E00364A6A /* KikakuCollectionViewController.swift in Sources */,
 				9A2239821B76C71900364A6A /* KikakuHeaderView.swift in Sources */,
+				9A2239B51B76D6FD00364A6A /* CAPSPageMenu.swift in Sources */,
 				9A2239AD1B76C80000364A6A /* History.swift in Sources */,
 				9A22394A1B76C5F300364A6A /* HistoryCollectionViewController.swift in Sources */,
+				9A2239B41B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				9A2239801B76C71900364A6A /* KikakuCollectionViewCell.swift in Sources */,
 				9A2239301B76C57E00364A6A /* VideoCollectionViewController.swift in Sources */,
 				9A2239151B76C44400364A6A /* Color.swift in Sources */,
@@ -859,6 +898,7 @@
 				9A2239091B76C3C200364A6A /* ButtonSet.swift in Sources */,
 				9A2238F11B76C34A00364A6A /* DeviceUtils.swift in Sources */,
 				9A22393C1B76C5A100364A6A /* VideoPlayManager.swift in Sources */,
+				9A2239BF1B76E50600364A6A /* NVActivityIndicatorView.swift in Sources */,
 				9A2239AA1B76C7E900364A6A /* Favorite.swift in Sources */,
 				9A2239231B76C55500364A6A /* BaseTableViewController.swift in Sources */,
 				9A22399D1B76C7BE00364A6A /* Story.swift in Sources */,

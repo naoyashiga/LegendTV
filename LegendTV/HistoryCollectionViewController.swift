@@ -83,7 +83,14 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             }
         } else {
             //レビューまだ
-            return 4
+            var maxInitialHistoryCount = 3
+            
+            if maxInitialHistoryCount > histories.count {
+                //3件未満のとき
+                return histories.count
+            } else {
+                return maxInitialHistoryCount + 1
+            }
         }
     }
     
@@ -126,7 +133,13 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             cell.thumbNailImageView.loadingImageBySDWebImage(history)
         } else {
             //レビューまだ
-            if indexPath.row < 3 {
+            var maxInitialHistoryCount = 3
+            
+            if maxInitialHistoryCount > histories.count {
+                maxInitialHistoryCount = histories.count
+            }
+            
+            if indexPath.row < maxInitialHistoryCount {
                 let history = histories[indexPath.row]
                 
                 cell.titleLabel.text = history.kikakuName
