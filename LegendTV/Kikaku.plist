@@ -63,11 +63,31 @@
 		<array>
 			<string>松本チーム罰ゲーム 絶対笑ってはいけない温泉宿一泊二日の旅</string>
 			<string>浜田・山崎・田中罰ゲーム 笑ってはいけない温泉宿一泊二日の旅in湯河原</string>
+			<string>松本・山崎・ココリコ罰ゲーム 絶対に笑ってはいけない高校（ハイスクール）</string>
+			<string>浜田・山崎・遠藤罰ゲーム 絶対に笑ってはいけない警察24時!!</string>
+			<string>絶対に笑ってはいけない病院24時</string>
+			<string>絶対に笑ってはいけない新聞社24時</string>
+			<string>絶対に笑ってはいけないホテルマン24時</string>
+			<string>絶対に笑ってはいけないスパイ24時</string>
+			<string>絶対に笑ってはいけない空港24時（エアポート）</string>
+			<string>絶対に笑ってはいけない熱血教師24時</string>
+			<string>絶対に笑ってはいけない地球防衛軍24時</string>
+			<string>絶対に笑ってはいけない大脱獄24時</string>
 		</array>
 		<key>queries</key>
 		<array>
 			<string>ガキの使い 笑ってはいけない Hot Spring</string>
 			<string>ガキの使い 笑ってはいけない  Yugawara</string>
+			<string>ガキの使い 絶対に笑ってはいけない高校</string>
+			<string>ガキの使い 絶対に笑ってはいけない警察24</string>
+			<string>ガキの使い 絶対に笑ってはいけない病院24</string>
+			<string>ガキの使い 絶対に笑ってはいけない新聞社24時 2008 gaki no tsukai newspaper agency eng sub 2/3</string>
+			<string>ガキの使い 絶対に笑ってはいけないホテルマン24時 2009 gaki no tsukai hotel man eng sub</string>
+			<string>ガキの使い 絶対に笑ってはいけないスパイ24時 2010 gaki no tsukai secret agent </string>
+			<string>ガキの使い 絶対に笑ってはいけない空港24時 2011 gaki no tsukai airport</string>
+			<string>ガキの使い 絶対に笑ってはいけない熱血教師24時 2012 gaki no tsukai teacher</string>
+			<string>ガキの使い 絶対に笑ってはいけない地球防衛軍24時 2013 earth defense force 1/3 </string>
+			<string>ガキの使い 絶対に笑ってはいけない大脱獄24時 2014 gaki no tsukai prison</string>
 		</array>
 	</dict>
 	<key>item2</key>
