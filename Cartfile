@@ -1,1 +1,2 @@
 github "dzenbot/DZNEmptyDataSet"
+github "Alamofire/Alamofire" >= 1.3
