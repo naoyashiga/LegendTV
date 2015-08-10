@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import DZNEmptyDataSet
 
 struct favoriteReuseId {
     static let cell = "VideoListCollectionViewCell"
@@ -15,7 +16,7 @@ struct favoriteReuseId {
 //    static let footerView = "FavoriteFooterView"
 }
 
-class FavoriteCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, FavoriteHeaderViewDelegate {
+class FavoriteCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, FavoriteHeaderViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     private var favorites: Results<Favorite> {
         get {
             let realm = Realm()
@@ -28,6 +29,9 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView?.emptyDataSetDelegate = self
+        collectionView?.emptyDataSetSource = self
         
         collectionView?.applyHeaderNib(headerNibName: favoriteReuseId.headerView)
         collectionView?.applyCellNib(cellNibName: favoriteReuseId.cell)
@@ -114,5 +118,7 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
         collectionView?.reloadData()
     }
     
-    //private method
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "loading.png")
+    }
 }
