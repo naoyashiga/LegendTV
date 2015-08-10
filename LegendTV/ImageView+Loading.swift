@@ -14,13 +14,12 @@ extension UIImageView {
         
         sd_setImageWithURL(
             NSURL(string: kikaku.thumbNailImageURL),
-            placeholderImage: UIImage(named: "loading.png"),
-            completed: { (image, error, type, URL) -> Void in
+            completed: { image, error, type, URL in
                 
                 self.alpha = 0
                 
                 UIView.animateWithDuration(0.25,
-                    animations: { () -> Void in
+                    animations: {
                         self.alpha = 1
                 })
         })
@@ -30,13 +29,12 @@ extension UIImageView {
         
         sd_setImageWithURL(
             NSURL(string: story.thumbNailImageURL),
-            placeholderImage: UIImage(named: "loading.png"),
-            completed: { (image, error, type, URL) -> Void in
+            completed: { image, error, type, URL in
                 
                 self.alpha = 0
                 
                 UIView.animateWithDuration(0.25,
-                    animations: { () -> Void in
+                    animations: {
                         self.alpha = 1
                 })
         })
