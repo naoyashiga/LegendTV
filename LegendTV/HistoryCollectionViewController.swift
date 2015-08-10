@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import DZNEmptyDataSet
 
 struct historyReuseId {
     static let cell = "VideoListCollectionViewCell"
@@ -15,7 +16,7 @@ struct historyReuseId {
     static let footerView = "HistoryFooterView"
 }
 
-class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate {
+class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     private var histories: Results<History> {
         get {
             let realm = Realm()
@@ -30,6 +31,9 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         super.viewDidLoad()
         
 //        collectionView?.registerNib(UINib(nibName: historyReuseId.footerView, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: historyReuseId.footerView)
+        
+        collectionView?.emptyDataSetDelegate = self
+        collectionView?.emptyDataSetSource = self
         
         collectionView?.applyHeaderNib(headerNibName: historyReuseId.headerView)
         collectionView?.applyCellNib(cellNibName: historyReuseId.cell)
@@ -180,5 +184,34 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         if !isReview {
             delegate?.showReview()
         }
+    }
+    
+    // MARK: DZNEmptyDataSetSource
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "time.png")
+    }
+    
+    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.grayColor()
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "履歴は0件です"
+        let font = UIFont(name: FontSet.bold, size: 30)!
+        return NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "最大30件まで登録できます"
+        let font = UIFont(name: FontSet.medium, size: 14)!
+        return NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
+    }
+    
+    func buttonImageForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> UIImage! {
+        return UIImage(named: "reload_gray.png")
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        collectionView?.reloadData()
     }
 }
