@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import DZNEmptyDataSet
 
 struct historyReuseId {
     static let cell = "VideoListCollectionViewCell"
@@ -16,7 +15,7 @@ struct historyReuseId {
     static let footerView = "HistoryFooterView"
 }
 
-class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate {
     private var histories: Results<History> {
         get {
             let realm = Realm()
@@ -186,32 +185,4 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         }
     }
     
-    // MARK: DZNEmptyDataSetSource
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "time.png")
-    }
-    
-    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
-        return UIColor.grayColor()
-    }
-    
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "履歴は0件です"
-        let font = UIFont(name: FontSet.bold, size: 30)!
-        return NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
-    }
-    
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "最大30件まで登録できます"
-        let font = UIFont(name: FontSet.medium, size: 14)!
-        return NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
-    }
-    
-    func buttonImageForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> UIImage! {
-        return UIImage(named: "reload_gray.png")
-    }
-    
-    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        collectionView?.reloadData()
-    }
 }

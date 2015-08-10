@@ -87,6 +87,8 @@
 		9A2239C81B76F4B200364A6A /* FavoriteHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239C61B76F4B200364A6A /* FavoriteHeaderView.swift */; };
 		9A2239C91B76F4B200364A6A /* FavoriteHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */; };
 		9A6334121B78C69900946862 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */; };
+		9A6334141B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */; };
+		9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */; };
 		9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */; };
 		9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */; };
 		9AE212EF1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */; };
@@ -193,6 +195,8 @@
 		9A2239C71B76F4B200364A6A /* FavoriteHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteHeaderView.xib; sourceTree = "<group>"; };
 		9A2B00EB1B781F0400F9484B /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage.build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
+		9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
 		9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+BaseCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+VideoPlayManagerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+ActivityIndicatorView.swift"; sourceTree = "<group>"; };
@@ -473,6 +477,7 @@
 			children = (
 				9A2239431B76C5E500364A6A /* FavoriteCollectionViewController.swift */,
 				9A2239441B76C5E500364A6A /* FavoriteCollectionViewController.xib */,
+				9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 			children = (
 				9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */,
 				9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */,
+				9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				9A22391E1B76C51700364A6A /* ReviewView.swift in Sources */,
 				9A2239961B76C7AB00364A6A /* HousoushitsuObjectHandler.swift in Sources */,
 				9A22396A1B76C6E100364A6A /* BackNumberTableViewCell.swift in Sources */,
+				9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */,
 				9A2239841B76C71900364A6A /* KikakuFooterView.swift in Sources */,
 				9A2238CD1B76C02500364A6A /* AppDelegate.swift in Sources */,
 				9A2239C81B76F4B200364A6A /* FavoriteHeaderView.swift in Sources */,
@@ -893,6 +900,7 @@
 				9A2239B51B76D6FD00364A6A /* CAPSPageMenu.swift in Sources */,
 				9A2239AD1B76C80000364A6A /* History.swift in Sources */,
 				9A22394A1B76C5F300364A6A /* HistoryCollectionViewController.swift in Sources */,
+				9A6334141B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift in Sources */,
 				9A2239B41B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				9A2239801B76C71900364A6A /* KikakuCollectionViewCell.swift in Sources */,
 				9A2239301B76C57E00364A6A /* VideoCollectionViewController.swift in Sources */,
