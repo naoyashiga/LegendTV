@@ -90,6 +90,7 @@
 		9A6334141B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */; };
 		9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */; };
 		9A6334181B796B4C00946862 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334171B796B4C00946862 /* Alamofire.framework */; };
+		9A63341A1B79A90400946862 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334191B79A90400946862 /* SwiftyJSON.framework */; };
 		9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */; };
 		9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */; };
 		9AE212EF1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */; };
@@ -199,6 +200,7 @@
 		9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
 		9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
 		9A6334171B796B4C00946862 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9A6334191B79A90400946862 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+BaseCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+VideoPlayManagerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+ActivityIndicatorView.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				E6878375DF456ABCE3734545 /* Pods.framework in Frameworks */,
 				9A6334121B78C69900946862 /* DZNEmptyDataSet.framework in Frameworks */,
 				9A6334181B796B4C00946862 /* Alamofire.framework in Frameworks */,
+				9A63341A1B79A90400946862 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +245,7 @@
 		7F3F02CCB20AAA17D87665F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A6334191B79A90400946862 /* SwiftyJSON.framework */,
 				9A6334171B796B4C00946862 /* Alamofire.framework */,
 				9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */,
 				9A2B00EB1B781F0400F9484B /* DZNEmptyDataSet.framework */,
@@ -821,6 +825,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);

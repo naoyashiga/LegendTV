@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>XCDYouTubeKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,21 +37,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26E1DCA29F4FEBDAC2055E676F324549</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>31672D04B0E9F749DCC3B389214A9F7D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7A0A3D4D65F8F2899D4ACBC0C4E7F5D6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8530DEDBC37DD75056E54EB064F88745</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B1284DC56EA796C97767050FE8A42F9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B7F9A7533DED8BDD8AB61ECFC648AC92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<key>BC1B8CBD47C082AB3BC90C3DF2E3E6E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1C9724820977B45BB40E40844F000A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

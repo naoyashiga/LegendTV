@@ -56,7 +56,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'
   install_framework 'Pods/SDWebImage.framework'
-  install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/XCDYouTubeKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -64,6 +63,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Realm.framework'
   install_framework 'Pods/RealmSwift.framework'
   install_framework 'Pods/SDWebImage.framework'
-  install_framework 'Pods/SwiftyJSON.framework'
   install_framework 'Pods/XCDYouTubeKit.framework'
 fi

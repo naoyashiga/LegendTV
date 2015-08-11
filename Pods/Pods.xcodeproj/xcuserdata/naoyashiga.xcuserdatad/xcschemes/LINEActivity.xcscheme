@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BB5BBDAA7E4BE90B57A03142"
+               BlueprintIdentifier = "B6318F72452F9B7F80603555"
                BuildableName = "LINEActivity.framework"
                BlueprintName = "LINEActivity"
                ReferencedContainer = "container:Pods.xcodeproj">
