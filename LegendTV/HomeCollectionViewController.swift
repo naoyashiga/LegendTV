@@ -30,6 +30,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     private var headerIndex = 0
     
     var kikakuData: NSDictionary = NSDictionary()
+    var kikakuJSON: JSON = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,13 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     func setKikakuData() {
         let path:NSString = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "plist")!
         kikakuData = NSDictionary(contentsOfFile: path as String)!
+        
+        if let path = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                kikakuJSON = json
+            }
+        }
     }
     
     func getSeriesName(index: Int) -> String {
@@ -93,14 +101,26 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     func getQueries(index: Int) -> NSArray {
         let index_name: String = "item" + String(index)
         let item: AnyObject = kikakuData[index_name]!
+        
+        let q = kikakuJSON["items"][index]["queries"]
+//        println(q)
+//        println(kikakuJSON["item"]["queries"])
+//        println(kikakuJSON["item"].array)
         return item["queries"] as! [String]
     }
     
     func setSearchText() -> String {
         //0~kikakuData.countまでの乱数
+        let itemCount = kikakuJSON["items"].count
+        println(itemCount)
         let randomKikakuIndex = Int(arc4random_uniform(UInt32(kikakuData.count - 1)))
+        let randomKikakuIndex2 = Int(arc4random_uniform(UInt32(itemCount - 1)))
+        println(randomKikakuIndex2)
         
         //Kikakuに基づくクエリを取得
+        let q = kikakuJSON["items"][randomKikakuIndex2]["queries"]
+        
+        
         let queryArray = getQueries(randomKikakuIndex)
         let queryCount = queryArray.count - 1
         var queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
