@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 struct homeReuseId {
     static let cell = "VideoListCollectionViewCell"
@@ -131,15 +133,30 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         let searchWord = setSearchText()
         let requestURL = Config.REQUEST_SEARCH_URL + "q=\(searchWord)&part=snippet&maxResults=\(sectionStoriesCount)"
         
-        HousoushitsuObjectHandler.getStories(requestURL, callback: {(stories) -> Void in
-            self.sectionIndex++
-            self.sections.append(stories)
-            
-            if self.sectionIndex < self.sectionCount {
-                self.setStories()
+        Alamofire.request(.GET, requestURL).responseSwiftyJSON({ (_, _, json, error) in
+            if (error != nil) {
+                println("Error with registration: \(error?.localizedDescription)")
             } else {
-                self.collectionView?.reloadData()
-                self.activityIndicator.stopAnimating()
+                
+                var stories = [Story]()
+                
+                if let items = json["items"].array {
+                    for item in items {
+                        let duration = Story(json: item)
+                        stories.append(duration)
+                    }
+                    
+                    self.sectionIndex++
+                    self.sections.append(stories)
+                    
+                    if self.sectionIndex < self.sectionCount {
+                        self.setStories()
+                    } else {
+                        self.collectionView?.reloadData()
+                        self.activityIndicator.stopAnimating()
+                    }
+                    
+                }
             }
         })
     }

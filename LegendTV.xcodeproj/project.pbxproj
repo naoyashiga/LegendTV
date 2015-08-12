@@ -65,8 +65,6 @@
 		9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239881B76C74000364A6A /* PlayControlBar.xib */; };
 		9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */; };
 		9A22398F1B76C75500364A6A /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */; };
-		9A2239961B76C7AB00364A6A /* HousoushitsuObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */; };
-		9A2239971B76C7AB00364A6A /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239941B76C7AB00364A6A /* HttpService.swift */; };
 		9A22399D1B76C7BE00364A6A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239991B76C7BE00364A6A /* Story.swift */; };
 		9A22399E1B76C7BE00364A6A /* ContentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22399A1B76C7BE00364A6A /* ContentDetails.swift */; };
 		9A22399F1B76C7BE00364A6A /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22399B1B76C7BE00364A6A /* Statistics.swift */; };
@@ -172,8 +170,6 @@
 		9A2239881B76C74000364A6A /* PlayControlBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayControlBar.xib; sourceTree = "<group>"; };
 		9A22398C1B76C75500364A6A /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A22398D1B76C75500364A6A /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
-		9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousoushitsuObjectHandler.swift; sourceTree = "<group>"; };
-		9A2239941B76C7AB00364A6A /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		9A2239991B76C7BE00364A6A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		9A22399A1B76C7BE00364A6A /* ContentDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetails.swift; sourceTree = "<group>"; };
 		9A22399B1B76C7BE00364A6A /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -605,18 +601,8 @@
 				9A2239A81B76C7D700364A6A /* Favorite */,
 				9A2239A11B76C7C200364A6A /* Kikaku */,
 				9A2239981B76C7AF00364A6A /* Video */,
-				9A2239911B76C7A000364A6A /* Connection */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		9A2239911B76C7A000364A6A /* Connection */ = {
-			isa = PBXGroup;
-			children = (
-				9A2239931B76C7AB00364A6A /* HousoushitsuObjectHandler.swift */,
-				9A2239941B76C7AB00364A6A /* HttpService.swift */,
-			);
-			name = Connection;
 			sourceTree = "<group>";
 		};
 		9A2239981B76C7AF00364A6A /* Video */ = {
@@ -872,7 +858,6 @@
 			files = (
 				9A22395E1B76C6AA00364A6A /* HistoryHeaderView.swift in Sources */,
 				9A22391E1B76C51700364A6A /* ReviewView.swift in Sources */,
-				9A2239961B76C7AB00364A6A /* HousoushitsuObjectHandler.swift in Sources */,
 				9A22396A1B76C6E100364A6A /* BackNumberTableViewCell.swift in Sources */,
 				9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */,
 				9A2239841B76C71900364A6A /* KikakuFooterView.swift in Sources */,
@@ -927,7 +912,6 @@
 				9A2239231B76C55500364A6A /* BaseTableViewController.swift in Sources */,
 				9A22399D1B76C7BE00364A6A /* Story.swift in Sources */,
 				9A22391C1B76C51700364A6A /* ReviewModalViewController.swift in Sources */,
-				9A2239971B76C7AB00364A6A /* HttpService.swift in Sources */,
 				9A2239A51B76C7CE00364A6A /* Kikaku.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
