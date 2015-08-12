@@ -20,29 +20,19 @@ class VideoInfo {
                 println("Error with registration: \(error?.localizedDescription)")
             } else {
                 println("Success!")
-            }
-        })
-        
-        Alamofire.request(.GET, contentsDetailURL)
-            .responseJSON{ _, _, json, _ in
-                println(json)
+                
                 var contentDetails = [ContentDetails]()
                 
-//                let json = JSON(data: data)
-                
-//                if let items = json["items"].array {
-//                    println(items)
-//                }
-                
-//                for item in JSON {
-//                    let duration = ContentDetails(json: item)
-//                    contentDetails.append(duration)
-//                }
-        }
-        
-        HousoushitsuObjectHandler.getContentDetails(contentsDetailURL){ contentDetails in
-            callback(contentDetails)
-        }
+                if let items = json["items"].array {
+                    for item in items {
+                        let duration = ContentDetails(json: item)
+                        contentDetails.append(duration)
+                    }
+                    
+                    callback(contentDetails)
+                }
+            }
+        })
     }
     
     class func getStatistics(videoID: String, callback:(([Statistics]) -> Void)) {
