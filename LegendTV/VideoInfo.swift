@@ -19,7 +19,6 @@ class VideoInfo {
             if (error != nil) {
                 println("Error with registration: \(error?.localizedDescription)")
             } else {
-                println("Success!")
                 
                 var contentDetails = [ContentDetails]()
                 
@@ -38,9 +37,23 @@ class VideoInfo {
     class func getStatistics(videoID: String, callback:(([Statistics]) -> Void)) {
         let statisticsURL = Config.REQUEST_STATISTICS_URL + "id=\(videoID)"
         
-        HousoushitsuObjectHandler.getStatistics(statisticsURL){ statistics in
-            callback(statistics)
-        }
+        Alamofire.request(.GET, statisticsURL).responseSwiftyJSON({ (_, _, json, error) in
+            if (error != nil) {
+                println("Error with registration: \(error?.localizedDescription)")
+            } else {
+                
+                var statistics = [Statistics]()
+                
+                if let items = json["items"].array {
+                    for item in items {
+                        let duration = Statistics(json: item)
+                        statistics.append(duration)
+                    }
+                    
+                    callback(statistics)
+                }
+            }
+        })
     }
     
     class func getDurationStr(nonFormatStr: String) -> String {
