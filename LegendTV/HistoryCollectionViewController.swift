@@ -66,9 +66,17 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         //TODO: 期間によって区分けする
 //        let now = NSDate().timeIntervalSince1970
 //        let DAY_IN_SECONDS = 60 * 60 * 24
-//        let threeDaysAgo = now - Double(DAY_IN_SECONDS * 3)
+//        let hours = 60 * 60
 //        
-//        let predicate = NSPredicate(format: "createdAt < %@ ","threeDaysAgo")
+//        let yesterday: Double = now - Double(DAY_IN_SECONDS)
+//        let threeDaysAgo: Double = now - Double(DAY_IN_SECONDS * 3)
+//        let threeHoursAgo: Double = now - Double(hours * 3)
+//        
+//        println(now)
+//        println(threeHoursAgo)
+//        
+////        let predicate = NSPredicate(format: "createdAt < %d", threeDaysAgo)
+//        let predicate = NSPredicate(format: "createdAt > %d", yesterday)
 //        let threeDaysAgoHistories = histories.filter(predicate)
 //        
 //        println(threeDaysAgoHistories.count)

@@ -107,13 +107,13 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         
         var randomQuery = queryArray[queryIndex] as! String
         
-        println(randomQuery)
+//        println(randomQuery)
         
         while randomQuery == "準備中" {
-            println("ng")
+//            println("ng")
             queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
             randomQuery = queryArray[queryIndex] as! String
-            println(randomQuery)
+//            println(randomQuery)
         }
         
         let encodingRandomQuery = randomQuery.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
@@ -193,7 +193,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(homeReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
     
         if sections.count != sectionCount {
-            println("not fill sectionCount")
+//            println("not fill sectionCount")
             return cell
         }
         
