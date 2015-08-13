@@ -79,16 +79,30 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     
     func setSearchText() -> String {
         let itemCount = kikakuJSON["items"].count
-        let item = kikakuJSON["items"][Int.random(0...itemCount)]
+        let item = kikakuJSON["items"][Int.random(0...(itemCount - 1))]
         let kikakuList = item["kikakuList"]
-        var randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
+        var randomKikaku = kikakuList[Int.random(0...(kikakuList.count - 1))]
         
-        while randomKikaku["query"].isEmpty {
-            randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
-            println("empty")
+        if let randomKikakuNotOptional = randomKikaku["query"].string {
+            if randomKikakuNotOptional.isEmpty {
+                randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
+                println("empty")
+                println(randomKikaku["query"].string)
+                
+                if let second = randomKikaku["query"].string {
+                    if second.isEmpty {
+                        //2回目も空
+                        randomKikaku["query"] = randomKikaku["name"]
+                        println("queryをnameと同じにする")
+                    }
+                }
+            }
+        } else {
+            
+            println("query optional")
+            println("queryをnameと同じにする")
+            randomKikaku["query"] = randomKikaku["name"]
         }
-        
-        println(randomKikaku)
         
         if let query = randomKikaku["query"].string {
             
@@ -103,7 +117,6 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
                 kikakuNames.append(kikakuName)
             }
             
-            println(encodingRandomQuery)
             
             return encodingRandomQuery
             

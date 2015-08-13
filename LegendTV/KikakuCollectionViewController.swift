@@ -130,19 +130,10 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kikakuReuseId.cell, forIndexPath: indexPath) as! KikakuCollectionViewCell
         
         let item = kikakuJSON["items"][indexPath.section]
-        let kikakuList = item["kikakuList"].array
         
         let vc = SecondBackNumberTableViewController()
-        
         vc.kikakuList = item["kikakuList"]
-        
-//        vc.queries = getQueries(indexPath.section) as! [(String)]
-        vc.navigationItem.title = item["seriesName"].string
-        
-//        let vc = SecondBackNumberTableViewController()
-//        vc.kikakuList = getKikakuList(indexPath.section) as! [(String)]
-//        vc.queries = getQueries(indexPath.section) as! [(String)]
-//        vc.navigationItem.title = getSeriesName(indexPath.section)
+        vc.navigationItem.title = item["seriesName"].stringValue
         
         kikakuDelegate?.transitionViewController(ToVC: vc)
     }

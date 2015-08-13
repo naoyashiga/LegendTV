@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LegendTV/HomeCollectionViewController.swift"
-            timestampString = "461154231.832029"
+            timestampString = "461159661.697561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "setStories()"
             landmarkType = "5">
          </BreakpointContent>

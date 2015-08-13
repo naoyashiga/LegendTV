@@ -11,9 +11,7 @@ import SwiftyJSON
 
 class SecondBackNumberTableViewController: BaseTableViewController {
     private let reuseIdentifier = "BackNumberTableViewCell"
-//    var kikakuList = [String]()
     var kikakuList: JSON = ""
-//    var queries = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +51,7 @@ class SecondBackNumberTableViewController: BaseTableViewController {
         
         if indexPath.row < kikakuList.count {
             
-            if kikakuList[indexPath.row]["query"].isEmpty {
+            if kikakuList[indexPath.row]["query"].stringValue.isEmpty {
                 cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
                 cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]["name"].stringValue
             } else {
@@ -66,20 +64,6 @@ class SecondBackNumberTableViewController: BaseTableViewController {
             println("indexPath.row index error")
         }
         
-//        if indexPath.row < queries.count {
-//            
-//            if queries[indexPath.row] == "準備中" {
-//                cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
-//                cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]
-//            } else {
-//                cell.backNumberLabel.textColor = UIColor.kikakuTitleColor()
-//                cell.backNumberLabel.text = kikakuList[indexPath.row]
-//            }
-//            
-//        } else {
-//            println("indexPath.row index error")
-//        }
-        
         cell.layoutIfNeeded()
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
@@ -88,7 +72,7 @@ class SecondBackNumberTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if kikakuList[indexPath.row]["query"].isEmpty {
+        if kikakuList[indexPath.row]["query"].stringValue.isEmpty {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             return
         }
