@@ -90,6 +90,7 @@
 		9A6334181B796B4C00946862 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334171B796B4C00946862 /* Alamofire.framework */; };
 		9A63341A1B79A90400946862 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334191B79A90400946862 /* SwiftyJSON.framework */; };
 		9A85BF061B7C0283002B7AF9 /* Kikaku.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A85BF051B7C0283002B7AF9 /* Kikaku.json */; };
+		9A85BF091B7C0E93002B7AF9 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A85BF081B7C0E93002B7AF9 /* Random.swift */; };
 		9AE212EB1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */; };
 		9AE212ED1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */; };
 		9AE212EF1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */; };
@@ -199,6 +200,7 @@
 		9A6334171B796B4C00946862 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9A6334191B79A90400946862 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9A85BF051B7C0283002B7AF9 /* Kikaku.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kikaku.json; sourceTree = SOURCE_ROOT; };
+		9A85BF081B7C0E93002B7AF9 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		9AE212EA1B77673E00C89B6A /* TopViewController+BaseCollectionViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+BaseCollectionViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EC1B77680500C89B6A /* TopViewController+VideoPlayManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+VideoPlayManagerDelegate.swift"; sourceTree = "<group>"; };
 		9AE212EE1B7769E000C89B6A /* TopViewController+ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopViewController+ActivityIndicatorView.swift"; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 		9A85BF071B7C0E4A002B7AF9 /* Random */ = {
 			isa = PBXGroup;
 			children = (
+				9A85BF081B7C0E93002B7AF9 /* Random.swift */,
 			);
 			name = Random;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				9A2239231B76C55500364A6A /* BaseTableViewController.swift in Sources */,
 				9A22399D1B76C7BE00364A6A /* Story.swift in Sources */,
 				9A22391C1B76C51700364A6A /* ReviewModalViewController.swift in Sources */,
+				9A85BF091B7C0E93002B7AF9 /* Random.swift in Sources */,
 				9A2239A51B76C7CE00364A6A /* Kikaku.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

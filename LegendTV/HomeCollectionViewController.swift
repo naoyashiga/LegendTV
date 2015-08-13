@@ -35,7 +35,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setKikakuData()
+        setKikakuJSON()
         setStories()
         
         collectionView?.applyHeaderNib(headerNibName: homeReuseId.headerView)
@@ -63,15 +63,12 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         sectionIndex = 0
         
         println(sections.count)
-        setKikakuData()
+        setKikakuJSON()
         setStories()
         callback()
     }
     
-    func setKikakuData() {
-        let path:NSString = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "plist")!
-        kikakuData = NSDictionary(contentsOfFile: path as String)!
-        
+    func setKikakuJSON() {
         if let path = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "json") {
             if let data = NSData(contentsOfFile: path) {
                 let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
@@ -80,73 +77,40 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         }
     }
     
-    func getSeriesName(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["seriesName"] as! String
-    }
-    
-    func getKikakuDescription(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["desc"] as! String
-    }
-    
-    func getKikakuList(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["kikakuList"] as! [String]
-    }
-    
-    func getQueries(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        
-        let q = kikakuJSON["items"][index]["queries"]
-//        println(q)
-//        println(kikakuJSON["item"]["queries"])
-//        println(kikakuJSON["item"].array)
-        return item["queries"] as! [String]
-    }
-    
     func setSearchText() -> String {
-        //0~kikakuData.countまでの乱数
         let itemCount = kikakuJSON["items"].count
-        println(itemCount)
-        let randomKikakuIndex = Int(arc4random_uniform(UInt32(kikakuData.count - 1)))
-        let randomKikakuIndex2 = Int(arc4random_uniform(UInt32(itemCount - 1)))
-        println(randomKikakuIndex2)
+        let item = kikakuJSON["items"][Int.random(0...itemCount)]
+        let kikakuList = item["kikakuList"]
+        var randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
         
-        //Kikakuに基づくクエリを取得
-        let q = kikakuJSON["items"][randomKikakuIndex2]["queries"]
-        
-        
-        let queryArray = getQueries(randomKikakuIndex)
-        let queryCount = queryArray.count - 1
-        var queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
-        
-        var randomQuery = queryArray[queryIndex] as! String
-        
-//        println(randomQuery)
-        
-        while randomQuery == "準備中" {
-//            println("ng")
-            queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
-            randomQuery = queryArray[queryIndex] as! String
-//            println(randomQuery)
+        while randomKikaku["query"].isEmpty {
+            randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
+            println("empty")
         }
         
-        let encodingRandomQuery = randomQuery.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        println(randomKikaku)
         
-        let kikakuList = getKikakuList(randomKikakuIndex)
-        let randomKikaku = kikakuList[queryIndex] as! String
-        let encodingRandomKikaku = randomKikaku.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        queries.append(encodingRandomKikaku)
-        seriesNames.append(getSeriesName(randomKikakuIndex))
-        kikakuNames.append(randomKikaku)
-        
-        return encodingRandomQuery
+        if let query = randomKikaku["query"].string {
+            
+            let encodingRandomQuery = query.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            queries.append(encodingRandomQuery)
+            
+            if let seriesName = item["seriesName"].string {
+                seriesNames.append(seriesName)
+            }
+            
+            if let kikakuName = randomKikaku["name"].string {
+                kikakuNames.append(kikakuName)
+            }
+            
+            println(encodingRandomQuery)
+            
+            return encodingRandomQuery
+            
+        } else {
+            println("query error")
+            return "ガキの使い".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        }
     }
     
     func setStories() {
