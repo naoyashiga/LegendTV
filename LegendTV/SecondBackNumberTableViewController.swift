@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SecondBackNumberTableViewController: BaseTableViewController {
     private let reuseIdentifier = "BackNumberTableViewCell"
-    var kikakuList = [String]()
-    var queries = [String]()
+//    var kikakuList = [String]()
+    var kikakuList: JSON = ""
+//    var queries = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,20 +51,34 @@ class SecondBackNumberTableViewController: BaseTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BackNumberTableViewCell
         
-        if indexPath.row < queries.count {
+        if indexPath.row < kikakuList.count {
             
-            if queries[indexPath.row] == "準備中" {
+            if kikakuList[indexPath.row]["query"].isEmpty {
                 cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
-                cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]
+                cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]["name"].stringValue
             } else {
                 cell.backNumberLabel.textColor = UIColor.kikakuTitleColor()
-                cell.backNumberLabel.text = kikakuList[indexPath.row]
+                cell.backNumberLabel.text = kikakuList[indexPath.row]["name"].stringValue
+                
             }
             
         } else {
             println("indexPath.row index error")
         }
         
+//        if indexPath.row < queries.count {
+//            
+//            if queries[indexPath.row] == "準備中" {
+//                cell.backNumberLabel.textColor = UIColor.kikakuTitleInPreparationColor()
+//                cell.backNumberLabel.text = "[準備中]" + kikakuList[indexPath.row]
+//            } else {
+//                cell.backNumberLabel.textColor = UIColor.kikakuTitleColor()
+//                cell.backNumberLabel.text = kikakuList[indexPath.row]
+//            }
+//            
+//        } else {
+//            println("indexPath.row index error")
+//        }
         
         cell.layoutIfNeeded()
         cell.separatorInset = UIEdgeInsetsZero
@@ -72,7 +88,7 @@ class SecondBackNumberTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if queries[indexPath.row] == "準備中" {
+        if kikakuList[indexPath.row]["query"].isEmpty {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             return
         }
@@ -84,8 +100,8 @@ class SecondBackNumberTableViewController: BaseTableViewController {
         collectionViewLayout.minimumInteritemSpacing = 1
         
         let vc = VideoCollectionViewController(collectionViewLayout: collectionViewLayout)
-        vc.searchText = queries[indexPath.row]
-        vc.navigationItem.title = kikakuList[indexPath.row]
+        vc.searchText = kikakuList[indexPath.row]["query"].stringValue
+        vc.navigationItem.title = kikakuList[indexPath.row]["name"].stringValue
         navigationController?.pushViewController(vc, animated: true)
     }
 }
