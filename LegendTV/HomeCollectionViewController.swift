@@ -87,20 +87,19 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
             if randomKikakuNotOptional.isEmpty {
                 randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
                 println("empty")
-                println(randomKikaku["query"].string)
                 
                 if let second = randomKikaku["query"].string {
                     if second.isEmpty {
                         //2回目も空
                         randomKikaku["query"] = randomKikaku["name"]
-                        println("queryをnameと同じにする")
+//                        println("queryをnameと同じにする")
                     }
                 }
             }
         } else {
             
-            println("query optional")
-            println("queryをnameと同じにする")
+//            println("query optional")
+//            println("queryをnameと同じにする")
             randomKikaku["query"] = randomKikaku["name"]
         }
         
@@ -116,7 +115,6 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
             if let kikakuName = randomKikaku["name"].string {
                 kikakuNames.append(kikakuName)
             }
-            
             
             return encodingRandomQuery
             
