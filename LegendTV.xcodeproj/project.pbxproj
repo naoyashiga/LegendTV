@@ -70,7 +70,6 @@
 		9A22399F1B76C7BE00364A6A /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22399B1B76C7BE00364A6A /* Statistics.swift */; };
 		9A2239A01B76C7BE00364A6A /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22399C1B76C7BE00364A6A /* VideoInfo.swift */; };
 		9A2239A51B76C7CE00364A6A /* Kikaku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239A21B76C7CE00364A6A /* Kikaku.swift */; };
-		9A2239A71B76C7CE00364A6A /* Kikaku.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A2239A41B76C7CE00364A6A /* Kikaku.plist */; };
 		9A2239AA1B76C7E900364A6A /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239A91B76C7E900364A6A /* Favorite.swift */; };
 		9A2239AD1B76C80000364A6A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239AC1B76C80000364A6A /* History.swift */; };
 		9A2239B41B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2239B21B76D6FD00364A6A /* MPMoviePlayerController+BackgroundPlayback.m */; };
@@ -177,7 +176,6 @@
 		9A22399B1B76C7BE00364A6A /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		9A22399C1B76C7BE00364A6A /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		9A2239A21B76C7CE00364A6A /* Kikaku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kikaku.swift; sourceTree = "<group>"; };
-		9A2239A41B76C7CE00364A6A /* Kikaku.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kikaku.plist; sourceTree = "<group>"; };
 		9A2239A91B76C7E900364A6A /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		9A2239AC1B76C80000364A6A /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		9A2239AE1B76D4AD00364A6A /* LegendTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LegendTV-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -625,7 +623,6 @@
 			isa = PBXGroup;
 			children = (
 				9A2239A21B76C7CE00364A6A /* Kikaku.swift */,
-				9A2239A41B76C7CE00364A6A /* Kikaku.plist */,
 				9A85BF051B7C0283002B7AF9 /* Kikaku.json */,
 			);
 			name = Kikaku;
@@ -778,7 +775,6 @@
 				9A22395D1B76C6AA00364A6A /* HistoryCollectionViewCell.xib in Resources */,
 				9A2238D71B76C02500364A6A /* LaunchScreen.xib in Resources */,
 				9A2238D41B76C02500364A6A /* Images.xcassets in Resources */,
-				9A2239A71B76C7CE00364A6A /* Kikaku.plist in Resources */,
 				9A2239461B76C5E500364A6A /* FavoriteCollectionViewController.xib in Resources */,
 				9A2239761B76C70000364A6A /* VideoListCollectionViewCell.xib in Resources */,
 				9A2239811B76C71900364A6A /* KikakuCollectionViewCell.xib in Resources */,
