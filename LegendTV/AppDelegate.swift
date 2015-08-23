@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.tabBarItemTintColor()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        ReviewManager.initialSetting()
         
         setSchemaVersion(1, Realm.defaultPath,
             { migration, oldSchemaVersion in

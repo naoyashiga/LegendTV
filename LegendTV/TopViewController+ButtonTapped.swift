@@ -58,6 +58,7 @@ extension TopViewController {
     func shareButtonTapped(sender:UIButton!){
         var sharedText = videoTitle
         let baseURL = "https://www.youtube.com/watch?v="
+        
         var sharedURL = NSURL(string: baseURL + videoID)!
         
         var activityItems = [AnyObject]()

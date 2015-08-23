@@ -24,7 +24,6 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     }
     
     var maxKikakuCount = 30
-    var isReview = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +36,6 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         collectionView?.applyHeaderNib(headerNibName: historyReuseId.headerView)
         collectionView?.applyCellNib(cellNibName: historyReuseId.cell)
         
-        setIsReview()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,19 +44,6 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    func setIsReview(){
-        let ud = NSUserDefaults.standardUserDefaults()
-        if(ud.objectForKey("isReview") == nil){
-            isReview = false
-            ud.setObject(isReview, forKey: "isReview")
-        }else{
-            isReview = ud.boolForKey("isReview")
-        }
-        
-        println("isReview")
-        println(isReview)
     }
     
     // MARK: UICollectionViewDataSource
@@ -85,7 +70,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if isReview {
+        if ReviewManager.isReview {
             //レビュー済み
             if histories.count < maxKikakuCount {
                 return histories.count
@@ -113,7 +98,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             
             headerView.delegate = self
             
-            if isReview {
+            if ReviewManager.isReview {
                 headerView.moreLoadButton.setTitle("", forState: .Normal)
                 
                 if histories.count < maxKikakuCount {
@@ -188,7 +173,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     func didMoreLoadButtonTapped() {
         
-        if !isReview {
+        if !ReviewManager.isReview {
             delegate?.showReview()
         }
     }
