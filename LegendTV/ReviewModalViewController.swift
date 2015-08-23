@@ -26,18 +26,12 @@ class ReviewModalViewController: UIViewController, ReviewViewDelegate {
     
     func openAppStore(urlStr:String){
         let url = NSURL(string:urlStr)
-        let app:UIApplication = UIApplication.sharedApplication()
-        app.openURL(url!)
+        UIApplication.sharedApplication().openURL(url!)
     }
     
     func transitionToReviewPage() {
-        let APP_ID = "1025411227"
-        
-        let reviewURL = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" + APP_ID
-        
         ReviewManager.updateReviewStatus()
         
-        openAppStore(reviewURL)
+        openAppStore(AppConstraints.reviewURLString)
     }
-    
 }
