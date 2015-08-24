@@ -15,8 +15,6 @@ protocol BaseCollectionViewControllerDelegate {
     func applyForControlBarKikakuData<T: Kikaku>(#kikaku: T)
     func saveHistory(#story: Story, cell: VideoListCollectionViewCell)
     func saveHistoryFromFavoriteOrHistory(#kikaku: Kikaku, cell: VideoListCollectionViewCell)
-    
-    func showReview()
 }
 
 struct cellSize {

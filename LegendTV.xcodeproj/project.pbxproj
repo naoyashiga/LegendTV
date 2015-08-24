@@ -95,6 +95,7 @@
 		9A2D38F31B8A973700D32D74 /* SettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2D38F11B8A973700D32D74 /* SettingHeaderView.xib */; };
 		9A2D38F61B8B365300D32D74 /* BackgroundPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38F51B8B365300D32D74 /* BackgroundPresentationController.swift */; };
 		9A2D38F81B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38F71B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift */; };
+		9A2D38FB1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38FA1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift */; };
 		9A6334121B78C69900946862 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */; };
 		9A6334141B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */; };
 		9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */; };
@@ -216,6 +217,7 @@
 		9A2D38F11B8A973700D32D74 /* SettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingHeaderView.xib; sourceTree = "<group>"; };
 		9A2D38F51B8B365300D32D74 /* BackgroundPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPresentationController.swift; sourceTree = "<group>"; };
 		9A2D38F71B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		9A2D38FA1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
 		9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
@@ -520,9 +522,9 @@
 		9A2239471B76C5E800364A6A /* History */ = {
 			isa = PBXGroup;
 			children = (
+				9A2D38F91B8B39D600D32D74 /* Delegate */,
 				9A2239481B76C5F300364A6A /* HistoryCollectionViewController.swift */,
 				9A2239491B76C5F300364A6A /* HistoryCollectionViewController.xib */,
-				9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -745,6 +747,15 @@
 				9A2D38F51B8B365300D32D74 /* BackgroundPresentationController.swift */,
 			);
 			name = PresentationController;
+			sourceTree = "<group>";
+		};
+		9A2D38F91B8B39D600D32D74 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */,
+				9A2D38FA1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		9A85BF071B7C0E4A002B7AF9 /* Random */ = {
@@ -989,6 +1000,7 @@
 				9A2239411B76C5D500364A6A /* TopViewController+Settings.swift in Sources */,
 				9A2239061B76C3B900364A6A /* FontSet.swift in Sources */,
 				9A2239281B76C56600364A6A /* HomeCollectionViewController.swift in Sources */,
+				9A2D38FB1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */,
 				9A2239BD1B76E50600364A6A /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				9A2D38F61B8B365300D32D74 /* BackgroundPresentationController.swift in Sources */,
 				9A2239681B76C6E100364A6A /* SecondBackNumberTableViewCell.swift in Sources */,

@@ -78,11 +78,4 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         
         videoDisplayAnimation()
     }
-    
-    func showReview() {
-        let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
-        reviewVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        
-        navigationController?.presentViewController(reviewVC, animated: true, completion: nil)
-    }
 }

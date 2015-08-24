@@ -174,7 +174,10 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     func didMoreLoadButtonTapped() {
         
         if !ReviewManager.isReview {
-            delegate?.showReview()
+            let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
+            reviewVC.modalPresentationStyle = .Custom
+            reviewVC.transitioningDelegate = self
+            view.window?.rootViewController?.presentViewController(reviewVC, animated: true, completion: nil)
         }
     }
     

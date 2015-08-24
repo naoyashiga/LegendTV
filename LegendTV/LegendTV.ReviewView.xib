@@ -41,7 +41,6 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Sew-sV-gCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AQK-Rg-tFx"/>
                 <constraint firstItem="kHr-44-0l5" firstAttribute="top" secondItem="Sew-sV-gCj" secondAttribute="bottom" constant="8" id="IEU-y5-GjH"/>
