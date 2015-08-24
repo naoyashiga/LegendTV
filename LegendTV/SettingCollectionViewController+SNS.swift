@@ -23,10 +23,10 @@ extension SettingCollectionViewController {
     }
     
     func transitionToReviewPage() {
-//        let reviewVC = ReviewViewController(nibName: "ReviewViewController", bundle: nil)
-//        reviewVC.modalPresentationStyle = .Custom
-//        reviewVC.transitioningDelegate = self
-//        view.window?.rootViewController?.presentViewController(reviewVC, animated: true, completion: nil)
+        let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
+        reviewVC.modalPresentationStyle = .Custom
+        reviewVC.transitioningDelegate = self
+        view.window?.rootViewController?.presentViewController(reviewVC, animated: true, completion: nil)
     }
     
     func postToTwitter(){
