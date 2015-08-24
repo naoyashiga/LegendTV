@@ -17,6 +17,7 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
         static let kikakuVC = "KikakuCollectionViewController"
         static let favVC = "FavoriteCollectionViewController"
         static let historyVC = "HistoryCollectionViewController"
+        static let settingVC = "SettingCollectionViewController"
     }
     
     override func viewDidLoad() {
@@ -26,12 +27,14 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
         let kikakuVC = KikakuCollectionViewController(nibName: NibNameSet.kikakuVC, bundle: nil)
         let favVC = FavoriteCollectionViewController(nibName: NibNameSet.favVC, bundle: nil)
         let historyVC = HistoryCollectionViewController(nibName: NibNameSet.historyVC, bundle: nil)
+        let settingVC = SettingCollectionViewController(nibName: NibNameSet.settingVC, bundle: nil)
         
         
         homeVC.title = "ピックアップ"
         kikakuVC.title = "企画"
         favVC.title = "お気に入り"
         historyVC.title = "履歴"
+        settingVC.title = "その他"
         
         kikakuVC.kikakuDelegate = self
         
@@ -39,6 +42,7 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
         controllerArray.append(kikakuVC)
         controllerArray.append(favVC)
         controllerArray.append(historyVC)
+        controllerArray.append(settingVC)
         
         let parameters: [CAPSPageMenuOption] = [
             .ScrollMenuBackgroundColor(UIColor.scrollMenuBackgroundColor()),
