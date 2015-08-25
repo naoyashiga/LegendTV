@@ -96,6 +96,8 @@
 		9A2D38F61B8B365300D32D74 /* BackgroundPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38F51B8B365300D32D74 /* BackgroundPresentationController.swift */; };
 		9A2D38F81B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38F71B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift */; };
 		9A2D38FB1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38FA1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift */; };
+		9A2D38FE1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D38FC1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.swift */; };
+		9A2D38FF1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2D38FD1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.xib */; };
 		9A6334121B78C69900946862 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */; };
 		9A6334141B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */; };
 		9A6334161B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */; };
@@ -218,6 +220,8 @@
 		9A2D38F51B8B365300D32D74 /* BackgroundPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPresentationController.swift; sourceTree = "<group>"; };
 		9A2D38F71B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		9A2D38FA1B8B3A1E00D32D74 /* HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		9A2D38FC1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequireReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A2D38FD1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequireReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A6334111B78C69900946862 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		9A6334131B78D52F00946862 /* HistoryCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
 		9A6334151B78D5A300946862 /* FavoriteCollectionViewController+DZNEmptyDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteCollectionViewController+DZNEmptyDataSet.swift"; sourceTree = "<group>"; };
@@ -559,6 +563,8 @@
 				9A2239591B76C6AA00364A6A /* HistoryCollectionViewCell.xib */,
 				9A22395A1B76C6AA00364A6A /* HistoryHeaderView.swift */,
 				9A22395B1B76C6AA00364A6A /* HistoryHeaderView.xib */,
+				9A2D38FC1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.swift */,
+				9A2D38FD1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.xib */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -869,6 +875,7 @@
 				9A2239C31B76E70300364A6A /* axisstd-medium.otf in Resources */,
 				9A2239831B76C71900364A6A /* KikakuHeaderView.xib in Resources */,
 				9A22395F1B76C6AA00364A6A /* HistoryHeaderView.xib in Resources */,
+				9A2D38FF1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.xib in Resources */,
 				9A22398A1B76C74000364A6A /* PlayControlBar.xib in Resources */,
 				9A22391D1B76C51700364A6A /* ReviewModalViewController.xib in Resources */,
 				9A2D38F31B8A973700D32D74 /* SettingHeaderView.xib in Resources */,
@@ -992,6 +999,7 @@
 				9A2239621B76C6BE00364A6A /* BaseTableViewCell.swift in Sources */,
 				9A2239241B76C55500364A6A /* BaseCollectionViewController.swift in Sources */,
 				9A2239771B76C70000364A6A /* HomeHeaderView.swift in Sources */,
+				9A2D38FE1B8B3D5E00D32D74 /* RequireReviewCollectionViewCell.swift in Sources */,
 				9A22395C1B76C6AA00364A6A /* HistoryCollectionViewCell.swift in Sources */,
 				9A2D38F81B8B374900D32D74 /* SettingCollectionViewController+UIViewControllerTransitioningDelegate.swift in Sources */,
 				9A22398E1B76C75500364A6A /* FavoriteCollectionViewCell.swift in Sources */,

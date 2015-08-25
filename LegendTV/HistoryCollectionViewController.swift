@@ -11,6 +11,7 @@ import RealmSwift
 
 struct historyReuseId {
     static let cell = "VideoListCollectionViewCell"
+    static let reviewCell = "RequireReviewCollectionViewCell"
     static let headerView = "HistoryHeaderView"
     static let footerView = "HistoryFooterView"
 }
@@ -35,6 +36,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         
         collectionView?.applyHeaderNib(headerNibName: historyReuseId.headerView)
         collectionView?.applyCellNib(cellNibName: historyReuseId.cell)
+        collectionView?.applyCellNib(cellNibName: historyReuseId.reviewCell)
         
     }
     
@@ -79,7 +81,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             }
         } else {
             //レビューまだ
-            var maxInitialHistoryCount = 3
+            var maxInitialHistoryCount = 4
             
             if maxInitialHistoryCount > histories.count {
                 //3件未満のとき
@@ -130,6 +132,13 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        if !ReviewManager.isReview && indexPath.row == 3 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.reviewCell, forIndexPath: indexPath) as! RequireReviewCollectionViewCell
+            return cell
+        }
+        
+        //レビュー済み
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
         
@@ -146,15 +155,23 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         return cell
     }
     
+    func getVideoListCollectionViewCell(indexPath: NSIndexPath) {
+        
+    }
+    
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
-        let history = histories[indexPath.row]
-        delegate?.sendKikakuData(kikaku: history)
-        delegate?.applyForControlBarKikakuData(kikaku: history)
-        delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
-        
+        if !ReviewManager.isReview && indexPath.row == 3 {
+            didMoreLoadButtonTapped()
+        } else {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
+            
+            let history = histories[indexPath.row]
+            delegate?.sendKikakuData(kikaku: history)
+            delegate?.applyForControlBarKikakuData(kikaku: history)
+            delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
+        }
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
