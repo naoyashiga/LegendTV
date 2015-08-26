@@ -10,12 +10,15 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="340"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWN-rs-k7Q" userLabel="atode">
-                    <rect key="frame" x="26" y="264" width="249" height="48"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_sentence" translatesAutoresizingMaskIntoConstraints="NO" id="Sew-sV-gCj">
+                    <rect key="frame" x="17" y="0.0" width="266" height="219"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="249" id="8aG-BD-phF"/>
-                        <constraint firstAttribute="height" constant="48" id="gb9-2A-BGc"/>
+                        <constraint firstAttribute="width" constant="266" id="74I-bf-oxU"/>
+                        <constraint firstAttribute="height" constant="219" id="9Ob-x4-46t"/>
                     </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWN-rs-k7Q" userLabel="atode">
+                    <rect key="frame" x="26" y="277" width="249" height="49"/>
                     <state key="normal" image="review_atode">
                         <color key="titleColor" red="1" green="0.65098039220000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,7 +28,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHr-44-0l5" userLabel="review">
-                    <rect key="frame" x="26" y="208" width="249" height="48"/>
+                    <rect key="frame" x="26" y="221" width="249" height="48"/>
                     <state key="normal" image="review_star_five">
                         <color key="titleColor" red="1" green="0.65098039220000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,21 +37,14 @@
                         <action selector="reviewButtonTapped:" destination="-1" eventType="touchUpInside" id="tIA-23-EsT"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_sentence" translatesAutoresizingMaskIntoConstraints="NO" id="Sew-sV-gCj">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="83J-BO-Evt"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="Sew-sV-gCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AQK-Rg-tFx"/>
-                <constraint firstItem="kHr-44-0l5" firstAttribute="top" secondItem="Sew-sV-gCj" secondAttribute="bottom" constant="8" id="IEU-y5-GjH"/>
-                <constraint firstAttribute="centerX" secondItem="kHr-44-0l5" secondAttribute="centerX" id="bRb-nn-w3D"/>
-                <constraint firstItem="jWN-rs-k7Q" firstAttribute="top" secondItem="kHr-44-0l5" secondAttribute="bottom" constant="8" id="eEs-MM-pgx"/>
-                <constraint firstAttribute="centerX" secondItem="jWN-rs-k7Q" secondAttribute="centerX" id="rl2-Zl-cJ4"/>
-                <constraint firstAttribute="trailing" secondItem="Sew-sV-gCj" secondAttribute="trailing" id="sYu-ct-Tki"/>
-                <constraint firstItem="Sew-sV-gCj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xx0-nz-zMy"/>
+                <constraint firstAttribute="centerX" secondItem="kHr-44-0l5" secondAttribute="centerX" id="IdH-a9-QiA"/>
+                <constraint firstAttribute="centerX" secondItem="jWN-rs-k7Q" secondAttribute="centerX" id="J3E-k0-4VO"/>
+                <constraint firstItem="Sew-sV-gCj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Kfn-5i-T1k"/>
+                <constraint firstItem="kHr-44-0l5" firstAttribute="top" secondItem="Sew-sV-gCj" secondAttribute="bottom" constant="2" id="Kom-23-UYi"/>
+                <constraint firstItem="jWN-rs-k7Q" firstAttribute="top" secondItem="kHr-44-0l5" secondAttribute="bottom" constant="8" id="Wyv-w8-2dn"/>
+                <constraint firstAttribute="centerX" secondItem="Sew-sV-gCj" secondAttribute="centerX" id="vZG-t3-7c4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -57,7 +53,7 @@
     </objects>
     <resources>
         <image name="review_atode" width="249" height="49"/>
-        <image name="review_sentence" width="300" height="200"/>
+        <image name="review_sentence" width="266" height="219"/>
         <image name="review_star_five" width="249" height="48"/>
     </resources>
 </document>
