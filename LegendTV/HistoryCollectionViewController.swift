@@ -133,7 +133,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        if !ReviewManager.isReview && indexPath.row == 3 {
+        if !ReviewManager.isReview && indexPath.length != 0 && indexPath.row == indexPath.length + 1 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.reviewCell, forIndexPath: indexPath) as! RequireReviewCollectionViewCell
             return cell
         }
@@ -162,7 +162,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if !ReviewManager.isReview && indexPath.row == 3 {
+        if !ReviewManager.isReview && indexPath.length != 0 && indexPath.row == indexPath.length + 1 {
             didMoreLoadButtonTapped()
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
