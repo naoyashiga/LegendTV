@@ -17,15 +17,9 @@ class BackgroundPresentationController: UIPresentationController {
     }
     
     func setupDimmingView() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "dimmingViewTapped:")
         dimmingView = UIView()
         dimmingView.backgroundColor = UIColor.blackColor()
-        //        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-        //        visualEffectView.frame = dimmingView.bounds
-        //        visualEffectView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
-        //
-        //        dimmingView.addSubview(visualEffectView)
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "dimmingViewTapped:")
         dimmingView.addGestureRecognizer(tapRecognizer)
     }
     
@@ -41,7 +35,7 @@ class BackgroundPresentationController: UIPresentationController {
     }
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
-        var presentedViewFrame = CGRectZero
+        let presentedViewFrame = CGRectZero
         
         var width:CGFloat = containerView.bounds.size.width * 0.85
         var height:CGFloat = containerView.bounds.size.height  * 0.8
