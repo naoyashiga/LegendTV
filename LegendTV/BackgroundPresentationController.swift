@@ -35,7 +35,7 @@ class BackgroundPresentationController: UIPresentationController {
     }
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
-        let presentedViewFrame = CGRectZero
+        var presentedViewFrame = CGRectZero
         
         var width:CGFloat = containerView.bounds.size.width * 0.85
         var height:CGFloat = containerView.bounds.size.height  * 0.8

@@ -234,7 +234,6 @@ class TopViewController: UIViewController {
         let realm = Realm()
         realm
         realm.write {
-//            realm.deleteAll()
             realm.add(kikaku, update: true)
         }
     }
