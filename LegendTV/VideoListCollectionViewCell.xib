@@ -33,7 +33,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="松本人志の放送室 第45回 「松本『携帯の絵文字はもっといいのを考えろ！』」" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-Ck-pDo" userLabel="Title">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-Ck-pDo" userLabel="Title">
                         <rect key="frame" x="153" y="7" width="149" height="66"/>
                         <fontDescription key="fontDescription" name="AxisStd-Light" family="AXIS Std" pointSize="13"/>
                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
