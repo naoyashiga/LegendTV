@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gakiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mV2-2B-D0G">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="mV2-2B-D0G">
                     <rect key="frame" x="165" y="165" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="92Y-fw-jx9"/>
@@ -29,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="gakiIcon" width="512" height="512"/>
+        <image name="splash" width="512" height="512"/>
     </resources>
 </document>

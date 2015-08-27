@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ReviewManager.initialSetting()
         
-        setSchemaVersion(1, Realm.defaultPath,
+        setSchemaVersion(4, Realm.defaultPath,
             { migration, oldSchemaVersion in
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
                 if oldSchemaVersion < 1 {
