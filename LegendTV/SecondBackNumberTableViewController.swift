@@ -61,7 +61,7 @@ class SecondBackNumberTableViewController: BaseTableViewController {
             }
             
         } else {
-            println("indexPath.row index error")
+            print("indexPath.row index error")
         }
         
         cell.layoutIfNeeded()

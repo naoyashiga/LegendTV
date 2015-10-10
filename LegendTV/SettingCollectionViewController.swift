@@ -65,7 +65,7 @@ class SettingCollectionViewController: BaseCollectionViewController {
         
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: settingReuseId.headerView, forIndexPath: indexPath) as! SettingHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: settingReuseId.headerView, forIndexPath: indexPath) as! SettingHeaderView
             
             switch indexPath.section {
             case 0:
@@ -126,7 +126,7 @@ class SettingCollectionViewController: BaseCollectionViewController {
         }
     }
     
-    private func getSelectedBackgroundViewCell(#cell: SettingCollectionViewCell) -> SettingCollectionViewCell {
+    private func getSelectedBackgroundViewCell(cell cell: SettingCollectionViewCell) -> SettingCollectionViewCell {
         //通常の背景
         let backgroundView = UIView()
         backgroundView.bounds = cell.bounds

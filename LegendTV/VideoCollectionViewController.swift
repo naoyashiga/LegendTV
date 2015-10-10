@@ -53,7 +53,7 @@ class VideoCollectionViewController: BaseCollectionViewController, UICollectionV
         
         Alamofire.request(.GET, requestURL).responseSwiftyJSON({ (_, _, json, error) in
             if (error != nil) {
-                println("Error with registration: \(error?.localizedDescription)")
+                print("Error with registration: \(error?.localizedDescription)")
             } else {
                 
                 var stories = [Story]()

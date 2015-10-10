@@ -74,7 +74,7 @@ extension TopViewController {
         navigationItem.leftBarButtonItem = nil
         navigationItem.hidesBackButton = true
         
-        let foldVideoControlButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let foldVideoControlButton = UIButton(type: UIButtonType.Custom)
         foldVideoControlButton.frame = CGRectMake(0, 0, 40, 40)
         foldVideoControlButton.setImage(UIImage(named:ButtonSet.foldVideo), forState: UIControlState.Normal)
         foldVideoControlButton.setImage(UIImage(named:ButtonSet.unfoldVideo), forState: UIControlState.Selected)
@@ -92,7 +92,7 @@ extension TopViewController {
     func addShareButton() {
         navigationItem.rightBarButtonItem = nil
         
-        let shareButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let shareButton = UIButton(type: UIButtonType.Custom)
         shareButton.frame = CGRectMake(0, 0, 40, 40)
         shareButton.setImage(UIImage(named:ButtonSet.share), forState: UIControlState.Normal)
         shareButton.tintColor = UIColor.whiteColor()

@@ -17,7 +17,7 @@ struct kikakuReuseId {
 }
 
 protocol KikakuCollectionViewControllerDelegate {
-    func transitionViewController(#ToVC:BaseTableViewController)
+    func transitionViewController(ToVC ToVC:BaseTableViewController)
 }
 
 class KikakuCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {

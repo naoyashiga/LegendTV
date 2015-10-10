@@ -24,14 +24,20 @@ class VideoPlayManager: NSObject {
     var delegate: VideoPlayManagerDelegate?
     
     override init() {
-        var audioSession = AVAudioSession.sharedInstance()
-        audioSession.setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        audioSession.setActive(true, error: nil)
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        } catch _ {
+        }
+        do {
+            try audioSession.setActive(true)
+        } catch _ {
+        }
         
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
     }
     
-    func setVideoPlayer(#videoID: String, playerView: UIView) {
+    func setVideoPlayer(videoID videoID: String, playerView: UIView) {
         videoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: videoID)
         
         videoPlayerViewController!.moviePlayer.backgroundPlaybackEnabled = true
@@ -48,7 +54,7 @@ class VideoPlayManager: NSObject {
         delegate?.videoPlayerDidChangeState(note)
     }
     
-    func setPlayingInfo(#title: String, artWorkImage: UIImage?) {
+    func setPlayingInfo(title title: String, artWorkImage: UIImage?) {
         let artistName = "ガキの使いやあらへんで!"
         if let artWorkImage = artWorkImage {
             

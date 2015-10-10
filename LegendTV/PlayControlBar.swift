@@ -17,7 +17,7 @@ class PlayControlBar: UIView {
     static var thumbNailImageView = UIImageView()
     static var kikakuNameLabel = UILabel()
     static var seriesNameLabel = UILabel()
-    static var playOrPauseButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+    static var playOrPauseButton = UIButton(type: UIButtonType.System)
     
     static var playingView = UIView()
     
@@ -27,10 +27,10 @@ class PlayControlBar: UIView {
     override init (frame : CGRect) {
         super.init(frame : frame)
         
-        PlayControlBar.thumbNailImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        PlayControlBar.kikakuNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        PlayControlBar.seriesNameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        PlayControlBar.playOrPauseButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        PlayControlBar.thumbNailImageView.translatesAutoresizingMaskIntoConstraints = false
+        PlayControlBar.kikakuNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        PlayControlBar.seriesNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        PlayControlBar.playOrPauseButton.translatesAutoresizingMaskIntoConstraints = false
         
         PlayControlBar.playOrPauseButton.tintColor = UIColor.clearColor()
         PlayControlBar.playOrPauseButton.addTarget(self, action: "playOrPauseButtonTapped", forControlEvents: UIControlEvents.TouchUpInside)
@@ -51,11 +51,11 @@ class PlayControlBar: UIView {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("This class does not support NSCoding")
     }
     
-    func setProperty(#thumbNailImageView: UIImageView,kikakuName: String, seriesName: String) {
+    func setProperty(thumbNailImageView thumbNailImageView: UIImageView,kikakuName: String, seriesName: String) {
         
         PlayControlBar.thumbNailImageView.image = thumbNailImageView.image
         PlayControlBar.kikakuNameLabel.text = kikakuName

@@ -62,7 +62,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         
         sectionIndex = 0
         
-        println(sections.count)
+        print(sections.count)
         setKikakuJSON()
         setStories()
         callback()
@@ -86,7 +86,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         if let randomKikakuNotOptional = randomKikaku["query"].string {
             if randomKikakuNotOptional.isEmpty {
                 randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
-                println("empty")
+                print("empty")
                 
                 if let second = randomKikaku["query"].string {
                     if second.isEmpty {
@@ -119,7 +119,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
             return encodingRandomQuery
             
         } else {
-            println("query error")
+            print("query error")
             return "ガキの使い".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         }
     }
@@ -130,7 +130,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         
         Alamofire.request(.GET, requestURL).responseSwiftyJSON({ (_, _, json, error) in
             if (error != nil) {
-                println("Error with registration: \(error?.localizedDescription)")
+                print("Error with registration: \(error?.localizedDescription)")
             } else {
                 
                 var stories = [Story]()

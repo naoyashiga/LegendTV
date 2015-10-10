@@ -44,8 +44,8 @@ extension Array {
     /**
     * Returns a copy of the array with the elements shuffled.
     */
-    func shuffled() -> [T] {
-        var newArray = [T](self)
+    func shuffled() -> [Element] {
+        var newArray = [Element](self)
         newArray.shuffle()
         return newArray
     }

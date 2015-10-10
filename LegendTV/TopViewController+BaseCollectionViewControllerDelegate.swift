@@ -11,7 +11,7 @@ import RealmSwift
 
 extension TopViewController: BaseCollectionViewControllerDelegate {
     
-    func saveHistory(#story: Story, cell: VideoListCollectionViewCell) {
+    func saveHistory(story story: Story, cell: VideoListCollectionViewCell) {
         
         playingCell = cell
         playingStory = story
@@ -21,7 +21,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         saveKikaku(kikaku: history, cell: cell, story: story)
     }
     
-    func saveHistoryFromFavoriteOrHistory(#kikaku: Kikaku, cell: VideoListCollectionViewCell) {
+    func saveHistoryFromFavoriteOrHistory(kikaku kikaku: Kikaku, cell: VideoListCollectionViewCell) {
         playingCell = cell
         playingKikaku = kikaku
         
@@ -51,7 +51,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         }
     }
     
-    func sendVideoData(#story: Story) {
+    func sendVideoData(story story: Story) {
         videoID = story.videoID
         videoTitle = story.title
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
@@ -59,7 +59,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         applyVideoPlayManager()
     }
     
-    func sendKikakuData<T: Kikaku>(#kikaku: T) {
+    func sendKikakuData<T: Kikaku>(kikaku kikaku: T) {
         videoID = kikaku.videoID
         videoTitle = kikaku.kikakuName
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: kikaku.thumbNailImageURL))

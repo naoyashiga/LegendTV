@@ -56,10 +56,10 @@ extension TopViewController {
     }
     
     func shareButtonTapped(sender:UIButton!){
-        var sharedText = videoTitle
+        let sharedText = videoTitle
         let baseURL = "https://www.youtube.com/watch?v="
         
-        var sharedURL = NSURL(string: baseURL + videoID)!
+        let sharedURL = NSURL(string: baseURL + videoID)!
         
         var activityItems = [AnyObject]()
         
@@ -111,7 +111,7 @@ extension TopViewController {
             delay: 0.1,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.0,
-            options: nil,
+            options: [],
             animations: {
                 self.view.layoutIfNeeded()
             }, completion: nil)

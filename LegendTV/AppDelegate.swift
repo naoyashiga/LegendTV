@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
     }
     
-    override func remoteControlReceivedWithEvent(event: UIEvent) {
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
         VideoPlayManager.sharedManager.remoteControlReceivedWithEvent(event)
     }
 }

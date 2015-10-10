@@ -97,7 +97,7 @@ class TopViewController: UIViewController {
             delay: 0.1,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.0,
-            options: nil,
+            options: [],
             animations: {
                 self.view.layoutIfNeeded()
                 self.resizedVC()
@@ -107,14 +107,14 @@ class TopViewController: UIViewController {
 
     }
     
-    func applyForControlBarData(#story: Story) {
+    func applyForControlBarData(story story: Story) {
         
         controlBarKikakuName.text = story.title
         controlBarSeriesName.text = story.seriesName
         controlBarThumbNaiImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
     }
     
-    func applyForControlBarKikakuData<T: Kikaku>(#kikaku: T) {
+    func applyForControlBarKikakuData<T: Kikaku>(kikaku kikaku: T) {
         
         controlBarKikakuName.text = kikaku.kikakuName
         controlBarSeriesName.text = kikaku.seriesName
@@ -152,7 +152,7 @@ class TopViewController: UIViewController {
             }
             
         } else {
-            println("playingStory is nil")
+            print("playingStory is nil")
         }
     }
     
@@ -178,7 +178,7 @@ class TopViewController: UIViewController {
         }
     }
     
-    func checkFavorite(#kikaku: Kikaku?,story: Story?) {
+    func checkFavorite(kikaku kikaku: Kikaku?,story: Story?) {
         
         if favoriteButton.selected {
             let realm = Realm()
@@ -219,7 +219,7 @@ class TopViewController: UIViewController {
         }
     }
     
-    func saveKikaku<T: Kikaku>(#kikaku: T, cell: VideoListCollectionViewCell, story: Story) {
+    func saveKikaku<T: Kikaku>(kikaku kikaku: T, cell: VideoListCollectionViewCell, story: Story) {
         kikaku.videoID = story.videoID
         kikaku.kikakuName = story.title
         kikaku.seriesName = story.seriesName
@@ -238,7 +238,7 @@ class TopViewController: UIViewController {
         }
     }
     
-    func saveKikakuFromFavoriteOrHistory<T: Kikaku>(#tmpKikaku: T,savedKikaku: T) {
+    func saveKikakuFromFavoriteOrHistory<T: Kikaku>(tmpKikaku tmpKikaku: T,savedKikaku: T) {
         tmpKikaku.videoID = savedKikaku.videoID
         tmpKikaku.kikakuName = savedKikaku.kikakuName
         tmpKikaku.seriesName = savedKikaku.seriesName

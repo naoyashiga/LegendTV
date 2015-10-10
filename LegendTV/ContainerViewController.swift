@@ -78,7 +78,7 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
     }
     
     //MARK: KikakuCollectionViewControllerDelegate
-    func transitionViewController(#ToVC: BaseTableViewController) {
+    func transitionViewController(ToVC ToVC: BaseTableViewController) {
         navigationController?.pushViewController(ToVC, animated: true)
     }
 }

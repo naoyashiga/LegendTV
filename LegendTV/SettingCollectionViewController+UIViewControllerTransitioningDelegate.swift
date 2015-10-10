@@ -10,7 +10,7 @@ import Foundation
 
 extension SettingCollectionViewController: UIViewControllerTransitioningDelegate {
     
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController!, sourceViewController source: UIViewController) -> UIPresentationController? {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return BackgroundPresentationController(presentedViewController: presented, presentingViewController: self)
         

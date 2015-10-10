@@ -22,7 +22,7 @@ import Realm.Private
 
 /// :nodoc:
 /// Internal class. Do not use directly.
-public class ListBase: RLMListBase, Printable {
+public class ListBase: RLMListBase, CustomStringConvertible {
     // Printable requires a description property defined in Swift (and not obj-c),
     // and it has to be defined as @objc override, which can't be done in a
     // generic class.
@@ -33,7 +33,7 @@ public class ListBase: RLMListBase, Printable {
 
     @objc private func descriptionWithMaxDepth(depth: UInt) -> String {
         let type = "List<\(_rlmArray.objectClassName)>"
-        return gsub("RLMArray <0x[a-z0-9]+>", type, _rlmArray.descriptionWithMaxDepth(depth)) ?? type
+        return gsub("RLMArray <0x[a-z0-9]+>", template: type, string: _rlmArray.descriptionWithMaxDepth(depth)) ?? type
     }
 
     /// Returns the number of objects in this list.
@@ -78,9 +78,9 @@ public final class List<T: Object>: ListBase {
     /**
     Returns the index of the given object, or `nil` if the object is not in the list.
 
-    :param: object The object whose index is being queried.
+    - parameter object: The object whose index is being queried.
 
-    :returns: The index of the given object, or `nil` if the object is not in the list.
+    - returns: The index of the given object, or `nil` if the object is not in the list.
     */
     public func indexOf(object: T) -> Int? {
         return notFoundToNil(_rlmArray.indexOfObject(unsafeBitCast(object, RLMObject.self)))
@@ -90,9 +90,9 @@ public final class List<T: Object>: ListBase {
     Returns the index of the first object matching the given predicate,
     or `nil` no objects match.
 
-    :param: predicate The `NSPredicate` used to filter the objects.
+    - parameter predicate: The `NSPredicate` used to filter the objects.
 
-    :returns: The index of the given object, or `nil` if no objects match.
+    - returns: The index of the given object, or `nil` if no objects match.
     */
     public func indexOf(predicate: NSPredicate) -> Int? {
         return notFoundToNil(_rlmArray.indexOfObjectWithPredicate(predicate))
@@ -102,10 +102,10 @@ public final class List<T: Object>: ListBase {
     Returns the index of the first object matching the given predicate,
     or `nil` if no objects match.
 
-    :param: predicateFormat The predicate format string, optionally followed by a variable number
+    - parameter predicateFormat: The predicate format string, optionally followed by a variable number
                             of arguments.
 
-    :returns: The index of the given object, or `nil` if no objects match.
+    - returns: The index of the given object, or `nil` if no objects match.
     */
     public func indexOf(predicateFormat: String, _ args: CVarArgType...) -> Int? {
         return indexOf(NSPredicate(format: predicateFormat, arguments: getVaList(args)))
@@ -119,9 +119,9 @@ public final class List<T: Object>: ListBase {
 
     :warning: You can only set an object during a write transaction.
 
-    :param: index The index.
+    - parameter index: The index.
 
-    :returns: The object at the given `index`.
+    - returns: The object at the given `index`.
     */
     public subscript(index: Int) -> T {
         get {
@@ -145,9 +145,9 @@ public final class List<T: Object>: ListBase {
     /**
     Returns an Array containing the results of invoking `valueForKey:` using key on each of the collection's objects.
 
-    :param: key The name of the property.
+    - parameter key: The name of the property.
 
-    :returns: Array containing the results of invoking `valueForKey:` using key on each of the collection's objects.
+    - returns: Array containing the results of invoking `valueForKey:` using key on each of the collection's objects.
     */
     public override func valueForKey(key: String) -> AnyObject? {
         return _rlmArray.valueForKey(key)
@@ -158,8 +158,8 @@ public final class List<T: Object>: ListBase {
 
     :warning: This method can only be called during a write transaction.
 
-    :param: value The object value.
-    :param: key   The name of the property.
+    - parameter value: The object value.
+    - parameter key:   The name of the property.
     */
     public override func setValue(value: AnyObject?, forKey key: String) {
         return _rlmArray.setValue(value, forKey: key)
@@ -170,9 +170,9 @@ public final class List<T: Object>: ListBase {
     /**
     Returns `Results` containing list elements that match the given predicate.
 
-    :param: predicateFormat The predicate format string which can accept variable arguments.
+    - parameter predicateFormat: The predicate format string which can accept variable arguments.
 
-    :returns: `Results` containing list elements that match the given predicate.
+    - returns: `Results` containing list elements that match the given predicate.
     */
     public func filter(predicateFormat: String, _ args: CVarArgType...) -> Results<T> {
         return Results<T>(_rlmArray.objectsWithPredicate(NSPredicate(format: predicateFormat, arguments: getVaList(args))))
@@ -181,9 +181,9 @@ public final class List<T: Object>: ListBase {
     /**
     Returns `Results` containing list elements that match the given predicate.
 
-    :param: predicate The predicate to filter the objects.
+    - parameter predicate: The predicate to filter the objects.
 
-    :returns: `Results` containing list elements that match the given predicate.
+    - returns: `Results` containing list elements that match the given predicate.
     */
     public func filter(predicate: NSPredicate) -> Results<T> {
         return Results<T>(_rlmArray.objectsWithPredicate(predicate))
@@ -194,10 +194,10 @@ public final class List<T: Object>: ListBase {
     /**
     Returns `Results` containing list elements sorted by the given property.
 
-    :param: property  The property name to sort by.
-    :param: ascending The direction to sort by.
+    - parameter property:  The property name to sort by.
+    - parameter ascending: The direction to sort by.
 
-    :returns: `Results` containing list elements sorted by the given property.
+    - returns: `Results` containing list elements sorted by the given property.
     */
     public func sorted(property: String, ascending: Bool = true) -> Results<T> {
         return sorted([SortDescriptor(property: property, ascending: ascending)])
@@ -206,9 +206,9 @@ public final class List<T: Object>: ListBase {
     /**
     Returns `Results` with elements sorted by the given sort descriptors.
 
-    :param: sortDescriptors `SortDescriptor`s to sort by.
+    - parameter sortDescriptors: `SortDescriptor`s to sort by.
 
-    :returns: `Results` with elements sorted by the given sort descriptors.
+    - returns: `Results` with elements sorted by the given sort descriptors.
     */
     public func sorted<S: SequenceType where S.Generator.Element == SortDescriptor>(sortDescriptors: S) -> Results<T> {
         return Results<T>(_rlmArray.sortedResultsUsingDescriptors(map(sortDescriptors) { $0.rlmSortDescriptorValue }))
@@ -222,7 +222,7 @@ public final class List<T: Object>: ListBase {
 
     :warning: This method can only be called during a write transaction.
 
-    :param: object An object.
+    - parameter object: An object.
     */
     public func append(object: T) {
         _rlmArray.addObject(unsafeBitCast(object, RLMObject.self))
@@ -233,10 +233,10 @@ public final class List<T: Object>: ListBase {
 
     :warning: This method can only be called during a write transaction.
 
-    :param: objects A sequence of objects.
+    - parameter objects: A sequence of objects.
     */
     public func extend<S: SequenceType where S.Generator.Element == T>(objects: S) {
-        for obj in SequenceOf<T>(objects) {
+        for obj in AnySequence<T>(objects) {
             _rlmArray.addObject(unsafeBitCast(obj, RLMObject.self))
         }
     }
@@ -248,8 +248,8 @@ public final class List<T: Object>: ListBase {
     :warning: Throws an exception when called with an index smaller than zero or greater than
               or equal to the number of objects in the list.
 
-    :param: object An object.
-    :param: index  The index at which to insert the object.
+    - parameter object: An object.
+    - parameter index:  The index at which to insert the object.
     */
     public func insert(object: T, atIndex index: Int) {
         throwForNegativeIndex(index)
@@ -263,7 +263,7 @@ public final class List<T: Object>: ListBase {
     :warning: Throws an exception when called with an index smaller than zero or greater than
               or equal to the number of objects in the list.
 
-    :param: index The index at which to remove the object.
+    - parameter index: The index at which to remove the object.
     */
     public func removeAtIndex(index: Int) {
         throwForNegativeIndex(index)
@@ -295,8 +295,8 @@ public final class List<T: Object>: ListBase {
     :warning: Throws an exception when called with an index smaller than zero or greater than
               or equal to the number of objects in the list.
 
-    :param: index  The list index of the object to be replaced.
-    :param: object An object to replace at the specified index.
+    - parameter index:  The list index of the object to be replaced.
+    - parameter object: An object to replace at the specified index.
     */
     public func replace(index: Int, object: T) {
         throwForNegativeIndex(index)
@@ -310,10 +310,10 @@ public final class List<T: Object>: ListBase {
     :warning: Throws an exception when called with an index smaller than zero or greater than
               or equal to the number of objects in the list.
 
-    :param: from  The index of the object to be moved.
-    :param: to    The index to which the object at `from` should be moved.
+    - parameter from:  The index of the object to be moved.
+    - parameter to:    The index to which the object at `from` should be moved.
     */
-    public func move(#from: Int, to: Int) {
+    public func move(from from: Int, to: Int) {
         throwForNegativeIndex(from)
         throwForNegativeIndex(to)
         _rlmArray.moveObjectAtIndex(UInt(from), toIndex: UInt(to))
@@ -325,8 +325,8 @@ public final class List<T: Object>: ListBase {
     :warning: Throws an exception when either index exceeds the bounds of the list.
     :warning: This method can only be called during a write transaction.
 
-    :param: index1 The index of the object with which to replace the object at index `index2`.
-    :param: index2 The index of the object with which to replace the object at index `index1`.
+    - parameter index1: The index of the object with which to replace the object at index `index2`.
+    - parameter index2: The index of the object with which to replace the object at index `index1`.
     */
     public func swap(index1: Int, _ index2: Int) {
         throwForNegativeIndex(index1, parameterName: "index1")
@@ -335,13 +335,13 @@ public final class List<T: Object>: ListBase {
     }
 }
 
-extension List: ExtensibleCollectionType {
+extension List: RangeReplaceableCollectionType {
     // MARK: Sequence Support
 
     /// Returns a `GeneratorOf<T>` that yields successive elements in the list.
-    public func generate() -> GeneratorOf<T> {
+    public func generate() -> AnyGenerator<T> {
         let base = NSFastGenerator(_rlmArray)
-        return GeneratorOf<T>() {
+        return anyGenerator() {
             let accessor = base.next() as! T?
             RLMInitializeSwiftListAccessor(accessor)
             return accessor

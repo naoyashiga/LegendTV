@@ -11,7 +11,7 @@ import UIKit
 class BackgroundPresentationController: UIPresentationController {
     var dimmingView: UIView!
     
-    override init(presentedViewController: UIViewController!, presentingViewController: UIViewController!) {
+    override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
         super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
         setupDimmingView()
     }
