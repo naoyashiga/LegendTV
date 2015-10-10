@@ -1,5 +1,0 @@
-platform :ios, '7.0'
-
-pod 'DZNEmptyDataSet', :path => '../../'
-
-pod 'DZNCategories/UIKit', '1.1.1'

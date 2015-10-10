@@ -1,10 +1,10 @@
 PODS:
   - LINEActivity (0.2.0)
-  - Realm (0.94.1):
-    - Realm/Headers (= 0.94.1)
-  - Realm/Headers (0.94.1)
-  - RealmSwift (0.94.1):
-    - Realm (= 0.94.1)
+  - Realm (0.95.3):
+    - Realm/Headers (= 0.95.3)
+  - Realm/Headers (0.95.3)
+  - RealmSwift (0.95.3):
+    - Realm (= 0.95.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -18,9 +18,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   LINEActivity: 3cf844b075bc7f8338ea86b41bd46acd5ec934d8
-  Realm: d999a6cf0b41577a077349c9cc9d496cc62a7d17
-  RealmSwift: 06b60ff5b1338755654d39aab44ac38001600f76
+  Realm: 55885fa05865344994ad8b56da96669ffa39fbf1
+  RealmSwift: 586df4b5a6d01473d2653b16e9fe7debce4a87ed
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   XCDYouTubeKit: 920ff5dfdf37f0f41b19610c5270b2ed23b05b13
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0.beta.4

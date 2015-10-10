@@ -830,7 +830,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = naoyashiga;
 				TargetAttributes = {
 					9A2238C61B76C02500364A6A = {
@@ -1114,6 +1114,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1191,6 +1192,7 @@
 				);
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.LegendTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
@@ -1212,6 +1214,7 @@
 				);
 				INFOPLIST_FILE = LegendTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.LegendTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "03ea179a-f7aa-48e3-8842-a314deba611d";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegendTV/LegendTV-Bridging-Header.h";
@@ -1232,6 +1235,7 @@
 				);
 				INFOPLIST_FILE = LegendTVTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.LegendTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LegendTV.app/LegendTV";
 			};
@@ -1247,6 +1251,7 @@
 				);
 				INFOPLIST_FILE = LegendTVTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.LegendTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LegendTV.app/LegendTV";
 			};
