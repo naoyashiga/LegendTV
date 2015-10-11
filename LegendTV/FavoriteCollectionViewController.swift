@@ -12,7 +12,6 @@ import RealmSwift
 struct favoriteReuseId {
     static let cell = "VideoListCollectionViewCell"
     static let headerView = "FavoriteHeaderView"
-//    static let footerView = "FavoriteFooterView"
 }
 
 class FavoriteCollectionViewController: BaseCollectionViewController, FavoriteHeaderViewDelegate {
