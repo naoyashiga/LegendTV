@@ -236,7 +236,6 @@ class PlayControlBar: UIView {
         let marginTop: CGFloat = 13.0
         let marginLeft: CGFloat = 4.0
         let marginRight: CGFloat = 16.0
-        let marginBottom: CGFloat = 7.0
         let imageWidth: CGFloat = 35
         let imageHeight: CGFloat = 35
         
