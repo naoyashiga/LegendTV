@@ -44,3 +44,6 @@ Pods/
 Carthage/Checkouts
 
 Carthage/Build
+
+#fonts
+*.otf
