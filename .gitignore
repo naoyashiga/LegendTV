@@ -47,3 +47,6 @@ Carthage/Build
 
 #fonts
 *.otf
+
+# Youtube API
+LegendTV/Config.swift
