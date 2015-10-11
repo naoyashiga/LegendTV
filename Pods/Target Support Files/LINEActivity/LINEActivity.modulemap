@@ -1,6 +1,0 @@
-framework module LINEActivity {
-  umbrella header "LINEActivity-umbrella.h"
-
-  export *
-  module * { export * }
-}
