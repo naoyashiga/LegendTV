@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
 
 struct kikakuReuseId {
     static let cell = "KikakuCollectionViewCell"
@@ -16,14 +17,13 @@ struct kikakuReuseId {
 }
 
 protocol KikakuCollectionViewControllerDelegate {
-    func transitionViewController(#ToVC:BaseTableViewController)
+    func transitionViewController(ToVC ToVC:BaseTableViewController)
 }
 
-class KikakuCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-    var kikakuData: NSDictionary = NSDictionary()
+class KikakuCollectionViewController: BaseCollectionViewController {
     
     var kikakuDelegate: KikakuCollectionViewControllerDelegate?
+    var kikakuJSON: JSON = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,55 +50,18 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
     }
     
     func setKikakuData() {
-        let path:NSString = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "plist")!
-        kikakuData = NSDictionary(contentsOfFile: path as String)!
         
-//        for(var i = 0; i < kikakuData.count; i++) {
-//            let index_name: String = "item" + String(i)
-//            let item: AnyObject = kikakuData[index_name]!
-//            
-//            let seriesName = item["seriesName"] as! String
-//            let desc = item["desc"] as! String
-//            let queries = item["queries"] as! NSArray
-//            
-//            for q in queries {
-//                let query = q as! String
-//                
-//                println(q)
-//            }
-//            
-//            println(seriesName)
-//            println(desc)
-//        }
-    }
-    
-    func getSeriesName(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["seriesName"] as! String
-    }
-    
-    func getKikakuDescription(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["desc"] as! String
-    }
-    
-    func getKikakuList(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["kikakuList"] as! [String]
-    }
-    
-    func getQueries(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["queries"] as! [String]
+        if let path = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                kikakuJSON = json
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return kikakuData.count
+        return kikakuJSON["items"].count
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -109,9 +72,10 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
         
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kikakuReuseId.headerView, forIndexPath: indexPath) as! KikakuHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kikakuReuseId.headerView, forIndexPath: indexPath) as! KikakuHeaderView
             
-            headerView.headerTitleLabel.text = getSeriesName(indexPath.section)
+            let item = kikakuJSON["items"][indexPath.section]
+            headerView.headerTitleLabel.text = item["seriesName"].stringValue
             
             return setCornerRadius(headerView: headerView)
             
@@ -129,19 +93,19 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kikakuReuseId.cell, forIndexPath: indexPath) as! KikakuCollectionViewCell
         
-        cell.descriptionLabel.text = getKikakuDescription(indexPath.section)
+        let item = kikakuJSON["items"][indexPath.section]
+        cell.descriptionLabel.text = item["desc"].stringValue
         
         return cell
     }
     
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kikakuReuseId.cell, forIndexPath: indexPath) as! KikakuCollectionViewCell
+        let item = kikakuJSON["items"][indexPath.section]
         
         let vc = SecondBackNumberTableViewController()
-        vc.kikakuList = getKikakuList(indexPath.section) as! [(String)]
-        vc.queries = getQueries(indexPath.section) as! [(String)]
-        vc.navigationItem.title = getSeriesName(indexPath.section)
+        vc.kikakuList = item["kikakuList"]
+        vc.navigationItem.title = item["seriesName"].stringValue
         
         kikakuDelegate?.transitionViewController(ToVC: vc)
     }

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 struct videoReuseId {
     static let cell = "VideoListCollectionViewCell"
 }
 
-class VideoCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+class VideoCollectionViewController: BaseCollectionViewController {
     private var stories:[Story] = [Story]() {
         didSet{
             self.collectionView?.reloadData()
@@ -49,10 +51,27 @@ class VideoCollectionViewController: BaseCollectionViewController, UICollectionV
         let searchWord = setSearchText()
         let requestURL = Config.REQUEST_SEARCH_URL + "q=\(searchWord)&part=snippet&maxResults=\(storiesCount)"
         
-        HousoushitsuObjectHandler.getStories(requestURL, callback: {(stories) -> Void in
-            self.stories = stories
-            self.activityIndicator.stopAnimating()
-        })
+        Alamofire.request(.GET, requestURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
+            } else {
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
+            }
+            
+            var stories = [Story]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = Story(json: item)
+                    stories.append(duration)
+                }
+                
+                self.stories = stories
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource

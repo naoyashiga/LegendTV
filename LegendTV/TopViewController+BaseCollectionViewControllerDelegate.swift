@@ -11,7 +11,7 @@ import RealmSwift
 
 extension TopViewController: BaseCollectionViewControllerDelegate {
     
-    func saveHistory(#story: Story, cell: VideoListCollectionViewCell) {
+    func saveHistory(story story: Story, cell: VideoListCollectionViewCell) {
         
         playingCell = cell
         playingStory = story
@@ -21,7 +21,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         saveKikaku(kikaku: history, cell: cell, story: story)
     }
     
-    func saveHistoryFromFavoriteOrHistory(#kikaku: Kikaku, cell: VideoListCollectionViewCell) {
+    func saveHistoryFromFavoriteOrHistory(kikaku kikaku: Kikaku, cell: VideoListCollectionViewCell) {
         playingCell = cell
         playingKikaku = kikaku
         
@@ -32,26 +32,31 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
             
         } else if kikaku is History {
             //履歴から再生のときに、お気に入り登録されているかをチェック
-            let realm = Realm()
-            let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
-            
-            if realm.objects(Favorite).filter(predicate).count == 0 {
-                //お気に入り未登録
-                favoriteButton.selected = false
-            } else {
-                //お気に入り登録済み
-                favoriteButton.selected = true
-            }
-            
-            //履歴の更新
-            realm.write {
-                kikaku.createdAt = NSDate().timeIntervalSince1970
-                realm.add(kikaku, update: true)
+            do {
+                let realm = try Realm()
+                let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
+                
+                if realm.objects(Favorite).filter(predicate).count == 0 {
+                    //お気に入り未登録
+                    favoriteButton.selected = false
+                } else {
+                    //お気に入り登録済み
+                    favoriteButton.selected = true
+                }
+                
+                //履歴の更新
+                try realm.write {
+                    kikaku.createdAt = NSDate().timeIntervalSince1970
+                    realm.add(kikaku, update: true)
+                }
+                
+            } catch {
+                print("Error")
             }
         }
     }
     
-    func sendVideoData(#story: Story) {
+    func sendVideoData(story story: Story) {
         videoID = story.videoID
         videoTitle = story.title
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: story.thumbNailImageURL))
@@ -59,7 +64,7 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         applyVideoPlayManager()
     }
     
-    func sendKikakuData<T: Kikaku>(#kikaku: T) {
+    func sendKikakuData<T: Kikaku>(kikaku kikaku: T) {
         videoID = kikaku.videoID
         videoTitle = kikaku.kikakuName
         videoThunmNailImageView.sd_setImageWithURL(NSURL(string: kikaku.thumbNailImageURL))
@@ -77,12 +82,5 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
         addFoldVideoControlButton()
         
         videoDisplayAnimation()
-    }
-    
-    func showReview() {
-        let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
-        reviewVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        
-        navigationController?.presentViewController(reviewVC, animated: true, completion: nil)
     }
 }

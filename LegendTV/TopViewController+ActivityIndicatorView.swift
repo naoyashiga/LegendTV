@@ -38,7 +38,7 @@ extension TopViewController {
                 delay: 0.1,
                 usingSpringWithDamping: 0.7,
                 initialSpringVelocity: 0.0,
-                options: nil,
+                options: [],
                 animations: {
                     indicator.alpha = 0
                     indicator.layer.opacity = 0

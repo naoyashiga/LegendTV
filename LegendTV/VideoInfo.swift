@@ -8,21 +8,58 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class VideoInfo {
     class func getDurationTimes(videoID: String, callback:(([ContentDetails]) -> Void)) {
         let contentsDetailURL = Config.REQUEST_CONTENT_DETAILS_URL + "id=\(videoID)"
         
-        HousoushitsuObjectHandler.getContentDetails(contentsDetailURL){ contentDetails in
-            callback(contentDetails)
+        Alamofire.request(.GET, contentsDetailURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
+            } else {
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
+            }
+            
+            var contentDetails = [ContentDetails]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = ContentDetails(json: item)
+                    contentDetails.append(duration)
+                }
+                
+                callback(contentDetails)
+            }
         }
+        
     }
     
     class func getStatistics(videoID: String, callback:(([Statistics]) -> Void)) {
         let statisticsURL = Config.REQUEST_STATISTICS_URL + "id=\(videoID)"
         
-        HousoushitsuObjectHandler.getStatistics(statisticsURL){ statistics in
-            callback(statistics)
+        Alamofire.request(.GET, statisticsURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
+            } else {
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
+            }
+            
+            var statistics = [Statistics]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = Statistics(json: item)
+                    statistics.append(duration)
+                }
+                
+                callback(statistics)
+            }
         }
     }
     
@@ -46,7 +83,7 @@ class VideoInfo {
         return replaceString
     }
     
-    class func doReplace(#str:String, pattern: String, replaceStr: String) -> String {
+    class func doReplace(str str:String, pattern: String, replaceStr: String) -> String {
         return str.stringByReplacingOccurrencesOfString(pattern, withString: replaceStr, options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
         
     }

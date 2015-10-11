@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 struct homeReuseId {
     static let cell = "VideoListCollectionViewCell"
     static let headerView = "HomeHeaderView"
 }
 
-class HomeCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeCollectionViewController: BaseCollectionViewController {
     private var sections = [[Story]]()
     private var queries = [String]()
     private var seriesNames = [String]()
@@ -28,11 +30,12 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
     private var headerIndex = 0
     
     var kikakuData: NSDictionary = NSDictionary()
+    var kikakuJSON: JSON = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setKikakuData()
+        setKikakuJSON()
         setStories()
         
         collectionView?.applyHeaderNib(headerNibName: homeReuseId.headerView)
@@ -59,89 +62,101 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         
         sectionIndex = 0
         
-        println(sections.count)
-        setKikakuData()
+        print(sections.count)
+        setKikakuJSON()
         setStories()
         callback()
     }
     
-    func setKikakuData() {
-        let path:NSString = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "plist")!
-        kikakuData = NSDictionary(contentsOfFile: path as String)!
-    }
-    
-    func getSeriesName(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["seriesName"] as! String
-    }
-    
-    func getKikakuDescription(index: Int) -> String {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["desc"] as! String
-    }
-    
-    func getKikakuList(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["kikakuList"] as! [String]
-    }
-    
-    func getQueries(index: Int) -> NSArray {
-        let index_name: String = "item" + String(index)
-        let item: AnyObject = kikakuData[index_name]!
-        return item["queries"] as! [String]
+    func setKikakuJSON() {
+        if let path = NSBundle.mainBundle().pathForResource("Kikaku", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                kikakuJSON = json
+            }
+        }
     }
     
     func setSearchText() -> String {
-        //0~kikakuData.countまでの乱数
-        let randomKikakuIndex = Int(arc4random_uniform(UInt32(kikakuData.count - 1)))
+        let itemCount = kikakuJSON["items"].count
+        let item = kikakuJSON["items"][Int.random(0...(itemCount - 1))]
+        let kikakuList = item["kikakuList"]
+        var randomKikaku = kikakuList[Int.random(0...(kikakuList.count - 1))]
         
-        //Kikakuに基づくクエリを取得
-        let queryArray = getQueries(randomKikakuIndex)
-        let queryCount = queryArray.count - 1
-        var queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
-        
-        var randomQuery = queryArray[queryIndex] as! String
-        
-        println(randomQuery)
-        
-        while randomQuery == "準備中" {
-            println("ng")
-            queryIndex = Int(arc4random_uniform(UInt32(queryCount)))
-            randomQuery = queryArray[queryIndex] as! String
-            println(randomQuery)
+        if let randomKikakuNotOptional = randomKikaku["query"].string {
+            if randomKikakuNotOptional.isEmpty {
+                randomKikaku = kikakuList[Int.random(0...kikakuList.count)]
+                print("empty")
+                
+                if let second = randomKikaku["query"].string {
+                    if second.isEmpty {
+                        //2回目も空
+                        randomKikaku["query"] = randomKikaku["name"]
+//                        println("queryをnameと同じにする")
+                    }
+                }
+            }
+        } else {
+            
+//            println("query optional")
+//            println("queryをnameと同じにする")
+            randomKikaku["query"] = randomKikaku["name"]
         }
         
-        let encodingRandomQuery = randomQuery.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        let kikakuList = getKikakuList(randomKikakuIndex)
-        let randomKikaku = kikakuList[queryIndex] as! String
-        let encodingRandomKikaku = randomKikaku.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        queries.append(encodingRandomKikaku)
-        seriesNames.append(getSeriesName(randomKikakuIndex))
-        kikakuNames.append(randomKikaku)
-        
-        return encodingRandomQuery
+        if let query = randomKikaku["query"].string {
+            
+            let encodingRandomQuery = query.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            queries.append(encodingRandomQuery)
+            
+            if let seriesName = item["seriesName"].string {
+                seriesNames.append(seriesName)
+            }
+            
+            if let kikakuName = randomKikaku["name"].string {
+                kikakuNames.append(kikakuName)
+            }
+            
+            return encodingRandomQuery
+            
+        } else {
+            print("query error")
+            return "ガキの使い".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        }
     }
     
     func setStories() {
         let searchWord = setSearchText()
         let requestURL = Config.REQUEST_SEARCH_URL + "q=\(searchWord)&part=snippet&maxResults=\(sectionStoriesCount)"
         
-        HousoushitsuObjectHandler.getStories(requestURL, callback: {(stories) -> Void in
-            self.sectionIndex++
-            self.sections.append(stories)
+        Alamofire.request(.GET, requestURL).responseJSON { reponse in
             
-            if self.sectionIndex < self.sectionCount {
-                self.setStories()
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
             } else {
-                self.collectionView?.reloadData()
-                self.activityIndicator.stopAnimating()
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
             }
-        })
+            
+            var stories = [Story]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = Story(json: item)
+                    stories.append(duration)
+                }
+                
+                self.sectionIndex++
+                self.sections.append(stories)
+                
+                if self.sectionIndex < self.sectionCount {
+                    self.setStories()
+                } else {
+                    self.collectionView?.reloadData()
+                    self.activityIndicator.stopAnimating()
+                }
+                
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource
@@ -176,7 +191,7 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(homeReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
     
         if sections.count != sectionCount {
-            println("not fill sectionCount")
+//            println("not fill sectionCount")
             return cell
         }
         

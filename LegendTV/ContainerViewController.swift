@@ -12,26 +12,29 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
     var pageMenu : CAPSPageMenu?
     var controllerArray : [BaseCollectionViewController] = []
     
-    private struct nibName {
-        static let homeVC = NSStringFromClass(HomeCollectionViewController.self)
-        static let kikakuVC = NSStringFromClass(KikakuCollectionViewController.self)
-        static let favVC = NSStringFromClass(FavoriteCollectionViewController.self)
-        static let historyVC = NSStringFromClass(HistoryCollectionViewController.self)
+    private struct NibNameSet {
+        static let homeVC = "HomeCollectionViewController"
+        static let kikakuVC = "KikakuCollectionViewController"
+        static let favVC = "FavoriteCollectionViewController"
+        static let historyVC = "HistoryCollectionViewController"
+        static let settingVC = "SettingCollectionViewController"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeVC = HomeCollectionViewController(nibName: nibName.homeVC, bundle: nil)
-        let kikakuVC = KikakuCollectionViewController(nibName: nibName.kikakuVC, bundle: nil)
-        let favVC = FavoriteCollectionViewController(nibName: nibName.favVC, bundle: nil)
-        let historyVC = HistoryCollectionViewController(nibName: nibName.historyVC, bundle: nil)
+        let homeVC = HomeCollectionViewController(nibName: NibNameSet.homeVC, bundle: nil)
+        let kikakuVC = KikakuCollectionViewController(nibName: NibNameSet.kikakuVC, bundle: nil)
+        let favVC = FavoriteCollectionViewController(nibName: NibNameSet.favVC, bundle: nil)
+        let historyVC = HistoryCollectionViewController(nibName: NibNameSet.historyVC, bundle: nil)
+        let settingVC = SettingCollectionViewController(nibName: NibNameSet.settingVC, bundle: nil)
         
         
         homeVC.title = "ピックアップ"
         kikakuVC.title = "企画"
         favVC.title = "お気に入り"
         historyVC.title = "履歴"
+        settingVC.title = "その他"
         
         kikakuVC.kikakuDelegate = self
         
@@ -39,6 +42,7 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
         controllerArray.append(kikakuVC)
         controllerArray.append(favVC)
         controllerArray.append(historyVC)
+        controllerArray.append(settingVC)
         
         let parameters: [CAPSPageMenuOption] = [
             .ScrollMenuBackgroundColor(UIColor.scrollMenuBackgroundColor()),
@@ -74,7 +78,7 @@ class ContainerViewController: UIViewController, KikakuCollectionViewControllerD
     }
     
     //MARK: KikakuCollectionViewControllerDelegate
-    func transitionViewController(#ToVC: BaseTableViewController) {
+    func transitionViewController(ToVC ToVC: BaseTableViewController) {
         navigationController?.pushViewController(ToVC, animated: true)
     }
 }

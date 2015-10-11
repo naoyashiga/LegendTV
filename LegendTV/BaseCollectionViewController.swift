@@ -9,14 +9,12 @@
 import UIKit
 
 protocol BaseCollectionViewControllerDelegate {
-    func sendVideoData(#story: Story)
-    func sendKikakuData<T: Kikaku>(#kikaku: T)
-    func applyForControlBarData(#story: Story)
-    func applyForControlBarKikakuData<T: Kikaku>(#kikaku: T)
-    func saveHistory(#story: Story, cell: VideoListCollectionViewCell)
-    func saveHistoryFromFavoriteOrHistory(#kikaku: Kikaku, cell: VideoListCollectionViewCell)
-    
-    func showReview()
+    func sendVideoData(story story: Story)
+    func sendKikakuData<T: Kikaku>(kikaku kikaku: T)
+    func applyForControlBarData(story story: Story)
+    func applyForControlBarKikakuData<T: Kikaku>(kikaku kikaku: T)
+    func saveHistory(story story: Story, cell: VideoListCollectionViewCell)
+    func saveHistoryFromFavoriteOrHistory(kikaku kikaku: Kikaku, cell: VideoListCollectionViewCell)
 }
 
 struct cellSize {
@@ -100,9 +98,9 @@ class BaseCollectionViewController: UICollectionViewController, UICollectionView
         activityIndicator.startAnimating()
     }
 
-    func setCornerRadius<T: UICollectionReusableView>(#headerView:T) -> T {
+    func setCornerRadius<T: UICollectionReusableView>(headerView headerView:T) -> T {
         let cornerRadius: CGFloat = 5.0
-        let maskPath = UIBezierPath(roundedRect: headerView.bounds, byRoundingCorners: (UIRectCorner.TopLeft | UIRectCorner.TopRight), cornerRadii: CGSizeMake(cornerRadius, cornerRadius))
+        let maskPath = UIBezierPath(roundedRect: headerView.bounds, byRoundingCorners: ([UIRectCorner.TopLeft, UIRectCorner.TopRight]), cornerRadii: CGSizeMake(cornerRadius, cornerRadius))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = headerView.bounds
         maskLayer.path = maskPath.CGPath
@@ -111,7 +109,7 @@ class BaseCollectionViewController: UICollectionViewController, UICollectionView
         return headerView
     }
     
-    func getDurationTimeAndStatistics(#story: Story, cell: VideoListCollectionViewCell, myCallback: (VideoListCollectionViewCell) -> ()) {
+    func getDurationTimeAndStatistics(story story: Story, cell: VideoListCollectionViewCell, myCallback: (VideoListCollectionViewCell) -> ()) {
         
         VideoInfo.getDurationTimes(story.videoID){ contentDetails in
             if contentDetails.isEmpty {

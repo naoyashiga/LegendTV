@@ -11,30 +11,38 @@ import RealmSwift
 
 struct historyReuseId {
     static let cell = "VideoListCollectionViewCell"
+    static let reviewCell = "RequireReviewCollectionViewCell"
     static let headerView = "HistoryHeaderView"
     static let footerView = "HistoryFooterView"
 }
 
-class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate {
+class HistoryCollectionViewController: BaseCollectionViewController, HistoryHeaderViewDelegate {
     private var histories: Results<History> {
         get {
-            let realm = Realm()
-            return realm.objects(History).sorted("createdAt", ascending: false)
+            do {
+                let realm = try Realm()
+                return realm.objects(History).sorted("createdAt", ascending: false)
+                
+            } catch {
+                fatalError("error histories")
+            }
         }
     }
     
     var maxKikakuCount = 30
-    var isReview = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        collectionView?.registerNib(UINib(nibName: historyReuseId.footerView, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: historyReuseId.footerView)
         
+        collectionView?.emptyDataSetDelegate = self
+        collectionView?.emptyDataSetSource = self
+        
         collectionView?.applyHeaderNib(headerNibName: historyReuseId.headerView)
         collectionView?.applyCellNib(cellNibName: historyReuseId.cell)
+        collectionView?.applyCellNib(cellNibName: historyReuseId.reviewCell)
         
-        setIsReview()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,27 +53,22 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         super.didReceiveMemoryWarning()
     }
     
-    func setIsReview(){
-        let ud = NSUserDefaults.standardUserDefaults()
-        if(ud.objectForKey("isReview") == nil){
-            isReview = false
-            ud.setObject(isReview, forKey: "isReview")
-        }else{
-            isReview = ud.boolForKey("isReview")
-        }
-        
-        println("isReview")
-        println(isReview)
-    }
-    
     // MARK: UICollectionViewDataSource
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //TODO: 期間によって区分けする
 //        let now = NSDate().timeIntervalSince1970
 //        let DAY_IN_SECONDS = 60 * 60 * 24
-//        let threeDaysAgo = now - Double(DAY_IN_SECONDS * 3)
+//        let hours = 60 * 60
 //        
-//        let predicate = NSPredicate(format: "createdAt < %@ ","threeDaysAgo")
+//        let yesterday: Double = now - Double(DAY_IN_SECONDS)
+//        let threeDaysAgo: Double = now - Double(DAY_IN_SECONDS * 3)
+//        let threeHoursAgo: Double = now - Double(hours * 3)
+//        
+//        println(now)
+//        println(threeHoursAgo)
+//        
+////        let predicate = NSPredicate(format: "createdAt < %d", threeDaysAgo)
+//        let predicate = NSPredicate(format: "createdAt > %d", yesterday)
 //        let threeDaysAgoHistories = histories.filter(predicate)
 //        
 //        println(threeDaysAgoHistories.count)
@@ -74,7 +77,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if isReview {
+        if ReviewManager.isReview {
             //レビュー済み
             if histories.count < maxKikakuCount {
                 return histories.count
@@ -83,7 +86,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             }
         } else {
             //レビューまだ
-            var maxInitialHistoryCount = 3
+            let maxInitialHistoryCount = 4
             
             if maxInitialHistoryCount > histories.count {
                 //3件未満のとき
@@ -98,11 +101,11 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
 
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: historyReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: historyReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
             
             headerView.delegate = self
             
-            if isReview {
+            if ReviewManager.isReview {
                 headerView.moreLoadButton.setTitle("", forState: .Normal)
                 
                 if histories.count < maxKikakuCount {
@@ -134,6 +137,13 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        if !ReviewManager.isReview && indexPath.length != 0 && indexPath.row == indexPath.length + 1 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.reviewCell, forIndexPath: indexPath) as! RequireReviewCollectionViewCell
+            return cell
+        }
+        
+        //レビュー済み
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
         
@@ -150,15 +160,23 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
         return cell
     }
     
+    func getVideoListCollectionViewCell(indexPath: NSIndexPath) {
+        
+    }
+    
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
         
-        let history = histories[indexPath.row]
-        delegate?.sendKikakuData(kikaku: history)
-        delegate?.applyForControlBarKikakuData(kikaku: history)
-        delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
-        
+        if !ReviewManager.isReview && indexPath.length != 0 && indexPath.row == indexPath.length + 1 {
+            didMoreLoadButtonTapped()
+        } else {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(historyReuseId.cell, forIndexPath: indexPath) as! VideoListCollectionViewCell
+            
+            let history = histories[indexPath.row]
+            delegate?.sendKikakuData(kikaku: history)
+            delegate?.applyForControlBarKikakuData(kikaku: history)
+            delegate?.saveHistoryFromFavoriteOrHistory(kikaku: history, cell: cell)
+        }
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -177,8 +195,12 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
     
     func didMoreLoadButtonTapped() {
         
-        if !isReview {
-            delegate?.showReview()
+        if !ReviewManager.isReview {
+            let reviewVC = ReviewModalViewController(nibName: "ReviewModalViewController", bundle: nil)
+            reviewVC.modalPresentationStyle = .Custom
+            reviewVC.transitioningDelegate = self
+            view.window?.rootViewController?.presentViewController(reviewVC, animated: true, completion: nil)
         }
     }
+    
 }
