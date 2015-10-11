@@ -15,7 +15,7 @@ struct homeReuseId {
     static let headerView = "HomeHeaderView"
 }
 
-class HomeCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeCollectionViewController: BaseCollectionViewController {
     private var sections = [[Story]]()
     private var queries = [String]()
     private var seriesNames = [String]()
@@ -128,32 +128,35 @@ class HomeCollectionViewController: BaseCollectionViewController, UICollectionVi
         let searchWord = setSearchText()
         let requestURL = Config.REQUEST_SEARCH_URL + "q=\(searchWord)&part=snippet&maxResults=\(sectionStoriesCount)"
         
-        Alamofire.request(.GET, requestURL).responseSwiftyJSON({ (_, _, json, error) in
-            if (error != nil) {
-                print("Error with registration: \(error?.localizedDescription)")
+        Alamofire.request(.GET, requestURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
             } else {
-                
-                var stories = [Story]()
-                
-                if let items = json["items"].array {
-                    for item in items {
-                        let duration = Story(json: item)
-                        stories.append(duration)
-                    }
-                    
-                    self.sectionIndex++
-                    self.sections.append(stories)
-                    
-                    if self.sectionIndex < self.sectionCount {
-                        self.setStories()
-                    } else {
-                        self.collectionView?.reloadData()
-                        self.activityIndicator.stopAnimating()
-                    }
-                    
-                }
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
             }
-        })
+            
+            var stories = [Story]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = Story(json: item)
+                    stories.append(duration)
+                }
+                
+                self.sectionIndex++
+                self.sections.append(stories)
+                
+                if self.sectionIndex < self.sectionCount {
+                    self.setStories()
+                } else {
+                    self.collectionView?.reloadData()
+                    self.activityIndicator.stopAnimating()
+                }
+                
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource

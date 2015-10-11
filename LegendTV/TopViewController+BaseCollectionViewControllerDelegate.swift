@@ -32,21 +32,26 @@ extension TopViewController: BaseCollectionViewControllerDelegate {
             
         } else if kikaku is History {
             //履歴から再生のときに、お気に入り登録されているかをチェック
-            let realm = Realm()
-            let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
-            
-            if realm.objects(Favorite).filter(predicate).count == 0 {
-                //お気に入り未登録
-                favoriteButton.selected = false
-            } else {
-                //お気に入り登録済み
-                favoriteButton.selected = true
-            }
-            
-            //履歴の更新
-            realm.write {
-                kikaku.createdAt = NSDate().timeIntervalSince1970
-                realm.add(kikaku, update: true)
+            do {
+                let realm = try Realm()
+                let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
+                
+                if realm.objects(Favorite).filter(predicate).count == 0 {
+                    //お気に入り未登録
+                    favoriteButton.selected = false
+                } else {
+                    //お気に入り登録済み
+                    favoriteButton.selected = true
+                }
+                
+                //履歴の更新
+                try realm.write {
+                    kikaku.createdAt = NSDate().timeIntervalSince1970
+                    realm.add(kikaku, update: true)
+                }
+                
+            } catch {
+                print("Error")
             }
         }
     }

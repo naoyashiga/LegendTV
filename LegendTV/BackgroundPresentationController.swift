@@ -28,17 +28,29 @@ class BackgroundPresentationController: UIPresentationController {
     }
     
     override func containerViewWillLayoutSubviews() {
+        guard let containerView = containerView else {
+            return
+        }
+        
+        guard let presentedView = presentedView() else {
+            return
+        }
+        
         dimmingView.frame = containerView.bounds
         
-        presentedView().frame = frameOfPresentedViewInContainerView()
-        presentedView().layer.borderWidth = 0.0
+        presentedView.frame = frameOfPresentedViewInContainerView()
+        presentedView.layer.borderWidth = 0.0
     }
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
+        guard let containerView = containerView else {
+            return CGRectZero
+        }
+        
         var presentedViewFrame = CGRectZero
         
-        var width:CGFloat = containerView.bounds.size.width * 0.85
-        var height:CGFloat = containerView.bounds.size.height  * 0.8
+        let width:CGFloat = containerView.bounds.size.width * 0.85
+        let height:CGFloat = containerView.bounds.size.height  * 0.8
         
         presentedViewFrame.size = CGSizeMake(width,height)
         presentedViewFrame.origin = CGPointMake(containerView.bounds.size.width / 2.0, containerView.bounds.size.height / 2.0)
@@ -50,6 +62,10 @@ class BackgroundPresentationController: UIPresentationController {
     }
     
     override func presentationTransitionWillBegin() {
+        guard let containerView = containerView else {
+            return
+        }
+        
         dimmingView.frame = containerView.bounds
         dimmingView.alpha = 0.0
         

@@ -57,7 +57,6 @@ class BaseTableViewController: UITableViewController {
         tableView.reloadData()
         
         let cells = tableView.visibleCells
-        let tableHeight: CGFloat = tableView.bounds.size.height
         let duration: NSTimeInterval = 0.5
         
         for i in cells {

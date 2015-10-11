@@ -16,11 +16,16 @@ struct historyReuseId {
     static let footerView = "HistoryFooterView"
 }
 
-class HistoryCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, HistoryHeaderViewDelegate {
+class HistoryCollectionViewController: BaseCollectionViewController, HistoryHeaderViewDelegate {
     private var histories: Results<History> {
         get {
-            let realm = Realm()
-            return realm.objects(History).sorted("createdAt", ascending: false)
+            do {
+                let realm = try Realm()
+                return realm.objects(History).sorted("createdAt", ascending: false)
+                
+            } catch {
+                fatalError("error histories")
+            }
         }
     }
     
@@ -81,7 +86,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
             }
         } else {
             //レビューまだ
-            var maxInitialHistoryCount = 4
+            let maxInitialHistoryCount = 4
             
             if maxInitialHistoryCount > histories.count {
                 //3件未満のとき
@@ -96,7 +101,7 @@ class HistoryCollectionViewController: BaseCollectionViewController, UICollectio
 
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: historyReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: historyReuseId.headerView, forIndexPath: indexPath) as! HistoryHeaderView
             
             headerView.delegate = self
             

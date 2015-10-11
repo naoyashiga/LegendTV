@@ -181,7 +181,6 @@ class PlayControlBar: UIView {
     private func setKikakuNameLabelContraints() -> [NSLayoutConstraint] {
         let marginTop: CGFloat = 10.0
         let marginLeft: CGFloat = 8.0
-        let marginRight: CGFloat = 8.0
         
         let top = NSLayoutConstraint(
             item: PlayControlBar.kikakuNameLabel,
@@ -209,7 +208,6 @@ class PlayControlBar: UIView {
     private func setSeriesNameLabelContraints() -> [NSLayoutConstraint] {
         let marginTop: CGFloat = 33.0
         let marginLeft: CGFloat = 8.0
-        let marginRight: CGFloat = 8.0
         
         let top = NSLayoutConstraint(
             item: PlayControlBar.seriesNameLabel,
@@ -250,16 +248,6 @@ class PlayControlBar: UIView {
             attribute: .Top,
             multiplier: 1.0,
             constant: marginTop
-        )
-        
-        let bottom = NSLayoutConstraint(
-            item: PlayControlBar.playOrPauseButton,
-            attribute: .Bottom,
-            relatedBy: .Equal,
-            toItem: self,
-            attribute: .Bottom,
-            multiplier: 1.0,
-            constant: marginBottom
         )
         
         let left = NSLayoutConstraint(

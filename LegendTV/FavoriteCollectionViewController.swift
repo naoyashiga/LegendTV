@@ -15,12 +15,17 @@ struct favoriteReuseId {
 //    static let footerView = "FavoriteFooterView"
 }
 
-class FavoriteCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, FavoriteHeaderViewDelegate {
+class FavoriteCollectionViewController: BaseCollectionViewController, FavoriteHeaderViewDelegate {
     private var favorites: Results<Favorite> {
         get {
-            let realm = Realm()
-            //新しい順に並べる
-            return realm.objects(Favorite).sorted("createdAt", ascending: false)
+            do {
+                let realm = try Realm()
+                //新しい順に並べる
+                return realm.objects(Favorite).sorted("createdAt", ascending: false)
+                
+            } catch {
+                fatalError("cant set favorites")
+            }
         }
     }
     
@@ -63,7 +68,7 @@ class FavoriteCollectionViewController: BaseCollectionViewController, UICollecti
         
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: favoriteReuseId.headerView, forIndexPath: indexPath) as! FavoriteHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: favoriteReuseId.headerView, forIndexPath: indexPath) as! FavoriteHeaderView
             
             headerView.delegate = self
             

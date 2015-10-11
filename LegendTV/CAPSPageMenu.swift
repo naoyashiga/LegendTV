@@ -235,6 +235,15 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Container View Controller
+    public override func shouldAutomaticallyForwardAppearanceMethods() -> Bool {
+        return true
+    }
+    
+    public override func shouldAutomaticallyForwardRotationMethods() -> Bool {
+        return true
+    }
+    
     // MARK: - UI Setup
     
     func setUpUserInterface() {
@@ -246,7 +255,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         controllerScrollView.alwaysBounceHorizontal = enableHorizontalBounce
         controllerScrollView.bounces = enableHorizontalBounce
         
-        controllerScrollView.frame = CGRectMake(0.0, menuHeight, self.view.frame.width, self.view.frame.height - menuHeight)
+        controllerScrollView.frame = CGRectMake(0.0, menuHeight, self.view.frame.width, self.view.frame.height)
         
         self.view.addSubview(controllerScrollView)
         
@@ -271,7 +280,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         // Add hairline to menu scroll view
         if addBottomMenuHairline {
-            var menuBottomHairline : UIView = UIView()
+            let menuBottomHairline : UIView = UIView()
             
             menuBottomHairline.translatesAutoresizingMaskIntoConstraints = false
             
@@ -332,9 +341,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         for controller in controllerArray {
             if index == 0.0 {
                 // Add first two controllers to scrollview and as child view controller
-                controller.viewWillAppear(true)
                 addPageAtIndex(0)
-                controller.viewDidAppear(true)
             }
             
             // Set up menu item for menu scroll view
@@ -347,7 +354,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
                 let titleText : String = controllerTitle != nil ? controllerTitle! : "Menu \(Int(index) + 1)"
                 
-                let itemWidthRect : CGRect = (titleText as NSString).boundingRectWithSize(CGSizeMake(1000, 1000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:menuItemFont], context: nil)
+                var itemWidthRect : CGRect = (titleText as NSString).boundingRectWithSize(CGSizeMake(1000, 1000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:menuItemFont], context: nil)
                 
                 menuItemWidth = itemWidthRect.width
                 
@@ -730,7 +737,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
                     menuItemRightBound = CGRectGetMaxX(menuItems[menuItems.count-1].frame)
                     
                     if (tappedPoint.x >= menuItemLeftBound && tappedPoint.x <= menuItemRightBound) {
-                        for (index, controller) in controllerArray.enumerate() {
+                        for (index, _) in controllerArray.enumerate() {
                             menuItemLeftBound = CGRectGetMinX(menuItems[index].frame)
                             menuItemRightBound = CGRectGetMaxX(menuItems[index].frame)
                             
@@ -838,8 +845,6 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         oldVC.view.removeFromSuperview()
         oldVC.removeFromParentViewController()
-        
-        oldVC.didMoveToParentViewController(nil)
     }
     
     
@@ -848,7 +853,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
     override public func viewDidLayoutSubviews() {
         // Configure controller scroll view content size
         controllerScrollView.contentSize = CGSizeMake(self.view.frame.width * CGFloat(controllerArray.count), self.view.frame.height - menuHeight)
-
+        
         let oldCurrentOrientationIsPortrait : Bool = currentOrientationIsPortrait
         currentOrientationIsPortrait = UIApplication.sharedApplication().statusBarOrientation.isPortrait
         
@@ -918,8 +923,8 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
             }
         }
         
-        // Hsoi 2015-02-05 - Running on iOS 7.1 complained: "'NSInternalInconsistencyException', reason: 'Auto Layout 
-        // still required after sending -viewDidLayoutSubviews to the view controller. ViewController's implementation 
+        // Hsoi 2015-02-05 - Running on iOS 7.1 complained: "'NSInternalInconsistencyException', reason: 'Auto Layout
+        // still required after sending -viewDidLayoutSubviews to the view controller. ViewController's implementation
         // needs to send -layoutSubviews to the view to invoke auto layout.'"
         //
         // http://stackoverflow.com/questions/15490140/auto-layout-error

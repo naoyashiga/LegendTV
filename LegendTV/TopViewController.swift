@@ -124,23 +124,35 @@ class TopViewController: UIViewController {
         if kikaku is Favorite {
             favoriteButton.selected = true
         } else if kikaku is History {
-            let realm = Realm()
-            let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
             
-            if realm.objects(Favorite).filter(predicate).count == 0 {
-                //お気に入り未登録
-                favoriteButton.selected = false
-            } else {
-                //お気に入り登録済み
-                favoriteButton.selected = true
+            do {
+                let realm = try Realm()
+                let predicate = NSPredicate(format: "videoID == %@", kikaku.videoID)
+                
+                if realm.objects(Favorite).filter(predicate).count == 0 {
+                    //お気に入り未登録
+                    favoriteButton.selected = false
+                } else {
+                    //お気に入り登録済み
+                    favoriteButton.selected = true
+                }
+                
+            } catch {
+                print("error in applyForControlBarKikakuData")
+                
             }
         }
     }
     
     private func applyFavoriteButtonState() {
-        if let playingStory = playingStory {
+        guard let playingStory = playingStory else {
+            print("playingStory is nil")
+            return
+        }
+        
+        do {
+            let realm = try Realm()
             
-            let realm = Realm()
             let predicate = NSPredicate(format: "videoID == %@", playingStory.videoID)
             
             if realm.objects(Favorite).filter(predicate).count == 0 {
@@ -151,8 +163,9 @@ class TopViewController: UIViewController {
                 favoriteButton.selected = true
             }
             
-        } else {
-            print("playingStory is nil")
+        } catch {
+            print("error in applyFavoriteButtonState")
+            
         }
     }
     
@@ -161,14 +174,19 @@ class TopViewController: UIViewController {
         if let playingKikaku = playingKikaku {
             
             if playingKikaku is Favorite {
-                let realm = Realm()
-                
-                realm.write {
-                    //お気に入り解除
-                    realm.delete(playingKikaku)
+                do {
+                    let realm = try Realm()
+                    
+                    try realm.write {
+                        //お気に入り解除
+                        realm.delete(playingKikaku)
+                    }
+                    
+                    favoriteButton.selected = false
+                    
+                } catch {
+                    print("error in checkFavorite")
                 }
-                
-                favoriteButton.selected = false
             }
             
             if playingKikaku is History {
@@ -181,7 +199,6 @@ class TopViewController: UIViewController {
     func checkFavorite(kikaku kikaku: Kikaku?,story: Story?) {
         
         if favoriteButton.selected {
-            let realm = Realm()
             var predicate: NSPredicate?
             
             if let kikaku = kikaku {
@@ -193,14 +210,20 @@ class TopViewController: UIViewController {
             }
             
             if let predicate = predicate {
-                let deletedFav = realm.objects(Favorite).filter(predicate)[0]
-                
-                realm.write {
-                    //お気に入り解除
-                    realm.delete(deletedFav)
+                do {
+                    let realm = try Realm()
+                    let deletedFav = realm.objects(Favorite).filter(predicate)[0]
+                    
+                    try realm.write {
+                        //お気に入り解除
+                        realm.delete(deletedFav)
+                    }
+                    
+                    favoriteButton.selected = false
+                    
+                } catch {
+                    print("error in checkFavorite")
                 }
-                
-                favoriteButton.selected = false
             }
             
         } else {
@@ -231,10 +254,15 @@ class TopViewController: UIViewController {
         
         kikaku.createdAt = NSDate().timeIntervalSince1970
         
-        let realm = Realm()
-        realm
-        realm.write {
-            realm.add(kikaku, update: true)
+        do {
+            let realm = try Realm()
+            
+            try realm.write {
+                realm.add(kikaku, update: true)
+            }
+            
+        } catch {
+            print("error in saveKikaku")
         }
     }
     
@@ -250,9 +278,15 @@ class TopViewController: UIViewController {
         
         tmpKikaku.createdAt = NSDate().timeIntervalSince1970
         
-        let realm = Realm()
-        realm.write {
-            realm.add(tmpKikaku, update: true)
+        do {
+            let realm = try Realm()
+            
+            try realm.write {
+                realm.add(tmpKikaku, update: true)
+            }
+            
+        } catch {
+            print("error in saveKikakuFromFavoriteOrHistory")
         }
     }
 }

@@ -27,15 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ReviewManager.initialSetting()
         
-        setSchemaVersion(4, Realm.defaultPath,
-            { migration, oldSchemaVersion in
-                // We haven’t migrated anything yet, so oldSchemaVersion == 0
-                if oldSchemaVersion < 1 {
-                    // Nothing to do!
-                    // Realm will automatically detect new properties and removed properties
-                    // And will update the schema on disk automatically
+        let config = Realm.Configuration(
+            schemaVersion: 4,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
                 }
         })
+        
+        Realm.Configuration.defaultConfiguration = config
         
         return true
     }
@@ -56,6 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
+        guard let event = event else {
+            return
+        }
+        
         VideoPlayManager.sharedManager.remoteControlReceivedWithEvent(event)
     }
 }

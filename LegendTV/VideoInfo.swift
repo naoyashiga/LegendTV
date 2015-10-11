@@ -15,45 +15,52 @@ class VideoInfo {
     class func getDurationTimes(videoID: String, callback:(([ContentDetails]) -> Void)) {
         let contentsDetailURL = Config.REQUEST_CONTENT_DETAILS_URL + "id=\(videoID)"
         
-        Alamofire.request(.GET, contentsDetailURL).responseSwiftyJSON({ (_, _, json, error) in
-            if (error != nil) {
-                print("Error with registration: \(error?.localizedDescription)")
+        Alamofire.request(.GET, contentsDetailURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
             } else {
-                
-                var contentDetails = [ContentDetails]()
-                
-                if let items = json["items"].array {
-                    for item in items {
-                        let duration = ContentDetails(json: item)
-                        contentDetails.append(duration)
-                    }
-                    
-                    callback(contentDetails)
-                }
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
             }
-        })
+            
+            var contentDetails = [ContentDetails]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = ContentDetails(json: item)
+                    contentDetails.append(duration)
+                }
+                
+                callback(contentDetails)
+            }
+        }
+        
     }
     
     class func getStatistics(videoID: String, callback:(([Statistics]) -> Void)) {
         let statisticsURL = Config.REQUEST_STATISTICS_URL + "id=\(videoID)"
         
-        Alamofire.request(.GET, statisticsURL).responseSwiftyJSON({ (_, _, json, error) in
-            if (error != nil) {
-                print("Error with registration: \(error?.localizedDescription)")
+        Alamofire.request(.GET, statisticsURL).responseJSON { reponse in
+            
+            var responseJSON: JSON
+            if reponse.result.isFailure {
+                responseJSON = JSON.null
             } else {
-                
-                var statistics = [Statistics]()
-                
-                if let items = json["items"].array {
-                    for item in items {
-                        let duration = Statistics(json: item)
-                        statistics.append(duration)
-                    }
-                    
-                    callback(statistics)
-                }
+                responseJSON = SwiftyJSON.JSON(reponse.result.value!)
             }
-        })
+            
+            var statistics = [Statistics]()
+            
+            if let items = responseJSON["items"].array {
+                for item in items {
+                    let duration = Statistics(json: item)
+                    statistics.append(duration)
+                }
+                
+                callback(statistics)
+            }
+        }
     }
     
     class func getDurationStr(nonFormatStr: String) -> String {
@@ -81,48 +88,3 @@ class VideoInfo {
         
     }
 }
-
-// MARK: Alamofire_SwiftyJSON
-extension Request {
-    
-    /**
-    Adds a handler to be called once the request has finished.
-    
-    - parameter completionHandler: A closure to be executed once the request has finished. The closure takes 4 arguments: the URL request, the URL response, if one was received, the SwiftyJSON enum, if one could be created from the URL response and data, and any error produced while creating the SwiftyJSON enum.
-    
-    - returns: The request.
-    */
-    public func responseSwiftyJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, SwiftyJSON.JSON, NSError?) -> Void) -> Self {
-        return responseSwiftyJSON(queue:nil, options:NSJSONReadingOptions.AllowFragments, completionHandler:completionHandler)
-    }
-    
-    /**
-    Adds a handler to be called once the request has finished.
-    
-    - parameter queue: The queue on which the completion handler is dispatched.
-    - parameter options: The JSON serialization reading options. `.AllowFragments` by default.
-    - parameter completionHandler: A closure to be executed once the request has finished. The closure takes 4 arguments: the URL request, the URL response, if one was received, the SwiftyJSON enum, if one could be created from the URL response and data, and any error produced while creating the SwiftyJSON enum.
-    
-    - returns: The request.
-    */
-    public func responseSwiftyJSON(queue: dispatch_queue_t? = nil, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, JSON, NSError?) -> Void) -> Self {
-        
-        return response(queue: queue, responseSerializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                
-                var responseJSON: JSON
-                if error != nil || object == nil{
-                    responseJSON = JSON.nullJSON
-                } else {
-                    responseJSON = SwiftyJSON.JSON(object!)
-                }
-                
-                dispatch_async(queue ?? dispatch_get_main_queue(), {
-                    completionHandler(self.request, self.response, responseJSON, error)
-                })
-            })
-        })
-    }
-}
-

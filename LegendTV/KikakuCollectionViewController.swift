@@ -20,7 +20,7 @@ protocol KikakuCollectionViewControllerDelegate {
     func transitionViewController(ToVC ToVC:BaseTableViewController)
 }
 
-class KikakuCollectionViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+class KikakuCollectionViewController: BaseCollectionViewController {
     
     var kikakuDelegate: KikakuCollectionViewControllerDelegate?
     var kikakuJSON: JSON = ""
@@ -72,7 +72,7 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
         
         switch kind {
         case UICollectionElementKindSectionHeader:
-            var headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kikakuReuseId.headerView, forIndexPath: indexPath) as! KikakuHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kikakuReuseId.headerView, forIndexPath: indexPath) as! KikakuHeaderView
             
             let item = kikakuJSON["items"][indexPath.section]
             headerView.headerTitleLabel.text = item["seriesName"].stringValue
@@ -101,8 +101,6 @@ class KikakuCollectionViewController: BaseCollectionViewController, UICollection
     
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kikakuReuseId.cell, forIndexPath: indexPath) as! KikakuCollectionViewCell
-        
         let item = kikakuJSON["items"][indexPath.section]
         
         let vc = SecondBackNumberTableViewController()
